@@ -1,0 +1,52 @@
+{
+ "updated": "2026-07-24 (초기 예시 · 자동 갱신 시작 전)",
+ "regions": ["서울"],
+ "count": 5,
+ "items": [
+  {
+   "title": "유영국: 산은 내 안에 있다",
+   "place": "서울시립미술관 서소문본관",
+   "period": "2026.05.14 ~ 2026.10.18",
+   "region": "서울",
+   "realm": "전시",
+   "url": "https://sema.seoul.go.kr",
+   "img": ""
+  },
+  {
+   "title": "환경, 예술이 되다",
+   "place": "리움미술관",
+   "period": "2026.05.05 ~ 2026.11.29",
+   "region": "서울",
+   "realm": "전시",
+   "url": "https://www.leeumhoam.org",
+   "img": ""
+  },
+  {
+   "title": "서도호 개인전",
+   "place": "국립현대미술관 서울",
+   "period": "2026.08 ~ 2027.02",
+   "region": "서울",
+   "realm": "전시",
+   "url": "https://www.mmca.go.kr",
+   "img": ""
+  },
+  {
+   "title": "조나스 우드 기획전",
+   "place": "아모레퍼시픽미술관",
+   "period": "2026.09.01 ~ 2027.02.28",
+   "region": "서울",
+   "realm": "전시",
+   "url": "https://apma.amorepacific.com",
+   "img": ""
+  },
+  {
+   "title": "구정아 개인전",
+   "place": "리움미술관",
+   "period": "2026.09.05 ~ 2026.12.27",
+   "region": "서울",
+   "realm": "전시",
+   "url": "https://www.leeumhoam.org",
+   "img": ""
+  }
+ ]
+}
