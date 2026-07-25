@@ -1,52 +1,564 @@
 {
- "updated": "2026-07-24 (초기 예시 · 자동 갱신 시작 전)",
- "regions": ["서울"],
- "count": 5,
+ "updated": "2026-07-24",
+ "regions": [
+  "서울",
+  "경기·인천",
+  "부산·경남",
+  "대구·경북",
+  "대전·충청",
+  "광주·전라",
+  "강원·제주"
+ ],
+ "count": 61,
  "items": [
   {
-   "title": "유영국: 산은 내 안에 있다",
-   "place": "서울시립미술관 서소문본관",
-   "period": "2026.05.14 ~ 2026.10.18",
+   "title": "[소마미술관] 그림책이 살아있다!",
+   "place": "소마미술관 2관",
+   "period": "2026.04.17 ~ 2026.09.06",
    "region": "서울",
    "realm": "전시",
-   "url": "https://sema.seoul.go.kr",
-   "img": ""
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/92cca0b3f7e84e64b160ad3cf2da71af.jpg"
   },
   {
-   "title": "환경, 예술이 되다",
-   "place": "리움미술관",
-   "period": "2026.05.05 ~ 2026.11.29",
+   "title": "[소마미술관] 이승택 : 조각의 바깥에서",
+   "place": "소마미술관 1관",
+   "period": "2026.04.10 ~ 2026.09.06",
    "region": "서울",
    "realm": "전시",
-   "url": "https://www.leeumhoam.org",
-   "img": ""
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/aa17e53476e642788fb31780fe75d141.jpg"
   },
   {
-   "title": "서도호 개인전",
-   "place": "국립현대미술관 서울",
-   "period": "2026.08 ~ 2027.02",
+   "title": "가나다락 - 글놀이 말놀이",
+   "place": "국립민속박물관",
+   "period": "2026.05.13 ~ 2026.08.30",
    "region": "서울",
    "realm": "전시",
-   "url": "https://www.mmca.go.kr",
-   "img": ""
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/b3116726911c45dd8767b5ad8b0ab0ab.jpg"
   },
   {
-   "title": "조나스 우드 기획전",
-   "place": "아모레퍼시픽미술관",
-   "period": "2026.09.01 ~ 2027.02.28",
+   "title": "고상우 개인전 《Breathing with You: 너와 함께 쉬는 숨》",
+   "place": "사비나미술관",
+   "period": "2026.06.05 ~ 2026.08.16",
    "region": "서울",
    "realm": "전시",
-   "url": "https://apma.amorepacific.com",
-   "img": ""
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/0e86a4367b3847dc8bb5302f871f100b.png"
   },
   {
-   "title": "구정아 개인전",
-   "place": "리움미술관",
-   "period": "2026.09.05 ~ 2026.12.27",
+   "title": "그래도 해보던 날들",
+   "place": "국립현대미술관 서울관",
+   "period": "2026.04.17 ~ 2026.08.30",
    "region": "서울",
    "realm": "전시",
-   "url": "https://www.leeumhoam.org",
-   "img": ""
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/5a840c9a22ef4e2e9412f1747aa5898d.jpg"
+  },
+  {
+   "title": "기록으로 산책하기_서울의 공원",
+   "place": "서울문화재단 본관",
+   "period": "2023.12.01 ~ 2026.09.29",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/24/12/rdf_202412022124560550.jpg"
+  },
+  {
+   "title": "난지미술창작스튜디오 20주년 기념전 《사랑의 기원》",
+   "place": "서울시립미술관",
+   "period": "2026.04.30 ~ 2026.09.06",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/08ce7fb5df4c4db193c9068d3850b43b.JPG"
+  },
+  {
+   "title": "내셔널지오그래픽 특별기획 《OCEAN》",
+   "place": "충무아트센터 갤러리",
+   "period": "2026.06.06 ~ 2026.10.11",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/4ba6b38175264092a564d6bd5ab22f64.jpg"
+  },
+  {
+   "title": "단원 김홍도, 시대를 그리다",
+   "place": "국립중앙박물관",
+   "period": "2026.05.04 ~ 2026.08.02",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/0dfd8a87e4b24d22931151f68ab7d122.png"
+  },
+  {
+   "title": "대학에서 우리는",
+   "place": "서울생활사박물관",
+   "period": "2026.05.15 ~ 2026.09.27",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/f8546ab1c3da40ada576098e7fc2ad10.jpg"
+  },
+  {
+   "title": "봄, 여름, 가을, 겨울 - 흔들리는 계절",
+   "place": "서대문 자연사박물관",
+   "period": "2025.10.01 ~ 2026.08.30",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/10/show_2025102013474304968.jpg"
+  },
+  {
+   "title": "색유만개 : 권순형 기증특별전시",
+   "place": "서울공예박물관",
+   "period": "2026.05.12 ~ 2026.08.02",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/316c94e900c94006b51b66a15fb75c6c.JPG"
+  },
+  {
+   "title": "서울시립 서서울미술관 개관 특별 미디어 소장품전 《서서울의 투명한 | 청소년 | 기계》",
+   "place": "서울시립 서서울미술관",
+   "period": "2026.05.14 ~ 2026.07.26",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/3a147db9d33547249fe951171122739c.jpg"
+  },
+  {
+   "title": "선물과 기록, 한국-프랑스 우정의 140년",
+   "place": "국립고궁박물관",
+   "period": "2026.06.03 ~ 2026.08.02",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/496d4fe76bd04fc4bb0488c558212ecc.JPG"
+  },
+  {
+   "title": "알렉사에게",
+   "place": "서울시립 미술아카이브",
+   "period": "2026.03.26 ~ 2026.07.26",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/dcfa1113e81541e7ab81db56750dd56c.jpg"
+  },
+  {
+   "title": "이슬람 미술 찬란한 빛의 여정",
+   "place": "국립중앙박물관",
+   "period": "2025.11.22 ~ 2026.10.11",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/fffac54cd3ec4f67a50c1ea8708b7afa.jpg"
+  },
+  {
+   "title": "인상주의를 넘어: 르누아르&middot;드가&middot;고흐&middot;마티스&middot;피카소",
+   "place": "세종문화회관 미술관",
+   "period": "2026.05.28 ~ 2026.08.23",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/09de6efdac5e4ea8bb2c4568c8e0db61.png"
+  },
+  {
+   "title": "제목전(展)",
+   "place": "한국영화박물관",
+   "period": "2026.05.08 ~ 2026.08.29",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/e7daf4dcdc76418bbbbdc4a77f78d50c.png"
+  },
+  {
+   "title": "쥬세뻬 비탈레 그림책 원화전 &lt;동물의 세계_몬도 아니말레展&gt;",
+   "place": "강동아트센터 복합문화공간 아트랑",
+   "period": "2026.06.04 ~ 2026.08.23",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/rlyPerfInfo/2026/202606/76595dd9878d4c99bf6be584bec27ba3.jpg"
+  },
+  {
+   "title": "킹 오브 킹스 전시 : The Greatest Love",
+   "place": "롯데백화점 문화홀 [김포공항]",
+   "period": "2025.10.31 ~ 2026.08.31",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/11/show_2025111519111412761.jpg"
+  },
+  {
+   "title": "페르난도 보테로: 형태의 미학",
+   "place": "예술의전당(한가람디자인미술관)",
+   "period": "2026.04.24 ~ 2026.08.30",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/04/rdf_2026042521282316168.jpg"
+  },
+  {
+   "title": "한불수교 140주년 기념전시 《더 하이브리드》",
+   "place": "서울공예박물관",
+   "period": "2026.04.28 ~ 2026.07.26",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/4253f75051c74e859f34b12468d5162f.JPG"
+  },
+  {
+   "title": "2026 수원시립아트스페이스광교 교육체험전 《하나 쌓고, 하나 빼-기》",
+   "place": "수원시립아트스페이스광교",
+   "period": "2026.04.07 ~ 2026.08.02",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/3ecb1082d8864802a2e76c59c331daa1.JPG"
+  },
+  {
+   "title": "[2026년 박물관&middot;미술관 주간] 침묵과 빛 사이 Between Silence &amp; Light",
+   "place": "모란미술관",
+   "period": "2026.04.14 ~ 2026.07.26",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/403d055f7e1c43cea6eb55f9d334acdf.png"
+  },
+  {
+   "title": "[광명업사이클아트센터] 2026 특별전시 업사이클 인터랙티브",
+   "place": "광명업사이클아트센터",
+   "period": "2026.02.13 ~ 2026.10.18",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/0544719806c64b2a9a64a99745680c53.jpg"
+  },
+  {
+   "title": "⟪상, 상 이상: 모란조각대상의 작가들⟫",
+   "place": "모란미술관",
+   "period": "2026.04.28 ~ 2026.08.16",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/2bd8c579c6484c1ca25cab09e07c2000.png"
+  },
+  {
+   "title": "국립세계문자박물관 특별전시 &lt;글씨상점: 당신의 글씨, 당신의 취향&gt;",
+   "place": "국립세계문자박물관",
+   "period": "2026.05.01 ~ 2026.08.23",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/f772aaf7ef6c4406a6df0d54bca3183a.jpg"
+  },
+  {
+   "title": "로드 무비: 1945년 이후 한&middot;일 미술",
+   "place": "국립현대미술관 과천관",
+   "period": "2026.05.14 ~ 2026.09.27",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/6ca1f02cc0df425eb0b58fd13d748cbe.JPG"
+  },
+  {
+   "title": "만인산: 보존과 해체의 기록",
+   "place": "국립민속박물관 파주",
+   "period": "2025.08.26 ~ 2026.08.23",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/11/show_202511511272110911.jpg"
+  },
+  {
+   "title": "보이는 선, 보이지 않는 결",
+   "place": "양주시립장욱진미술관",
+   "period": "2026.04.28 ~ 2026.08.30",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/c61f4cc818904b1a8344811916926d39.JPG"
+  },
+  {
+   "title": "[울산시립미술관] 동행(同行): 아이와 보는 미술",
+   "place": "울산시립미술관",
+   "period": "2026.03.26 ~ 2026.08.02",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/4be051b2b9cd4eb3b51b379f93866a33.jpg"
+  },
+  {
+   "title": "문신연대기 Moon Shin Chronology",
+   "place": "창원시립마산문신미술관",
+   "period": "2025.04.22 ~ 2026.08.30",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/a3d9cfc3367f471abe33d2f7fdb32627.jpg"
+  },
+  {
+   "title": "사랑(Deep Affection)",
+   "place": "창원시립마산문신미술관",
+   "period": "2025.12.16 ~ 2026.08.31",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/12/show_202512171016759559.jpg"
+  },
+  {
+   "title": "신진작가 신가윤 상설전",
+   "place": "울산북구문화예술회관",
+   "period": "2026.06.02 ~ 2026.07.31",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/06/rdf_2026062521202503812.jpg"
+  },
+  {
+   "title": "직조하는 손, 여성의 시간: 아세안의 직물공예",
+   "place": "아세안문화원",
+   "period": "2026.03.25 ~ 2026.08.30",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/49c2b4802b3f4d75b7072ce8f5587916.png"
+  },
+  {
+   "title": "첨단가야 : 과학과 마주하다",
+   "place": "국립김해박물관",
+   "period": "2026.04.14 ~ 2026.07.31",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/aeb3ed7cccbd4bcdaf040256debe8eca.png"
+  },
+  {
+   "title": "2025 상주박물관 특별기회전 &#39;화령, 백두대간이 품은 마을&#39;",
+   "place": "상주박물관",
+   "period": "2025.09.24 ~ 2026.07.26",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/12/rdf_2025120821315882450.jpg"
+  },
+  {
+   "title": "2025 신소장품 보고전",
+   "place": "대구미술관",
+   "period": "2026.02.10 ~ 2026.08.09",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/04e03fdf49e1494791a1febe42a10bba.jpg"
+  },
+  {
+   "title": "83년 만에 만남, 경주 월성에서 찾은 비석 조각",
+   "place": "국립경주박물관",
+   "period": "2026.04.13 ~ 2026.08.17",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/71eee995eb6c42fea6ffa2f4b182bcc3.png"
+  },
+  {
+   "title": "[2026년 박물관&middot;미술관 주간] 상식이 된 파격_그때는 힙스터: 지금은 꼰대",
+   "place": "대구대학교박물관",
+   "period": "2026.05.12 ~ 2026.08.21",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/5852351dc5d54d15bc5b12733efd30e1.png"
+  },
+  {
+   "title": "알록달록 동자상",
+   "place": "국립대구박물관",
+   "period": "2025.09.30 ~ 2026.10.05",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/09/show_202509251024362832.jpg"
+  },
+  {
+   "title": "2025년 대전근현대사전시관 특별전 &lt;추억의 문방구&gt;",
+   "place": "대전근현대사전시관",
+   "period": "2025.12.23 ~ 2026.07.31",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202601/bca0bdc5940d420ca33d75bc53ccfba6.jpg"
+  },
+  {
+   "title": "미술은행 20주년 특별전《돌아온 미래: 형태와 생각의 발현》",
+   "place": "국립현대미술관 청주관",
+   "period": "2025.08.08 ~ 2026.07.31",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/08/show_2025081117472658878.jpg"
+  },
+  {
+   "title": "방혜자 - 천지에 마음의 빛 뿌리며 간다",
+   "place": "국립현대미술관 청주관",
+   "period": "2026.04.24 ~ 2026.09.27",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/bafef63bcf7348c79795c33d589d0688.JPG"
+  },
+  {
+   "title": "빛&middot;울림&middot;힘 - 금속, 감각을 깨우다",
+   "place": "국립청주박물관",
+   "period": "2026.04.28 ~ 2026.08.30",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/c6e50fc73d064e3fa7d3e4309df3b417.jpg"
+  },
+  {
+   "title": "열린수장고 기획전 《깊고 깊은 숲으로: 도로시의 원더링》",
+   "place": "대전시립미술관",
+   "period": "2026.03.03 ~ 2026.08.17",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/bf042f9df7a342e99cd74328cdab9b7f.jpg"
+  },
+  {
+   "title": "ACC 국제교류특별전〈자밀 프라이즈: 무빙 이미지〉",
+   "place": "국립아시아문화전당 문화창조원 복합 6관",
+   "period": "2026.05.28 ~ 2026.08.23",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/05/rdf_2026051021204944474.jpg"
+  },
+  {
+   "title": "ACC 필름앤비디오 《아시아의 장치들》",
+   "place": "국립아시아문화전당 문화창조원 복합 2관",
+   "period": "2026.03.19 ~ 2026.09.27",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/02/rdf_2026022521262014953.jpg"
+  },
+  {
+   "title": "[광주광역시 남구 이강하미술관] 5&middot;18광주민주화운동 특별전시 《새로운 창작, 미래의 숨결》",
+   "place": "이강하 미술관",
+   "period": "2026.05.14 ~ 2026.08.02",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/5c2484651bfc4aad9d5f63ef34caee2a.jpg"
+  },
+  {
+   "title": "《이나괴 : 이상한데 나를 닮은 괴물》",
+   "place": "전북도립미술관",
+   "period": "2026.05.01 ~ 2026.10.11",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/10dd591a1d65482ba49bd5ad1b9541e0.png"
+  },
+  {
+   "title": "박일광 전시연계 아트놀이터 〈마음 모양〉",
+   "place": "영암군립 하정웅미술관 창작교육관",
+   "period": "2026.03.31 ~ 2026.07.26",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/e200794f72e24510854764b3428d849c.png"
+  },
+  {
+   "title": "박일광 초대전 &lt;찾아헤맨 모든 꿈&gt;",
+   "place": "영암군립 하정웅미술관 창작교육관",
+   "period": "2026.03.31 ~ 2026.07.26",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/7ec235b9f67845fb8c97168d8fa4f411.png"
+  },
+  {
+   "title": "사물의 잔상: 모노하의 확장과 변주",
+   "place": "영암군립 하정웅미술관",
+   "period": "2026.03.03 ~ 2026.07.26",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/378171ab8bb8412997b659a253dd26e8.jpg"
+  },
+  {
+   "title": "전북도립미술관 기증소장품전 《고귀하고 고귀한Ⅲ》",
+   "place": "전북도립미술관",
+   "period": "2026.02.10 ~ 2026.08.30",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/5f7461f94b424697b5dd96eee8ea71e9.JPG"
+  },
+  {
+   "title": "코스모 아시아 피플 COSMO, ASIA, PEOPLE",
+   "place": "국립아시아문화전당",
+   "period": "2026.05.14 ~ 2026.08.23",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/03/rdf_2026032821212038868.jpg"
+  },
+  {
+   "title": "해동문화예술촌 어린이 체험형 예술전시 &#39;장미 작가와 함께하는 마음보관소&#39; 展",
+   "place": "해동문화예술촌",
+   "period": "2026.03.21 ~ 2026.09.06",
+   "region": "광주·전라",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/a2f6092e7568455ab04fcaa03a6f33de.jpg"
+  },
+  {
+   "title": "2025 공공수장고 야외 전시 프로젝트 《강주현: 연결의 비정형》",
+   "place": "제주현대미술관",
+   "period": "2025.09.30 ~ 2026.09.27",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/3f348feb75854fac80a0e4aa4846765a.jpg"
+  },
+  {
+   "title": "[2026년 박물관&middot;미술관 주간] 물길따라 사람 길을 잇다",
+   "place": "김만덕기념관",
+   "period": "2026.05.01 ~ 2026.08.30",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/4ec500d61bfe45dd8eb7e2944014094f.jpg"
+  },
+  {
+   "title": "《경계 위의 그녀》",
+   "place": "제주도립미술관",
+   "period": "2026.04.07 ~ 2026.08.02",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/f27ddef570b3498aaae6604778df32d0.png"
+  },
+  {
+   "title": "《우리 이토록 작은 존재들 We, Such Fragile Beings》",
+   "place": "포도뮤지엄",
+   "period": "2025.08.09 ~ 2026.08.08",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/8e59b89398244083a65ecb6c2ca09bac.jpg"
+  },
+  {
+   "title": "은은한 문제: 김창열의 신문지 작업",
+   "place": "제주도립김창열미술관",
+   "period": "2026.04.28 ~ 2026.10.18",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/5c911e1fc1054105af695ba7e9290759.png"
   }
  ]
 }
