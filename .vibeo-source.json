@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/hongji33/artclass",
-  "sourceCommit": "8062a57d087226c82bc2401ee8dcc30206e40ddf",
+  "sourceCommit": "1ab966d0a20b0093968b815c194df0f0cfe93147",
   "sourceBranch": "main",
-  "synchronizedAt": "2026-08-10T11:28:23.636Z",
+  "synchronizedAt": "2026-08-10T12:08:11.614Z",
   "note": "원본의 .github/workflows는 보안상 복제하지 않습니다."
 }
