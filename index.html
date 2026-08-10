@@ -3,1665 +3,641 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>즐거운 미술시간</title>
+<title>미술교사 비법책</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
   :root{
-    --bg:#fdf6f1; --panel:#ffffff; --ink:#2e2529; --muted:#8a7a80;
-    --brand:#ff6b6b; --brand2:#ffa62b; --accent:#4d96ff; --accent2:#6bcb77;
-    --line:#efe6df; --shadow:0 12px 34px -12px rgba(120,80,70,.20);
-    --shadow-sm:0 2px 10px rgba(120,80,70,.06);
-    --radius:18px;
+    --bg:#f5f2ec; --panel:#fff; --ink:#2c2a33; --muted:#847f8f;
+    --brand:#5b57d6; --brand2:#12b3a6; --accent:#f0714f; --line:#e9e4dc;
+    --shadow:0 12px 34px -12px rgba(60,50,90,.22); --shadow-sm:0 2px 10px rgba(60,50,90,.06); --radius:18px;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{
-    font-family:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-    background:linear-gradient(180deg,#fdf7f3 0%,#fbeee7 100%); background-attachment:fixed; color:var(--ink);
-    display:flex; min-height:100vh; -webkit-font-smoothing:antialiased; letter-spacing:-0.01em;
-  }
-  /* ===== Sidebar ===== */
-  .sidebar{
-    width:258px; flex-shrink:0;
-    background:linear-gradient(165deg,#ff9a6a 0%,#ff7a70 45%,#ff6a86 100%);
-    color:#fff; padding:22px 16px 30px; position:sticky; top:0; height:100vh;
-    overflow-y:auto; box-shadow:inset -1px 0 0 rgba(255,255,255,.12);
-  }
-  .brand{display:flex; align-items:center; gap:12px; padding:4px 6px 18px; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,.22);}
-  .brand .logo{font-size:26px; background:rgba(255,255,255,.22); width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(2px);}
-  .brand h1{font-size:19px; margin:0; line-height:1.2; font-weight:800; letter-spacing:-.02em;}
-  .brand small{display:block; font-size:11px; opacity:.88; font-weight:500; margin-top:2px;}
+  body{font-family:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; letter-spacing:-.01em; min-height:100vh;}
+  /* ===== login ===== */
+  #login{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:20px;
+    background:linear-gradient(150deg,#5b57d6 0%,#7a68e0 50%,#12b3a6 100%);}
+  .login-card{background:#fff; border-radius:22px; padding:40px 34px; width:100%; max-width:380px; box-shadow:0 30px 70px -20px rgba(0,0,0,.5); text-align:center;}
+  .login-card .book{font-size:52px;}
+  .login-card h1{font-size:24px; margin:8px 0 4px; font-weight:800; letter-spacing:-.03em;}
+  .login-card p{color:var(--muted); font-size:13.5px; margin:0 0 22px;}
+  .login-card input{width:100%; padding:13px 15px; border:2px solid var(--line); border-radius:12px; font-size:16px; text-align:center; letter-spacing:.2em; font-family:inherit;}
+  .login-card input:focus{outline:none; border-color:var(--brand);}
+  .login-card button{width:100%; margin-top:12px; padding:13px; border:0; border-radius:12px; background:var(--brand); color:#fff; font-size:16px; font-weight:800; cursor:pointer; transition:.15s;}
+  .login-card button:hover{filter:brightness(1.07);}
+  .login-hint{font-size:12px; color:var(--muted); margin-top:14px;}
+  #loginErr{color:#e03131; font-size:13px; font-weight:700; min-height:18px; margin-top:8px;}
+  /* ===== layout ===== */
+  #app{display:flex; min-height:100vh;}
+  .sidebar{width:250px; flex-shrink:0; background:linear-gradient(170deg,#5b57d6,#6d5fd8 55%,#12b3a6); color:#fff; padding:22px 16px 30px; position:sticky; top:0; height:100vh; overflow-y:auto;}
+  .brand{display:flex; align-items:center; gap:12px; padding:2px 6px 18px; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,.22);}
+  .brand .logo{font-size:26px; background:rgba(255,255,255,.22); width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center;}
+  .brand h1{font-size:18px; margin:0; font-weight:800; letter-spacing:-.02em;}
+  .brand small{display:block; font-size:11px; opacity:.85; margin-top:2px;}
   .nav{list-style:none; margin:0; padding:0;}
-  .nav>li{margin:3px 0;}
-  .nav button.item{
-    width:100%; text-align:left; border:0; cursor:pointer; color:#fff;
-    background:transparent; padding:12px 13px; border-radius:13px;
-    font-size:14.5px; font-weight:600; display:flex; align-items:center; gap:11px;
-    transition:.18s ease; letter-spacing:-.01em;
-  }
-  .nav button.item:hover{background:rgba(255,255,255,.16); transform:translateX(2px);}
-  .nav button.item.active{background:#fff; color:var(--brand); box-shadow:0 6px 16px -6px rgba(0,0,0,.3); font-weight:800;}
-  .nav .emoji{font-size:18px;}
-  .submenu{list-style:none; margin:2px 0 6px; padding:0 0 0 8px; display:none;}
-  .submenu.open{display:block;}
-  .submenu button{
-    width:100%; text-align:left; border:0; cursor:pointer; color:#fff;
-    background:rgba(255,255,255,.10); margin:4px 0; padding:9px 12px;
-    border-radius:9px; font-size:13.5px; font-weight:500; display:flex; gap:8px; align-items:center;
-    transition:.15s;
-  }
-  .submenu button:hover{background:rgba(255,255,255,.28);}
-  .submenu button.active{background:#fff; color:var(--brand); font-weight:700;}
-  .caret{margin-left:auto; transition:.2s; font-size:12px;}
-  .caret.rot{transform:rotate(90deg);}
-  /* ===== Main ===== */
-  .main{flex:1; min-width:0; padding:30px 38px 64px; overflow-x:hidden; max-width:1100px;}
-  .page{display:none; animation:fade .4s cubic-bezier(.2,.7,.3,1);}
+  .nav button{width:100%; text-align:left; border:0; cursor:pointer; color:#fff; background:transparent; padding:12px 13px; border-radius:12px; font-size:14.5px; font-weight:600; display:flex; align-items:center; gap:11px; transition:.16s; margin:3px 0;}
+  .nav button:hover{background:rgba(255,255,255,.16); transform:translateX(2px);}
+  .nav button.active{background:#fff; color:var(--brand); font-weight:800; box-shadow:0 6px 16px -6px rgba(0,0,0,.3);}
+  .logout{width:100%; margin-top:18px; border:1px dashed rgba(255,255,255,.5); background:rgba(255,255,255,.1); color:#fff; border-radius:11px; padding:9px; font-size:12.5px; font-weight:700; cursor:pointer;}
+  .logout:hover{background:rgba(255,255,255,.2);}
+  .main{flex:1; min-width:0; padding:30px 36px 64px; max-width:1080px;}
+  .page{display:none; animation:fade .35s ease;}
   .page.show{display:block;}
-  @keyframes fade{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
-  .page h2{font-size:27px; margin:0 0 6px; display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.03em;}
-  .page .lead{color:var(--muted); margin:0 0 24px; font-size:15px; line-height:1.6;}
-  .card{
-    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 24px; margin:0 0 18px; box-shadow:var(--shadow-sm);
-    transition:box-shadow .25s ease, transform .25s ease;
-  }
-  .card:hover{box-shadow:var(--shadow);}
-  .card h3{margin:0 0 12px; font-size:18px; display:flex; align-items:center; gap:8px; font-weight:800; letter-spacing:-.02em;}
-  .grid{display:grid; gap:14px;}
-  .g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-  .g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-  .tile{
-    background:linear-gradient(180deg,#ffffff,#fffaf6); border:1px solid var(--line); border-radius:15px; padding:16px 17px;
-    box-shadow:0 2px 8px rgba(120,80,70,.05); transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .tile:hover{transform:translateY(-2px); box-shadow:0 10px 22px -10px rgba(120,80,70,.22);}
-  .tile h4{margin:0 0 6px; font-size:15.5px; font-weight:800; letter-spacing:-.02em;}
-  .tile p{margin:0; font-size:13.5px; color:var(--muted); line-height:1.55;}
-  .pill{display:inline-block; background:#fff2ec; color:#e8590c; border-radius:20px;
-    padding:4px 12px; font-size:12px; font-weight:700; margin:0 6px 6px 0; border:1px solid #ffe3d6;}
-  .pill.blue{background:#e7f0ff; color:#1971c2;}
-  .pill.green{background:#e6f7ec; color:#2b8a3e;}
-  .pill.purple{background:#f3e8ff; color:#8e44ad;}
-  a.btn,button.btn{
-    display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#fff;
-    text-decoration:none; border:0; border-radius:12px; padding:10px 17px; font-size:14px;
-    font-weight:700; cursor:pointer; transition:.18s ease; box-shadow:0 6px 14px -8px rgba(77,150,255,.7);
-  }
-  a.btn:hover,button.btn:hover{filter:brightness(1.05); transform:translateY(-2px); box-shadow:0 10px 20px -8px rgba(77,150,255,.7);}
-  .btn.ghost{background:#fff; color:var(--accent); border:1.5px solid var(--accent);}
-  .btn.warm{background:var(--brand2);}
-  .note{background:#fffbe6; border:1px solid #ffe58f; border-radius:12px; padding:12px 16px;
-    font-size:13.5px; color:#8a6d0b; line-height:1.55;}
-  ul.clean{margin:8px 0 0; padding-left:20px; line-height:1.7; font-size:14px;}
-  ul.clean li{margin:3px 0;}
-  table.info{width:100%; border-collapse:collapse; font-size:13.5px;}
-  table.info th,table.info td{border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top;}
-  table.info th{color:var(--muted); font-weight:700; background:#fff7f2;}
-  /* ===== Drawing tools ===== */
-  .draw-wrap{display:flex; gap:16px; flex-wrap:wrap;}
-  .toolbar{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px; width:190px; flex-shrink:0;}
-  .toolbar label{font-size:12.5px; font-weight:700; color:var(--muted); display:block; margin:12px 0 6px;}
-  .swatches{display:grid; grid-template-columns:repeat(6,1fr); gap:6px;}
-  .swatches span{width:100%; aspect-ratio:1; border-radius:7px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 0 1px var(--line);}
-  .swatches span.sel{outline:3px solid var(--ink); outline-offset:1px;}
-  #brushSize{width:100%;}
-  canvas.paint{background:#fff; border:2px dashed #ffcdb2; border-radius:14px; touch-action:none; cursor:crosshair; max-width:100%;}
-  .row{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
-  .mini{border:0; border-radius:9px; padding:8px 12px; font-size:13px; font-weight:700; cursor:pointer; background:#ffe3d3; color:#e8590c;}
+  @keyframes fade{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
+  h2.title{font-size:26px; margin:0 0 6px; font-weight:800; letter-spacing:-.03em; display:flex; gap:10px; align-items:center;}
+  .lead{color:var(--muted); font-size:14.5px; margin:0 0 22px; line-height:1.6;}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; margin:0 0 18px; box-shadow:var(--shadow-sm);}
+  .card h3{margin:0 0 12px; font-size:17px; font-weight:800; display:flex; gap:8px; align-items:center;}
+  .row{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+  .btn{display:inline-flex; align-items:center; gap:6px; background:var(--brand); color:#fff; border:0; border-radius:11px; padding:10px 16px; font-size:14px; font-weight:700; cursor:pointer; transition:.16s; text-decoration:none;}
+  .btn:hover{filter:brightness(1.06); transform:translateY(-1px);}
+  .btn.ghost{background:#fff; color:var(--brand); border:1.5px solid var(--brand);}
+  .btn.teal{background:var(--brand2);} .btn.warm{background:var(--accent);}
+  .mini{border:0; border-radius:9px; padding:8px 12px; font-size:13px; font-weight:700; cursor:pointer; background:#eceaff; color:var(--brand);}
   .mini.gray{background:#eef0f2; color:#495057;}
-  .tools{display:flex; flex-wrap:wrap; gap:5px;}
-  .tbtn{border:0; border-radius:8px; padding:6px 8px; font-size:12px; font-weight:700; cursor:pointer; background:#eef0f2; color:#495057;}
-  .tbtn.sel{background:var(--brand); color:#fff;}
-  .toolbar label.chk{display:flex; align-items:center; gap:6px; font-weight:600; color:var(--ink); font-size:13px;}
-  /* color wheel */
-  #wheel{border-radius:50%; cursor:pointer; box-shadow:var(--shadow);}
-  .colorbox{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
-  .bigswatch{width:90px; height:90px; border-radius:16px; box-shadow:var(--shadow); border:3px solid #fff;}
-  .valstrip{display:flex; height:60px; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);}
-  .valstrip div{flex:1;}
-  .comp-demo{display:flex; gap:0; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); height:120px;}
-  .comp-demo div{flex:1; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px;}
-  .quiz-opt{display:inline-block; margin:6px 6px 0 0; padding:10px 18px; border-radius:12px; border:2px solid var(--line); background:#fff; cursor:pointer; font-weight:700; font-size:14px;}
-  .quiz-opt:hover{border-color:var(--accent);}
-  .topbar-mobile{display:none;}
-  /* home */
-  .hero{background:linear-gradient(135deg,#ff9a6a 0%,#ff6b86 100%); color:#fff; border-radius:22px; padding:36px 34px; margin-bottom:24px; box-shadow:var(--shadow); position:relative; overflow:hidden;}
-  .hero::after{content:"🎨"; position:absolute; right:22px; bottom:-14px; font-size:120px; opacity:.16;}
-  .hero h2{font-size:31px; margin:0 0 10px; color:#fff; font-weight:800; letter-spacing:-.03em;}
-  .hero p{margin:0; font-size:15.5px; opacity:.96; line-height:1.65; max-width:640px;}
-  .home-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:16px;}
-  .home-card{cursor:pointer; border:1px solid var(--line); border-radius:18px; padding:22px; background:#fff; box-shadow:var(--shadow-sm); transition:.18s ease; display:flex; flex-direction:column; gap:5px; border-top:5px solid var(--brand);}
-  .home-card:hover{transform:translateY(-5px); box-shadow:var(--shadow);}
-  .home-card .hemoji{font-size:34px; line-height:1;}
-  .home-card h4{margin:6px 0 0; font-size:17px; font-weight:800; letter-spacing:-.02em;}
-  .home-card p{margin:0; font-size:13px; color:var(--muted); line-height:1.5;}
-  /* artist cards + modal */
-  .artist-card{cursor:pointer; transition:.15s;}
-  .artist-card:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(120,80,70,.16);}
-  .thumb{height:90px; border-radius:10px; margin-bottom:9px;}
-  .modal{display:none; position:fixed; inset:0; background:rgba(40,25,20,.55); z-index:200; align-items:center; justify-content:center; padding:20px;}
-  .modal.open{display:flex;}
-  .modal-box{background:#fff; border-radius:18px; max-width:440px; width:100%; padding:22px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,.35); animation:fade .25s;}
-  .modal-x{position:absolute; top:12px; right:14px; border:0; background:#f1f3f5; border-radius:50%; width:32px; height:32px; cursor:pointer; font-size:15px; font-weight:700;}
-  .modal-thumb{height:160px; border-radius:12px; margin-bottom:14px;}
-  .modal-box h3{margin:0 0 4px; font-size:22px;}
-  /* quiz */
-  .qitem{background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:12px;}
-  .qitem .q{font-weight:800; font-size:15px; margin-bottom:10px;}
-  .qopt{display:block; width:100%; text-align:left; margin:6px 0; padding:10px 14px; border-radius:10px; border:2px solid var(--line); background:#fff; cursor:pointer; font-size:14px; font-weight:600; transition:.12s;}
-  .qopt:hover{border-color:var(--accent);}
-  .qopt.correct{background:#e6f7ec; border-color:#2b8a3e; color:#2b6a30;}
-  .qopt.wrong{background:#ffeaea; border-color:#e03131; color:#c92a2a;}
-  .qopt:disabled{cursor:default;}
-  /* labs */
-  .lab-label{display:block; font-size:12.5px; font-weight:700; color:var(--muted); margin:12px 0 5px;}
-  .harmrow{display:flex; gap:8px; margin-top:5px;}
-  .harmrow div{flex:1; height:44px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.08);}
+  .in{padding:9px 11px; border:1.5px solid var(--line); border-radius:10px; font-size:14px; font-family:inherit;}
+  .in:focus{outline:none; border-color:var(--brand);}
+  .lbl{display:block; font-size:12.5px; font-weight:700; color:var(--muted); margin:12px 0 5px;}
+  .note{background:#fff9ec; border:1px solid #ffe6a8; border-radius:12px; padding:12px 15px; font-size:13.5px; color:#8a6d0b; line-height:1.55;}
+  .seg{border:0; border-radius:9px; padding:8px 13px; font-size:13px; font-weight:700; cursor:pointer; background:#eef0f2; color:#495057; margin:3px 4px 3px 0;}
+  .seg.sel{background:var(--brand); color:#fff;}
+  .home-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:16px;}
+  .home-card{cursor:pointer; border:1px solid var(--line); border-radius:16px; padding:20px; background:#fff; box-shadow:var(--shadow-sm); transition:.18s; border-top:5px solid var(--brand);}
+  .home-card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+  .home-card .e{font-size:32px;} .home-card h4{margin:6px 0 3px; font-size:16px; font-weight:800;} .home-card p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.5;}
+  table.tb{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.tb th,table.tb td{border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:middle;}
+  table.tb th{color:var(--muted); font-weight:700; background:#faf8f4;}
+  .pill{display:inline-block; border-radius:20px; padding:3px 11px; font-size:12px; font-weight:800;}
+  .pill.ok{background:#e6f7ec; color:#2b8a3e;} .pill.low{background:#fff3bf; color:#a97b06;} .pill.no{background:#ffe3e3; color:#c92a2a;}
+  /* seating (재사용) */
+  .seat-front{background:linear-gradient(180deg,#3a2f4a,#2c2a33); color:#fff; text-align:center; border-radius:12px; padding:11px; font-weight:800; margin:0 0 18px; letter-spacing:.15em;}
+  .seat-grid{display:flex; flex-wrap:wrap; gap:16px; justify-content:center;}
+  .group{background:#f3f1ff; border:2px solid #d9d4ff; border-radius:14px; padding:10px; display:grid; gap:8px;}
+  .seat{background:#fff; border:2px solid var(--line); border-radius:10px; min-width:98px; min-height:60px; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; padding:6px 8px; text-align:center; transition:.12s;}
+  .seat:hover{border-color:var(--brand);} .seat.sel{outline:3px solid var(--accent); outline-offset:1px;}
+  .seat .nm{font-weight:800; font-size:15px;} .seat.empty .nm{color:#c9c0bb; font-weight:600;}
+  .seat .role{font-size:11px; font-weight:800; margin-top:3px; padding:1px 8px; border-radius:10px; white-space:nowrap;}
+  .role.A{background:#e7f0ff; color:#1971c2;} .role.B{background:#e6f7ec; color:#2b8a3e;} .role.C{background:#fff3bf; color:#a97b06;} .role.D{background:#ffe3e3; color:#c92a2a;}
+  #page-seat.board .seat-editor, #page-seat.board .seat-toolbar, #page-seat.board .title, #page-seat.board .lead{display:none;}
+  #page-seat.board .seat{min-width:140px; min-height:88px;} #page-seat.board .seat .nm{font-size:24px;} #page-seat.board .seat .role{font-size:14px;}
+  .harmrow{display:flex; gap:8px;}
+  /* picker */
+  #pickResult{font-size:44px; font-weight:800; text-align:center; padding:26px; border-radius:16px; background:#f3f1ff; color:var(--brand); min-height:60px;}
+  /* timer */
+  #timerDisp{font-size:74px; font-weight:800; text-align:center; letter-spacing:.04em; color:var(--ink);}
   input[type=range]{accent-color:var(--brand);}
-  .majchip{display:inline-block; background:#eef2ff; color:#3b5bdb; border:1px solid #dbe4ff; border-radius:16px; padding:5px 12px; margin:3px 5px 3px 0; font-size:12.5px; font-weight:700; cursor:pointer; transition:.12s;}
-  .majchip:hover{background:#3b5bdb; color:#fff; transform:translateY(-1px);}
-  .unilist{display:flex; flex-wrap:wrap; gap:7px; margin-top:6px;}
-  .unilist span{background:#fff2ec; color:#e8590c; border:1px solid #ffe3d6; border-radius:16px; padding:5px 12px; font-size:13px; font-weight:700;}
-  @media(max-width:820px){
-    body{flex-direction:column;}
-    .sidebar{width:100%; height:auto; position:relative; padding:14px;}
-    .main{padding:18px;}
+  /* 주별 수업계획 */
+  .plan-table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  .plan-table th,.plan-table td{border:1px solid var(--line); padding:8px; vertical-align:top;}
+  .plan-table th{background:#faf8f4; color:var(--muted); font-weight:700;}
+  .plan-table td.wk{white-space:nowrap; font-weight:800; text-align:center; width:56px;}
+  .plan-table td.dt{white-space:nowrap; color:var(--muted); width:100px; text-align:center; font-size:12.5px;}
+  .plan-table textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:7px; font-family:inherit; font-size:13.5px; resize:vertical; min-height:46px;}
+  .plan-table tr.event{background:#f4f1f0;}
+  .donerow{display:flex; flex-wrap:wrap; gap:5px;}
+  .donechk{display:inline-flex; align-items:center; font-size:12px; font-weight:700; background:#eceaff; color:var(--brand); border-radius:8px; padding:4px 8px; cursor:pointer; border:1px solid #ddd8ff;}
+  .donechk.on{background:#2b8a3e; color:#fff; border-color:#2b8a3e;}
+  @media print{
+    #login{display:none !important;} .sidebar,.plan-setup,.plan-toolbar,.logout,.lead{display:none !important;}
+    #app{display:block !important;} .main{padding:0 !important; max-width:none !important;}
+    .page:not(.show){display:none !important;} .card{box-shadow:none !important; border:none !important; padding:0 !important; margin:0 !important;}
+    body{background:#fff;} .plan-table th,.plan-table td{border:1px solid #888 !important;}
+    .donechk{border:1px solid #888 !important;} .donechk.on{background:#2b8a3e !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    .plan-table tr.event{background:#eee !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    h2.title{font-size:20px;}
   }
+  @media(max-width:820px){ #app{flex-direction:column;} .sidebar{width:100%; height:auto; position:relative;} .main{padding:18px;} }
 </style>
 </head>
 <body>
-  <!-- ===================== SIDEBAR ===================== -->
-  <aside class="sidebar">
-    <div class="brand" onclick="goMain()" style="cursor:pointer;" title="홈으로">
-      <span class="logo">🎨</span>
-      <div>
-        <h1>즐거운 미술시간</h1>
-        <small>중학교 미술 놀이터</small>
-      </div>
+  <!-- ===== 로그인 ===== -->
+  <div id="login">
+    <div class="login-card">
+      <div class="book">📔</div>
+      <h1>미술교사 비법책</h1>
+      <p>미술 수업을 돕는 교사 전용 도구 모음</p>
+      <input id="loginPw" type="password" inputmode="numeric" placeholder="비밀번호" onkeydown="if(event.key==='Enter')doLogin()">
+      <div id="loginErr"></div>
+      <button onclick="doLogin()">들어가기</button>
+      <div class="login-hint">처음이라면 비밀번호 <b>0000</b> 으로 들어간 뒤,<br>설정에서 새 비밀번호로 바꿔주세요.</div>
     </div>
-    <ul class="nav">
-      <li><button class="item active" data-tab="home" onclick="go('home',this)"><span class="emoji">🏠</span> 홈</button></li>
-      <li>
-        <button class="item" data-tab="play" onclick="toggleSub(this,'sub-play')">
-          <span class="emoji">🖌️</span> 미술놀이 <span class="caret">▶</span>
-        </button>
-        <ul class="submenu" id="sub-play">
-          <li><button class="active" data-sub="draw" onclick="go('play',this,'draw')">✏️ 자유 그리기·색칠</button></li>
-          <li><button data-sub="color" onclick="go('play',this,'color')">🌈 색채 이론 놀이</button></li>
-          <li><button data-sub="value" onclick="go('play',this,'value')">🌗 명암 놀이</button></li>
-          <li><button data-sub="comp" onclick="go('play',this,'comp')">🎭 보색 놀이</button></li>
-        </ul>
-      </li>
-      <li><button class="item" data-tab="ai" onclick="go('ai',this)"><span class="emoji">🤖</span> AI 미술 체험</button></li>
-      <li><button class="item" data-tab="school" onclick="go('school',this)"><span class="emoji">🏫</span> 고등학교·대학 정보</button></li>
-      <li><button class="item" data-tab="job" onclick="go('job',this)"><span class="emoji">💼</span> 미술 관련 직업</button></li>
-      <li><button class="item" data-tab="market" onclick="go('market',this)"><span class="emoji">💰</span> 현재 미술시장</button></li>
-      <li><button class="item" data-tab="artist" onclick="go('artist',this)"><span class="emoji">⭐</span> 추천 화가·디자이너</button></li>
-      <li><button class="item" data-tab="expo" onclick="go('expo',this)"><span class="emoji">🖼️</span> 전시회 정보</button></li>
-    </ul>
-  </aside>
+  </div>
 
-  <!-- ===================== MAIN ===================== -->
-  <main class="main">
+  <!-- ===== 앱 ===== -->
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="logo">📔</span><div><h1>미술교사 비법책</h1><small>Teacher's Toolkit</small></div></div>
+      <ul class="nav">
+        <li><button class="active" data-tab="home" onclick="go('home',this)">🏠 홈</button></li>
+        <li><button data-tab="seat" onclick="go('seat',this)">🪑 미술실 자리배치</button></li>
+        <li><button data-tab="materials" onclick="go('materials',this)">🎨 미술 재료 정리</button></li>
+        <li><button data-tab="planner" onclick="go('planner',this)">📅 주별 수업계획</button></li>
+        <li><button data-tab="checklist" onclick="go('checklist',this)">✅ 준비물 체크리스트</button></li>
+        <li><button data-tab="picker" onclick="go('picker',this)">🎲 랜덤 뽑기</button></li>
+        <li><button data-tab="timer" onclick="go('timer',this)">⏱️ 수업 타이머</button></li>
+        <li><button data-tab="memo" onclick="go('memo',this)">📝 메모장</button></li>
+        <li><button data-tab="settings" onclick="go('settings',this)">⚙️ 설정</button></li>
+      </ul>
+      <button class="logout" style="background:rgba(255,255,255,.22); border-style:solid;" onclick="goStudent()">🎨 학생 화면으로 가기</button>
+      <button class="logout" onclick="doLogout()">🔒 잠그기(로그아웃)</button>
+    </aside>
 
-    <!-- ============ 홈 (시작 화면) ============ -->
-    <section class="page show" id="page-home">
-      <div class="hero">
-        <h2>🎨 즐거운 미술시간에 오신 걸 환영해요!</h2>
-        <p>그리기·색채·명암 놀이부터 AI 미술 체험, 멋진 화가 감상, 미래 직업과 진로까지 — 미술의 모든 것을 재미있게 만나봐요. 아래에서 하고 싶은 활동을 골라 시작하세요!</p>
-      </div>
-      <div class="home-grid">
-        <div class="home-card" style="border-top-color:#ff6b6b;" onclick="homeGo('play')">
-          <span class="hemoji">🖌️</span><h4>미술놀이</h4>
-          <p>그리기·색칠, 색채 이론, 명암·보색 놀이와 실험실</p>
+    <main class="main">
+      <!-- 홈 -->
+      <section class="page show" id="page-home">
+        <h2 class="title">📔 미술교사 비법책</h2>
+        <p class="lead">미술 수업에 필요한 도구를 한곳에 모았어요. 아래에서 원하는 도구를 골라 시작하세요.</p>
+        <div class="home-grid">
+          <div class="home-card" style="border-top-color:#5b57d6;" onclick="go('seat',navBtn('seat'))"><div class="e">🪑</div><h4>미술실 자리배치</h4><p>모둠·지정석·역할·칠판 보기</p></div>
+          <div class="home-card" style="border-top-color:#12b3a6;" onclick="go('materials',navBtn('materials'))"><div class="e">🎨</div><h4>미술 재료 정리</h4><p>보유·부족 재료를 한눈에 관리</p></div>
+          <div class="home-card" style="border-top-color:#f0714f;" onclick="go('checklist',navBtn('checklist'))"><div class="e">✅</div><h4>준비물 체크리스트</h4><p>수업별 준비물 점검</p></div>
+          <div class="home-card" style="border-top-color:#e8590c;" onclick="go('picker',navBtn('picker'))"><div class="e">🎲</div><h4>랜덤 뽑기</h4><p>발표자·모둠 랜덤 정하기</p></div>
+          <div class="home-card" style="border-top-color:#2b8a3e;" onclick="go('timer',navBtn('timer'))"><div class="e">⏱️</div><h4>수업 타이머</h4><p>활동 시간 재기</p></div>
+          <div class="home-card" style="border-top-color:#7048e8;" onclick="go('memo',navBtn('memo'))"><div class="e">📝</div><h4>메모장</h4><p>간단 메모·할 일</p></div>
         </div>
-        <div class="home-card" style="border-top-color:#4d96ff;" onclick="homeGo('ai')">
-          <span class="hemoji">🤖</span><h4>AI 미술 체험</h4>
-          <p>글(프롬프트)로 진짜 그림을 만들어 봐요</p>
-        </div>
-        <div class="home-card" style="border-top-color:#ffa62b;" onclick="homeGo('artist')">
-          <span class="hemoji">⭐</span><h4>추천 화가·디자이너</h4>
-          <p>거장의 작품 감상과 미술 퀴즈</p>
-        </div>
-        <div class="home-card" style="border-top-color:#6bcb77;" onclick="homeGo('job')">
-          <span class="hemoji">💼</span><h4>미술 관련 직업</h4>
-          <p>직업 탐색과 '나만의 직업' 창직 놀이</p>
-        </div>
-        <div class="home-card" style="border-top-color:#8e44ad;" onclick="homeGo('school')">
-          <span class="hemoji">🏫</span><h4>고등학교·대학 정보</h4>
-          <p>예술중·고와 미술대학, 전공별 진로</p>
-        </div>
-        <div class="home-card" style="border-top-color:#e8590c;" onclick="homeGo('market')">
-          <span class="hemoji">💰</span><h4>현재 미술시장</h4>
-          <p>그림은 어떻게 사고팔릴까? 미술시장 이야기</p>
-        </div>
-        <div class="home-card" style="border-top-color:#1971c2;" onclick="homeGo('expo')">
-          <span class="hemoji">🖼️</span><h4>전시회 정보</h4>
-          <p>지금 가볼 만한 미술 전시를 확인해요</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ 미술놀이 ============ -->
-    <section class="page" id="page-play">
-      <!-- draw -->
-      <div class="sub-play" data-sub="draw">
-        <h2>✏️ 자유 그리기·색칠</h2>
-        <p class="lead">마우스나 손가락으로 화면에 직접 그려보세요. 색과 붓 굵기를 바꿔가며 나만의 그림을 완성해요!</p>
-        <div class="draw-wrap">
-          <div class="toolbar">
-            <label>🎨 색 고르기</label>
-            <div class="swatches" id="swatches"></div>
-            <label>직접 고르기</label>
-            <input type="color" id="picker" value="#ff6b6b" style="width:100%;height:34px;border:none;background:none;cursor:pointer;">
-            <label>붓·선 굵기 <span id="sizeLabel">8</span>px</label>
-            <input type="range" id="brushSize" min="1" max="40" value="8">
-            <label>✏️ 도구 고르기</label>
-            <div class="tools" id="tools">
-              <button class="tbtn sel" data-tool="brush">🖌️ 붓</button>
-              <button class="tbtn" data-tool="eraser">🧽 지우개</button>
-              <button class="tbtn" data-tool="line">📏 직선</button>
-              <button class="tbtn" data-tool="rect">▭ 사각형</button>
-              <button class="tbtn" data-tool="circle">⭕ 원</button>
-              <button class="tbtn" data-tool="triangle">🔺 삼각형</button>
-              <button class="tbtn" data-tool="star">⭐ 별</button>
-            </div>
-            <label class="chk"><input type="checkbox" id="fillChk"> 도형 안쪽 색 채우기</label>
-            <label>🖼️ 사진 위에 그리기</label>
-            <button class="mini" id="uploadBtn">📁 이미지 불러오기</button>
-            <input type="file" id="imgInput" accept="image/*" style="display:none;">
-            <div class="row">
-              <button class="mini gray" id="clearBtn">🗑️ 전체 지우기</button>
-              <button class="mini" id="saveBtn">💾 저장</button>
-            </div>
-            <div class="row">
-              <button class="mini" id="galleryBtn" style="background:#e7f0ff;color:#1971c2;">🖼️ 갤러리에 올리기</button>
-            </div>
-          </div>
-          <div style="flex:1; min-width:280px;">
-            <canvas id="paint" class="paint" width="640" height="460"></canvas>
-          </div>
+      <!-- 자리배치 -->
+      <section class="page" id="page-seat">
+        <h2 class="title">🪑 미술실 자리배치</h2>
+        <p class="lead">반별 지정석·모둠·역할을 정하고 '칠판으로 크게 보기'로 학생과 함께 볼 수 있어요.</p>
+        <div class="seat-toolbar row" style="margin-bottom:14px;">
+          <button class="btn" onclick="seatBoardMode(true)">🖥️ 칠판으로 크게 보기 (학생 보기)</button>
         </div>
-
-        <div class="card" style="margin-top:16px;">
-          <h3>🖼️ 우리 반 그림 갤러리 <span style="font-size:12px;color:var(--muted);font-weight:600;">(최근 10개 · 새로 올리면 가장 오래된 그림이 빠져요)</span></h3>
-          <p class="lead" style="margin-bottom:12px;">그림을 완성했으면 왼쪽 도구의 <b>'🖼️ 갤러리에 올리기'</b>를 눌러 전시해 보세요!</p>
-          <div id="galleryEmpty" style="color:var(--muted); font-size:14px;">아직 올라온 그림이 없어요. 첫 작품을 올려보세요! 🎨</div>
-          <div id="gallery" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:10px;"></div>
-        </div>
-      </div>
-
-      <!-- color theory -->
-      <div class="sub-play" data-sub="color" style="display:none;">
-        <h2>🌈 색채 이론 놀이</h2>
-        <p class="lead">색이 어떻게 만들어지고 어울리는지 놀이로 배워봐요. 색상환을 눌러 색을 골라보세요!</p>
-        <div class="grid g2">
+        <div class="seat-editor">
           <div class="card">
-            <h3>🎡 색상환에서 색 고르기</h3>
-            <div style="text-align:center;">
-              <canvas id="wheel" width="230" height="230"></canvas>
+            <label class="lbl">🏫 반 선택 (반별로 따로 배치돼요)</label>
+            <div id="classTabs" class="row"></div>
+            <div class="row" style="margin-top:8px;">
+              <input id="newClass" class="in" placeholder="예: 1-3">
+              <button class="mini" onclick="seatAddClass()">＋ 반 추가</button>
+              <button class="mini gray" onclick="seatDelClass()">현재 반 삭제</button>
             </div>
-            <div class="colorbox" style="margin-top:14px;">
-              <div class="bigswatch" id="wheelSwatch" style="background:#ff0000;"></div>
-              <div>
-                <div style="font-weight:800; font-size:16px;" id="wheelName">빨강 계열</div>
-                <div style="color:var(--muted); font-size:13.5px;" id="wheelHex">#FF0000</div>
+            <label class="lbl">🧑‍🎓 학생 명단 (한 줄에 한 명)</label>
+            <textarea id="seatRoster" rows="4" class="in" style="width:100%;" placeholder="김미술&#10;이그림"></textarea>
+            <div class="row" style="margin-top:8px;"><button class="mini" onclick="seatSaveRoster()">명단 저장</button><span id="seatMsg" style="font-size:12.5px;color:#2b8a3e;"></span></div>
+
+            <label class="lbl">🔗 짝 규칙 (명단 저장 후 선택)</label>
+            <div style="display:flex; flex-wrap:wrap; gap:16px;">
+              <div style="flex:1; min-width:250px;">
+                <div style="font-size:12.5px;font-weight:800;color:#c92a2a;margin-bottom:5px;">🚫 붙이면 안 되는 짝</div>
+                <div class="row"><select id="apartA" class="in"></select><select id="apartB" class="in"></select><button class="mini gray" onclick="seatAddPair('apart')">추가</button></div>
+                <div id="apartList" style="margin-top:8px;"></div>
+              </div>
+              <div style="flex:1; min-width:250px;">
+                <div style="font-size:12.5px;font-weight:800;color:#2b8a3e;margin-bottom:5px;">🤝 꼭 붙여야 하는 짝</div>
+                <div class="row"><select id="togetherA" class="in"></select><select id="togetherB" class="in"></select><button class="mini gray" onclick="seatAddPair('together')">추가</button></div>
+                <div id="togetherList" style="margin-top:8px;"></div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <h3>💡 색의 3가지 성질</h3>
-            <p style="font-size:14px; line-height:1.7; color:var(--ink);">
-              <b>① 색상(Hue)</b> — 빨강·노랑·파랑처럼 색의 이름이에요.<br>
-              <b>② 명도(Value)</b> — 색의 밝고 어두운 정도예요.<br>
-              <b>③ 채도(Chroma)</b> — 색이 얼마나 맑고 선명한지예요.
-            </p>
-            <div class="note" style="margin-top:12px;">
-              🎨 <b>1차색(빨강·노랑·파랑)</b>을 섞으면 <b>2차색(주황·초록·보라)</b>이 만들어져요. 아래에서 직접 섞어볼까요?
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <h3>🧪 색 섞기 실험실</h3>
-          <p class="lead" style="margin-bottom:10px;">색을 섞는 방법에는 두 가지가 있어요. 아래 버튼으로 골라서 비교해 보세요!</p>
-          <div class="row" style="margin-bottom:12px;">
-            <button class="tbtn sel" id="modePig" onclick="setMixMode('pig')" style="padding:9px 15px;font-size:13.5px;">🎨 색(물감)의 혼합</button>
-            <button class="tbtn" id="modeLight" onclick="setMixMode('light')" style="padding:9px 15px;font-size:13.5px;">💡 빛의 혼합</button>
-          </div>
-          <div class="note" id="mixIntro" style="margin-bottom:14px;">
-            🎨 <b>색(물감)의 혼합</b>은 <b>감산혼합</b>이에요. 섞을수록 점점 <b>어두워져요.</b> 색의 3원색은 <b>빨강·노랑·파랑</b>! (미술 시간에 물감으로 하는 것과 같아요.)
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
-            <div>
-              <div style="font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:5px;">첫 번째 색</div>
-              <div id="mixBtnsA"></div>
-            </div>
-            <div style="font-size:26px; font-weight:800; color:var(--muted);">+</div>
-            <div>
-              <div style="font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:5px;">두 번째 색</div>
-              <div id="mixBtnsB"></div>
-            </div>
-            <div style="font-size:26px; font-weight:800; color:var(--muted);">=</div>
-            <div>
-              <div class="bigswatch" id="mixResult" style="background:#eee;"></div>
-            </div>
-          </div>
-          <div style="margin-top:12px; font-weight:800; font-size:15px;" id="mixText">두 색을 골라보세요!</div>
-        </div>
 
-        <div class="card">
-          <h3>🔬 색 만들기 실험실 — 색상·명도·채도</h3>
-          <p class="lead" style="margin-bottom:10px;">앞에서 배운 색의 3가지 성질을 직접 조절해 봐요! 슬라이더를 움직이면 색이 바뀌어요.</p>
-          <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:center;">
-            <div class="bigswatch" id="hslSwatch" style="width:120px; height:120px; background:hsl(0,80%,50%);"></div>
-            <div style="flex:1; min-width:240px;">
-              <label class="lab-label">🎨 색상(Hue) — <span id="hueV">0</span></label>
-              <input type="range" id="hueR" min="0" max="360" value="0" style="width:100%;">
-              <label class="lab-label">✨ 채도(선명함) — <span id="satV">80</span>%</label>
-              <input type="range" id="satR" min="0" max="100" value="80" style="width:100%;">
-              <label class="lab-label">💡 명도(밝기) — <span id="litV">50</span>%</label>
-              <input type="range" id="litR" min="0" max="100" value="50" style="width:100%;">
-              <div style="margin-top:10px; font-weight:800; font-size:14.5px;" id="hslName">빨강 계열 · 선명한 보통 밝기의 색</div>
+            <label class="lbl">🪑 모둠(자리) 형태</label>
+            <div id="groupSizeSeg"></div>
+            <label class="lbl">📐 모둠 수 — <span id="gcVal">6</span>개</label>
+            <input type="range" id="groupCount" min="1" max="12" value="6" style="width:100%;">
+            <div class="row" style="margin-top:12px;">
+              <button class="btn warm" onclick="seatRandom()">🎲 랜덤 배치</button>
+              <button class="btn ghost" onclick="seatClearAssign()">배치 비우기</button>
+              <button class="btn ghost" onclick="seatApplyAll()">📋 전체 반 적용</button>
             </div>
-          </div>
-        </div>
+            <div id="seatWarn" style="color:#c92a2a;font-weight:700;font-size:13px;margin-top:8px;"></div>
+            <div class="note" style="margin-top:8px;">💡 자리 두 곳을 차례로 누르면 서로 바뀌어요. 랜덤 후 지정석으로 손보세요.</div>
 
-        <div class="card">
-          <h3>🎨 어울리는 배색 찾기 실험실</h3>
-          <p class="lead" style="margin-bottom:8px;">색 하나를 고르면, 그 색과 잘 어울리는 색 조합을 자동으로 만들어줘요. 포스터나 그림 색을 정할 때 써 봐요!</p>
-          <label class="lab-label">기준 색상 고르기 — 색상값 <span id="harmV">210</span></label>
-          <input type="range" id="harmR" min="0" max="360" value="210" style="width:100%;">
-          <div style="display:flex; align-items:center; gap:14px; margin-top:12px; background:#faf4ef; border:1px solid var(--line); border-radius:12px; padding:10px 14px;">
-            <div id="harmBase" style="width:58px; height:58px; border-radius:12px; box-shadow:var(--shadow); border:2px solid #fff;"></div>
-            <div>
-              <div style="font-weight:800; font-size:15px;" id="harmBaseName">내가 고른 색</div>
-              <div style="font-size:12.5px; color:var(--muted);" id="harmBaseHex"></div>
-            </div>
-          </div>
-          <div style="margin-top:12px;">
-            <div style="font-size:12.5px; font-weight:700; color:var(--muted);">🔴 보색 배색 (정반대 · 강한 대비)</div>
-            <div class="harmrow" id="harmComp"></div>
-            <div style="font-size:12.5px; font-weight:700; color:var(--muted); margin-top:10px;">🟢 유사색 배색 (이웃 · 편안한 느낌)</div>
-            <div class="harmrow" id="harmAnalog"></div>
-            <div style="font-size:12.5px; font-weight:700; color:var(--muted); margin-top:10px;">🔺 삼각 배색 (3색 · 균형 잡힌 화려함)</div>
-            <div class="harmrow" id="harmTriad"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- value / shading -->
-      <div class="sub-play" data-sub="value" style="display:none;">
-        <h2>🌗 명암 놀이</h2>
-        <p class="lead">같은 색이라도 밝기를 조절하면 입체감이 생겨요. 빛이 닿는 곳은 밝게, 반대쪽은 어둡게!</p>
-        <div class="card">
-          <h3>🎚️ 밝기 조절해 보기</h3>
-          <p class="lead" style="margin-bottom:12px;">아래 막대를 움직이면 공(구)의 명암이 바뀌어요. 명암이 잘 표현되면 평평한 원이 입체적인 공처럼 보인답니다.</p>
-          <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
-            <canvas id="sphere" width="220" height="220" style="border-radius:14px;"></canvas>
-            <div style="flex:1; min-width:220px;">
-              <label style="font-weight:700; font-size:14px;">빛의 세기 <span id="lightVal">70</span></label>
-              <input type="range" id="light" min="20" max="100" value="70" style="width:100%; margin:10px 0 20px;">
-              <div class="valstrip">
-                <div style="background:#ffffff;"></div><div style="background:#d0d0d0;"></div>
-                <div style="background:#a0a0a0;"></div><div style="background:#707070;"></div>
-                <div style="background:#404040;"></div><div style="background:#111111;"></div>
+            <div id="roleBox">
+              <label class="lbl">🧹 4인 모둠 역할 (A·B·C·D)</label>
+              <div class="row">
+                <span>A <input id="roleA" class="in" style="width:88px;" value="바닥쓸기"></span>
+                <span>B <input id="roleB" class="in" style="width:88px;" value="나누미"></span>
+                <span>C <input id="roleC" class="in" style="width:88px;" value="정돈이"></span>
+                <span>D <input id="roleD" class="in" style="width:88px;" value="제출이"></span>
               </div>
-              <p style="font-size:13px; color:var(--muted); margin-top:8px;">← 밝음(하이라이트) ······ 어두움(그림자) →</p>
+              <div class="row" style="margin-top:8px;"><button class="mini" onclick="seatRotateRoles()">🔄 역할 한 칸 돌리기</button><button class="mini" onclick="seatRandomRoles()">🎲 역할 랜덤</button></div>
             </div>
+
+            <label class="lbl">📌 자리표 저장·불러오기 (한 학기·월별)</label>
+            <div class="row"><input id="layoutName" class="in" placeholder="예: 한 학기 지정석, 9월 자리"><button class="mini" onclick="seatSaveLayout()">현재 배치 저장</button></div>
+            <div id="layoutList" style="margin-top:8px;"></div>
+          </div>
+        </div>
+        <div class="seat-front">🟦 칠 판 · 교 탁 🟦</div>
+        <div class="seat-grid" id="seatGrid"></div>
+        <button id="boardExit" onclick="seatBoardMode(false)" style="display:none;position:fixed;top:14px;right:14px;z-index:60;border:0;background:var(--accent);color:#fff;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer;">✕ 크게 보기 끝내기</button>
+      </section>
+
+      <!-- 재료 정리 -->
+      <section class="page" id="page-materials">
+        <h2 class="title">🎨 미술 재료 정리</h2>
+        <p class="lead">보유한 미술 재료와 수량·보관 장소를 관리하고, 부족한 재료를 한눈에 확인하세요.</p>
+        <div class="card">
+          <h3>➕ 재료 추가</h3>
+          <div class="row">
+            <input id="matName" class="in" placeholder="재료 이름 (예: 아크릴 물감)">
+            <select id="matCat" class="in"><option>물감·채색</option><option>붓·도구</option><option>종이·화지</option><option>점토·조소</option><option>공예·재료</option><option>기타</option></select>
+            <input id="matQty" class="in" style="width:110px;" placeholder="수량 (예: 20)">
+            <input id="matPlace" class="in" style="width:130px;" placeholder="보관 장소">
+            <select id="matStatus" class="in"><option value="ok">충분</option><option value="low">부족</option><option value="no">없음</option></select>
+            <button class="btn" onclick="matAdd()">추가</button>
           </div>
         </div>
         <div class="card">
-          <h3>📚 명암 5단계</h3>
-          <ul class="clean">
-            <li><b>하이라이트</b> — 빛이 가장 강하게 닿는 가장 밝은 부분</li>
-            <li><b>밝은 면</b> — 빛을 받는 밝은 영역</li>
-            <li><b>중간 톤</b> — 밝음과 어둠의 중간</li>
-            <li><b>어두운 면(코어 섀도)</b> — 빛이 닿지 않는 가장 어두운 부분</li>
-            <li><b>반사광 · 그림자</b> — 바닥에 생기는 그림자와 되비치는 빛</li>
-          </ul>
+          <h3>📦 재료 목록 <span id="matCount" style="font-size:13px;color:var(--muted);font-weight:600;"></span></h3>
+          <div class="row" style="margin-bottom:10px;"><button class="mini gray" onclick="matFilter('all')">전체</button><button class="mini gray" onclick="matFilter('low')">부족·없음만</button><button class="mini gray" onclick="matExport()">📤 내보내기</button><button class="mini gray" onclick="document.getElementById('matImport').click()">📥 불러오기</button><input type="file" id="matImport" accept=".json" style="display:none;"></div>
+          <table class="tb"><thead><tr><th>재료</th><th>분류</th><th>수량</th><th>장소</th><th>상태</th><th></th></tr></thead><tbody id="matBody"></tbody></table>
         </div>
+      </section>
 
+      <!-- 준비물 체크리스트 -->
+      <section class="page" id="page-checklist">
+        <h2 class="title">✅ 준비물 체크리스트</h2>
+        <p class="lead">수업별 준비물을 목록으로 만들고 체크하세요. 여러 개의 목록을 만들 수 있어요.</p>
         <div class="card">
-          <h3>🔦 빛의 방향 실험실</h3>
-          <p class="lead" style="margin-bottom:10px;">공(구) 주변을 눌러 빛의 위치를 바꿔 보세요. 빛이 닿는 쪽은 밝아지고, 반대쪽엔 그림자가 생겨요!</p>
-          <div style="text-align:center;">
-            <canvas id="lightLab" width="280" height="280" style="border-radius:14px; cursor:pointer; touch-action:none; box-shadow:var(--shadow);"></canvas>
-            <div style="font-size:13px; color:var(--muted); margin-top:8px;">🖱️ 캔버스 아무 곳이나 눌러(또는 터치해) 빛을 옮겨보세요.</div>
-          </div>
+          <div class="row"><input id="clNew" class="in" placeholder="새 목록 이름 (예: 3학년 수채화)"><button class="mini" onclick="clAddList()">＋ 목록 추가</button></div>
+          <div id="clTabs" class="row" style="margin-top:10px;"></div>
         </div>
+        <div class="card" id="clPanel">
+          <div class="row"><input id="clItem" class="in" style="flex:1;" placeholder="준비물 입력 후 Enter 또는 추가" onkeydown="if(event.key==='Enter')clAddItem()"><button class="mini" onclick="clAddItem()">추가</button><button class="mini gray" onclick="clClearDone()">체크된 항목 지우기</button></div>
+          <div id="clList" style="margin-top:12px;"></div>
+        </div>
+      </section>
 
+      <!-- 주별 수업계획 -->
+      <section class="page" id="page-planner">
+        <h2 class="title">📅 주별 수업계획</h2>
+        <p class="lead">학기 시작일과 주차 수를 정하면 주차별 날짜가 자동으로 나와요. 행사 주간은 '행사'로 표시하면 수업칸이 잠기고, 각 주마다 어느 반이 했는지 체크할 수 있어요. 인쇄(PDF 저장)도 됩니다.</p>
+        <div class="card plan-setup">
+          <div class="row">
+            <span><label class="lbl" style="margin:0 0 4px;">학기 시작일 (월요일 권장)</label><br><input type="date" id="planStart" class="in"></span>
+            <span><label class="lbl" style="margin:0 0 4px;">주차 수</label><br><input type="number" id="planWeeks" class="in" style="width:90px;" min="1" max="30" value="16"></span>
+            <span style="flex:1; min-width:220px;"><label class="lbl" style="margin:0 0 4px;">반 목록 (쉼표로 구분)</label><br><input id="planClasses" class="in" style="width:100%;" placeholder="1-1, 1-2, 1-3"></span>
+          </div>
+          <div class="row" style="margin-top:12px;"><button class="btn" onclick="planBuild()">표 만들기 / 갱신</button><span id="planMsg" style="font-size:12.5px;color:#2b8a3e;"></span></div>
+        </div>
+        <div class="plan-toolbar row" style="margin-bottom:12px;">
+          <button class="btn teal" onclick="planPrint()">🖨️ 인쇄 / PDF 저장</button>
+        </div>
+        <div class="card" style="overflow-x:auto;">
+          <table class="plan-table" id="planTable"></table>
+        </div>
+      </section>
+
+      <!-- 랜덤 뽑기 -->
+      <section class="page" id="page-picker">
+        <h2 class="title">🎲 랜덤 뽑기</h2>
+        <p class="lead">발표자나 모둠을 랜덤으로 정해요. 이름을 넣거나 자리배치의 반 명단을 불러올 수 있어요.</p>
         <div class="card">
-          <h3>🌗 색의 명도 알아보기 실험</h3>
-          <p class="lead" style="margin-bottom:10px;">색마다 밝기(명도)가 달라요. 색을 흑백으로 바꿔 보면 진짜 밝기를 알 수 있어요. 노랑은 밝고 파랑은 어둡답니다!</p>
-          <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
-            <div style="min-width:200px;">
-              <label class="lab-label">색 골라보기</label>
-              <input type="color" id="valPick" value="#f5d90a" style="width:100%; height:42px; border:none; background:none; cursor:pointer;">
-            </div>
-            <div style="display:flex; gap:16px; align-items:center;">
-              <div style="text-align:center;"><div class="bigswatch" id="valColor" style="width:84px; height:84px; background:#f5d90a;"></div><div style="font-size:12px; margin-top:5px; color:var(--muted);">원래 색</div></div>
-              <div style="font-size:22px; color:var(--muted);">→</div>
-              <div style="text-align:center;"><div class="bigswatch" id="valGray" style="width:84px; height:84px; background:#ddd;"></div><div style="font-size:12px; margin-top:5px; color:var(--muted);">흑백(명도)</div></div>
-            </div>
+          <label class="lbl">이름 명단 (한 줄에 한 명)</label>
+          <textarea id="pickRoster" rows="4" class="in" style="width:100%;" placeholder="김미술&#10;이그림"></textarea>
+          <div class="row" style="margin-top:8px;"><button class="mini gray" onclick="pickLoadClass()">📋 자리배치 반 명단 불러오기</button></div>
+          <div class="row" style="margin-top:12px;">
+            <button class="btn warm" onclick="pickOne()">🎯 한 명 뽑기</button>
+            <button class="btn ghost" onclick="pickGroups()">👥 모둠으로 나누기</button>
+            <input id="pickGroupN" class="in" style="width:110px;" type="number" min="2" value="4" title="한 모둠 인원">
           </div>
-          <div style="margin-top:12px; font-weight:800; font-size:15px;" id="valText">밝기(명도): 89% — 아주 밝아요</div>
         </div>
-      </div>
+        <div class="card"><div id="pickResult">여기에 결과가 나와요</div><div id="pickGroupsOut" style="margin-top:14px;"></div></div>
+      </section>
 
-      <!-- complementary -->
-      <div class="sub-play" data-sub="comp" style="display:none;">
-        <h2>🎭 보색 놀이</h2>
-        <p class="lead">색상환에서 <b>정반대</b>에 있는 두 색을 '보색'이라고 해요. 나란히 두면 서로를 더 선명하고 강하게 만들어줘요!</p>
+      <!-- 타이머 -->
+      <section class="page" id="page-timer">
+        <h2 class="title">⏱️ 수업 타이머</h2>
+        <p class="lead">활동 시간을 재는 카운트다운 타이머예요. 시간이 다 되면 소리로 알려줘요.</p>
         <div class="card">
-          <h3>🔄 보색 찾기</h3>
-          <p class="lead" style="margin-bottom:12px;">색을 고르면 정반대의 보색을 자동으로 찾아줘요.</p>
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
-            <button class="quiz-opt" onclick="showComp('#e03131','빨강','#2b9e6e','초록')">🔴 빨강</button>
-            <button class="quiz-opt" onclick="showComp('#f5a30a','주황','#1971c2','파랑')">🟠 주황</button>
-            <button class="quiz-opt" onclick="showComp('#f5d90a','노랑','#7048e8','보라')">🟡 노랑</button>
-            <button class="quiz-opt" onclick="showComp('#2b9e6e','초록','#e03131','빨강')">🟢 초록</button>
-            <button class="quiz-opt" onclick="showComp('#1971c2','파랑','#f5a30a','주황')">🔵 파랑</button>
-            <button class="quiz-opt" onclick="showComp('#7048e8','보라','#f5d90a','노랑')">🟣 보라</button>
+          <div id="timerDisp">10:00</div>
+          <div class="row" style="justify-content:center; margin-top:14px;">
+            <button class="mini gray" onclick="timerAdd(-60)">－1분</button>
+            <button class="mini gray" onclick="timerAdd(60)">＋1분</button>
+            <button class="mini gray" onclick="timerAdd(300)">＋5분</button>
+            <button class="mini gray" onclick="timerSet(0)">0으로</button>
           </div>
-          <div class="comp-demo" id="compDemo">
-            <div style="background:#e03131; color:#fff;">빨강</div>
-            <div style="background:#2b9e6e; color:#fff;">초록 (보색)</div>
+          <div class="row" style="justify-content:center; margin-top:12px;">
+            <button class="btn" id="timerStartBtn" onclick="timerToggle()">▶ 시작</button>
+            <button class="btn ghost" onclick="timerReset()">↺ 리셋</button>
           </div>
-          <div class="note" style="margin-top:14px;">
-            💡 <b>왜 중요할까요?</b> 크리스마스(빨강+초록), 축구팀 유니폼, 광고 포스터… 보색은 눈에 확 띄게 만들어서 디자인에서 아주 많이 쓰여요!
+          <div class="row" style="justify-content:center; margin-top:12px;">
+            <button class="seg" onclick="timerPreset(5)">5분</button><button class="seg" onclick="timerPreset(10)">10분</button>
+            <button class="seg" onclick="timerPreset(15)">15분</button><button class="seg" onclick="timerPreset(20)">20분</button>
           </div>
-          <button class="btn ghost" style="margin-top:12px;" onclick="drawWithComp()">🖌️ 이 두 색으로 그림 그리러 가기</button>
         </div>
+      </section>
 
+      <!-- 메모 -->
+      <section class="page" id="page-memo">
+        <h2 class="title">📝 메모장</h2>
+        <p class="lead">수업 아이디어나 할 일을 적어두세요. 자동으로 저장돼요.</p>
+        <div class="card"><textarea id="memoArea" rows="16" class="in" style="width:100%; font-size:15px; line-height:1.6;" placeholder="여기에 자유롭게 메모하세요..."></textarea><div style="font-size:12.5px;color:var(--muted);margin-top:8px;" id="memoMsg">자동 저장됨</div></div>
+      </section>
+
+      <!-- 설정 -->
+      <section class="page" id="page-settings">
+        <h2 class="title">⚙️ 설정</h2>
+        <p class="lead">비밀번호를 바꾸거나, 모든 데이터를 백업·복원할 수 있어요.</p>
         <div class="card">
-          <h3>👁️ 활동 1. 보색 잔상(착시) 실험</h3>
-          <p class="lead">한 색을 오래 바라본 뒤 흰 곳을 보면, 신기하게도 그 색의 <b>보색</b>이 눈앞에 떠올라요! 우리 눈이 만들어내는 착시랍니다.</p>
-          <div style="text-align:center;">
-            <div id="afterStage" style="width:220px;height:220px;margin:12px auto;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#e03131;box-shadow:var(--shadow);">
-              <div id="afterDot" style="width:12px;height:12px;background:#fff;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.25);"></div>
-            </div>
-            <div id="afterMsg" style="font-weight:700;color:var(--muted);min-height:22px;">가운데 흰 점을 15초 동안 가만히 바라보세요.</div>
-            <button class="btn warm" style="margin-top:10px;" onclick="startAfter()">▶ 실험 시작 (15초)</button>
-          </div>
-          <div class="note" style="margin-top:14px;">🔬 <b>왜 그럴까요?</b> 한 색을 오래 보면 그 색을 느끼는 눈 속 세포가 잠깐 지쳐요. 그래서 흰 곳을 볼 때 <b>보색</b>이 더 강하게 보이는 거예요.</div>
+          <h3>🔒 비밀번호 변경</h3>
+          <label class="lbl">새 비밀번호</label>
+          <input id="pwNew" class="in" type="password" placeholder="새 비밀번호">
+          <label class="lbl">새 비밀번호 확인</label>
+          <input id="pwNew2" class="in" type="password" placeholder="한 번 더 입력">
+          <div class="row" style="margin-top:12px;"><button class="btn" onclick="changePw()">변경하기</button><span id="pwMsg" style="font-size:13px;color:#2b8a3e;"></span></div>
         </div>
-
         <div class="card">
-          <h3>🟥 활동 2. 보색으로 '옵아트' 무늬 만들기</h3>
-          <p class="lead">보색 두 개만으로 눈이 어질어질한 '옵아트(옵티컬 아트)' 무늬를 만들어 봐요. 칸을 눌러 색칠하세요!</p>
-          <div style="display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start;">
-            <canvas id="opCanvas" width="300" height="300" style="border-radius:12px; box-shadow:var(--shadow); cursor:pointer; touch-action:none;"></canvas>
-            <div style="min-width:180px;">
-              <div style="font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:6px;">색 고르기 (누르면 선택)</div>
-              <button class="mini" id="opC1" onclick="opPick(1)">색 1</button>
-              <button class="mini" id="opC2" onclick="opPick(2)">색 2</button>
-              <div class="row" style="margin-top:12px;">
-                <button class="mini gray" onclick="opPattern('check')">🏁 체크무늬</button>
-                <button class="mini gray" onclick="opPattern('stripe')">🟰 줄무늬</button>
-              </div>
-              <div class="row" style="margin-top:8px;">
-                <button class="mini gray" onclick="opPattern('clear')">🗑️ 지우기</button>
-                <button class="mini" onclick="opSave()">💾 저장</button>
-              </div>
-              <p style="font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.55;">보색을 딱 붙여 놓으면 경계가 진동하듯 보여요. 그게 바로 옵아트의 매력!</p>
-            </div>
-          </div>
+          <h3>🏫 담당 반 설정</h3>
+          <p style="font-size:13.5px;color:var(--muted);">한 줄에 한 반씩 적어주세요. 자리배치·주별 수업계획에서 반 목록으로 자동으로 쓰여요.</p>
+          <textarea id="setCls" rows="5" class="in" style="width:100%;" placeholder="1-1&#10;1-2&#10;1-3"></textarea>
+          <div class="row" style="margin-top:10px;"><button class="btn" onclick="saveMyClassesFromSettings()">저장</button><span id="setClsMsg" style="font-size:13px;color:#2b8a3e;"></span></div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ AI 미술 체험 ============ -->
-    <section class="page" id="page-ai">
-      <h2>🤖 AI 미술 체험</h2>
-      <p class="lead">AI는 우리가 글로 설명한 그림을 대신 그려주는 똑똑한 도구예요. 어떻게 쓰는지, 어떻게 하면 잘 쓰는지 배워봐요.</p>
-
-      <div class="card">
-        <h3>1️⃣ AI 미술이란?</h3>
-        <p style="font-size:14.5px; line-height:1.75;">
-          AI 미술은 사람이 <b>글(프롬프트)</b>로 "어떤 그림을 그려줘"라고 설명하면, AI가 수많은 그림을 학습한 실력으로 새로운 이미지를 만들어 주는 거예요.
-          붓 대신 <b>말과 상상력</b>으로 그리는 미술이라고 생각하면 쉬워요. 아이디어를 빠르게 시각화하거나, 상상 속 장면을 만들어 볼 때 아주 유용하답니다.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>2️⃣ 프롬프트(주문) 만들기</h3>
-        <p class="lead" style="margin-bottom:14px;">항목을 하나씩 골라보면 AI에게 줄 멋진 주문이 완성돼요. 아래에서 직접 고쳐 써도 좋아요!</p>
-        <div class="grid g2">
-          <div>
-            <label style="font-size:12.5px;font-weight:700;color:var(--muted);">① 무엇을</label>
-            <div id="pWhat"></div>
-            <label style="font-size:12.5px;font-weight:700;color:var(--muted);margin-top:10px;display:block;">② 어디서 / 어떤 상황</label>
-            <div id="pWhere"></div>
-            <label style="font-size:12.5px;font-weight:700;color:var(--muted);margin-top:10px;display:block;">③ 어떤 그림체로</label>
-            <div id="pStyle"></div>
-          </div>
-          <div>
-            <div class="note" style="height:100%;">
-              📝 <b>완성된 나의 주문</b>
-              <div id="promptOut" style="margin-top:10px; font-size:15px; font-weight:700; color:#5f3dc4; line-height:1.6; min-height:60px;">
-                위에서 항목을 골라보세요!
-              </div>
-            </div>
-          </div>
+        <div class="card">
+          <h3>🎨 학생 앱 주소</h3>
+          <p style="font-size:13.5px;color:var(--muted);">사이드바의 '학생 화면으로 가기' 버튼이 열 주소예요. 학생용 앱(즐거운 미술시간)의 인터넷 주소를 넣어주세요. (GitHub Pages 주소 등)</p>
+          <input id="setStudentUrl" class="in" style="width:100%;" placeholder="https://아이디.github.io/artclass/">
+          <div class="row" style="margin-top:10px;"><button class="btn" onclick="saveStudentUrl()">저장</button><span id="stuMsg" style="font-size:13px;color:#2b8a3e;"></span></div>
         </div>
-      </div>
-
-      <div class="card">
-        <h3>3️⃣ 직접 그림 만들기 ✨</h3>
-        <p class="lead" style="margin-bottom:12px;">아래 칸에 만들고 싶은 그림을 한국어(또는 영어)로 써넣고 버튼을 눌러보세요. 잠시 기다리면 AI가 진짜 그림을 그려줍니다!</p>
-        <textarea id="genPrompt" rows="2" placeholder="예: 달빛 아래 바닷속을 헤엄치는 귀여운 고양이, 수채화 스타일" style="width:100%; padding:12px; border:2px solid var(--line); border-radius:12px; font-size:14px; font-family:inherit; resize:vertical; box-sizing:border-box;"></textarea>
-        <div class="note" style="margin-top:10px; background:#fff0f0; border-color:#ffc9c9; color:#c92a2a;">
-          ⚠️ <b>이름·학교·주소·연락처 같은 개인정보는 입력하지 마세요!</b> 입력한 글은 그림을 만들기 위해 외부 AI 서버로 전송돼요. 그리고 싶은 그림만 적어요.
+        <div class="card">
+          <h3>💾 전체 데이터 백업·복원</h3>
+          <p style="font-size:13.5px;color:var(--muted);">자리배치·재료·체크리스트·메모 등 모든 데이터를 파일 하나로 저장하거나, 다른 컴퓨터에서 불러올 수 있어요.</p>
+          <div class="row"><button class="btn ghost" onclick="backupAll()">📤 전체 내보내기</button><button class="btn ghost" onclick="document.getElementById('restoreAll').click()">📥 전체 불러오기</button><input type="file" id="restoreAll" accept=".json" style="display:none;"></div>
         </div>
-        <div class="row" style="margin-top:10px;">
-          <button class="btn warm" onclick="genImage()">🎨 그림 만들기</button>
-          <button class="btn ghost" onclick="useBuiltPrompt()">⬆️ 위에서 만든 주문 가져오기</button>
-        </div>
-        <div id="genArea" style="margin-top:16px; text-align:center;">
-          <div id="genStatus" style="color:var(--muted); font-size:14px; min-height:20px;"></div>
-          <img id="genImg" alt="AI가 만든 그림" style="display:none; max-width:100%; width:420px; border-radius:14px; box-shadow:var(--shadow); margin-top:8px;">
-          <div id="genActions" style="display:none; margin-top:10px;">
-            <a id="genDownload" class="btn ghost" href="#" target="_blank" rel="noopener">🔍 크게 보기 / 저장</a>
-          </div>
-        </div>
-        <div class="note" style="margin-top:14px;">
-          🧑‍🏫 이 기능은 무료 공개 AI(Pollinations)를 사용해요. 인터넷 연결이 필요하고, 만들어진 그림은 <b>선생님과 함께</b> 확인해요. 실제 인물·친구 얼굴이나 폭력적인 내용은 넣지 않기로 약속해요!
-        </div>
-      </div>
+      </section>
+    </main>
 
-      <div class="card">
-        <h3>4️⃣ 안전하고 올바르게 사용하기 ✅</h3>
-        <ul class="clean">
-          <li>AI가 만든 이미지에는 <b>실수나 이상한 부분</b>이 있을 수 있어요. 꼭 내 눈으로 확인해요.</li>
-          <li>다른 사람의 얼굴이나 작품을 <b>함부로 따라 만들지 않기</b> — 저작권과 초상권을 지켜요.</li>
-          <li>AI는 <b>도우미</b>일 뿐, 나의 아이디어와 손그림이 가장 소중해요.</li>
-          <li>미성년자는 반드시 <b>선생님·보호자와 함께</b> 사용해요.</li>
-        </ul>
-        <div class="note" style="margin-top:14px;">
-          🧑‍🏫 선생님께: 실제 이미지 생성은 학교에서 허용된 도구(예: 교육용 AI 플랫폼)를 통해 위 프롬프트를 붙여넣어 체험하도록 안내해 주세요. 이 화면은 <b>프롬프트를 스스로 설계하는 사고력</b> 훈련에 초점을 둡니다.
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 고등학교·대학 ============ -->
-    <section class="page" id="page-school">
-      <h2>🏫 미술 관련 고등학교·대학 정보</h2>
-      <p class="lead">미술을 더 깊이 공부하고 싶다면 어떤 학교와 학과가 있을까요? 진로를 미리 상상해 봐요.</p>
-
-      <div class="card">
-        <h3>🎒 미술을 배우는 예술중학교</h3>
-        <p style="font-size:14px; line-height:1.7;">중학교 때부터 미술을 전문적으로 배우고 싶다면 <b>예술중학교</b>가 있어요. (음악·무용과 함께 미술 전공을 두는 곳이 많아요.)</p>
-        <div style="margin-top:8px;">
-          <span class="pill">예원학교(서울)</span><span class="pill">선화예술중(서울)</span><span class="pill">서울예술중</span>
-          <span class="pill">계원예술중(경기)</span><span class="pill">부산예술중</span><span class="pill">광주예술중</span><span class="pill">전주예술중</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>🏫 미술과가 있는 예술고등학교 (국·공·사립)</h3>
-        <p style="font-size:14px; line-height:1.7;">학교 카드를 눌러보세요! 지역·설립유형과 홈페이지를 볼 수 있어요. 사립 예술고도 아주 많아요. (학교마다 실기시험이 달라요.)</p>
-        <div style="font-size:13px; font-weight:800; color:var(--muted); margin:10px 0 6px;">🏙️ 서울 · 경기 · 인천</div>
-        <div class="grid g3" id="schoolMetro"></div>
-        <div style="font-size:13px; font-weight:800; color:var(--muted); margin:16px 0 6px;">🌄 영남 · 호남 · 충청 · 강원</div>
-        <div class="grid g3" id="schoolLocal"></div>
-        <div class="note" style="margin-top:12px;">💡 카드의 설립유형(국립·공립·사립)과 소개는 참고용이에요. 정확한 모집 요강은 각 학교 홈페이지에서 꼭 확인하세요.</div>
-      </div>
-
-      <div class="card">
-        <h3>🎓 미술대학의 주요 학과 <span style="font-size:12px;color:var(--muted);font-weight:600;">(전공을 누르면 그 과가 있는 대학을 알려줘요)</span></h3>
-        <p style="font-size:14px; line-height:1.7;">미술대학은 크게 <b>순수미술 · 디자인 · 응용예술 · 이론</b> 분야로 나뉘어요. 관심 있는 전공을 눌러보세요!</p>
-        <div class="grid g2" style="margin-top:12px;">
-          <div class="tile"><h4>🖼️ 순수미술</h4><div class="majchips" id="majPure"></div></div>
-          <div class="tile"><h4>✏️ 디자인</h4><div class="majchips" id="majDesign"></div></div>
-          <div class="tile"><h4>🎬 응용·미디어</h4><div class="majchips" id="majMedia"></div></div>
-          <div class="tile"><h4>📖 이론·교육</h4><div class="majchips" id="majTheory"></div></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>🏛️ 대표적인 미술대학 (예시)</h3>
-        <span class="pill">서울대 미술대학</span><span class="pill">홍익대 미술대학</span><span class="pill">국민대 조형대학</span>
-        <span class="pill">이화여대 조형예술대</span><span class="pill">한국예술종합학교 미술원</span><span class="pill">서울과학기술대</span>
-        <span class="pill">건국대·중앙대</span><span class="pill">계원예술대</span>
-        <p style="font-size:13px; color:var(--muted); margin-top:10px;">※ 이 외에도 전국에 훌륭한 미술대학이 많아요. 학교보다 <b>내가 하고 싶은 분야</b>를 먼저 정하는 것이 중요해요!</p>
-      </div>
-
-      <div class="card">
-        <h3>🔎 우리 지역 학교·학과 최신 정보 확인</h3>
-        <p style="font-size:14px; line-height:1.7;">입시 요강과 학교 정보는 해마다 조금씩 바뀌어요. 아래에서 항상 최신 정보를 확인하세요.</p>
-        <div class="row" style="margin-top:8px;">
-          <a class="btn" href="https://www.schoolinfo.go.kr" target="_blank" rel="noopener">🏫 학교알리미</a>
-          <a class="btn ghost" href="https://www.career.go.kr" target="_blank" rel="noopener">🧭 커리어넷 진로정보</a>
-          <a class="btn ghost" href="https://www.data.go.kr/data/15107737/standard.do" target="_blank" rel="noopener">🎓 전국 대학·학과 정보</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 직업 ============ -->
-    <section class="page" id="page-job">
-      <h2>💼 미술 관련 직업</h2>
-      <p class="lead">직업 카드를 눌러보세요! 하는 일과, 실제로 그 일을 하는 사람들을 볼 수 있어요.</p>
-
-      <div class="card">
-        <h3>🎨 순수예술 · 시각디자인</h3>
-        <div class="grid g3" id="jobGrid1"></div>
-      </div>
-      <div class="card">
-        <h3>📱 콘텐츠 · 게임 · 제품 · 패션</h3>
-        <div class="grid g3" id="jobGrid2"></div>
-      </div>
-      <div class="card">
-        <h3>🏛️ 미술관 · 교육 · 미래 직업</h3>
-        <div class="grid g3" id="jobGrid3"></div>
-      </div>
-
-      <div class="card" style="background:linear-gradient(180deg,#fff,#fff6ef);">
-        <h3>🧪 창직 놀이 — 나만의 미래 직업 만들기</h3>
-        <p class="lead" style="margin-bottom:12px;">내가 <b>좋아하는 분야</b>와 <b>미술 기술</b>을 하나씩 골라 합쳐 보세요. 세상에 없던 나만의 직업이 만들어져요!</p>
-        <div class="grid g2">
-          <div>
-            <label style="font-size:12.5px;font-weight:700;color:var(--muted);">① 내가 좋아하는 분야</label>
-            <div id="jobInterest" style="margin-top:6px;"></div>
-          </div>
-          <div>
-            <label style="font-size:12.5px;font-weight:700;color:var(--muted);">② 미술 기술</label>
-            <div id="jobSkill" style="margin-top:6px;"></div>
-          </div>
-        </div>
-        <div class="row" style="margin-top:12px;">
-          <button class="btn warm" onclick="rollJob()">🎲 무작위로 뽑기</button>
-        </div>
-        <div id="jobResult" class="note" style="margin-top:14px; background:#eef6ff; border-color:#c9e0ff; color:#1c3f66; line-height:1.65;">
-          위에서 분야와 기술을 하나씩 골라보세요!
-        </div>
-      </div>
-    </section>
-
-    <!-- 직업 상세 팝업 -->
-    <div id="jobModal" class="modal" onclick="closeJob(event)">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <button class="modal-x" onclick="closeJob()">✕</button>
-        <div id="jobIcon" style="font-size:42px; text-align:center; margin-bottom:4px;"></div>
-        <h3 id="jobModalName" style="text-align:center; margin-bottom:6px;"></h3>
-        <div id="jobModalTag" style="text-align:center; margin-bottom:14px;"></div>
-        <p style="font-size:13px; font-weight:800; color:var(--accent); margin:0 0 3px;">🎯 하는 일</p>
-        <p id="jobWork" style="font-size:14px; line-height:1.65; margin:0 0 12px;"></p>
-        <p style="font-size:13px; font-weight:800; color:var(--accent); margin:0 0 3px;">📚 필요한 능력·공부</p>
-        <p id="jobSkillTxt" style="font-size:14px; line-height:1.65; margin:0 0 16px;"></p>
-        <div class="row">
-          <a id="jobInfoLink" class="btn" target="_blank" rel="noopener">🔎 직업 자세히 알아보기</a>
-          <a id="jobPeopleLink" class="btn ghost" target="_blank" rel="noopener">🎥 실제로 일하는 사람 보기</a>
-        </div>
+    <!-- 첫 로그인: 담당 반 입력 -->
+    <div id="onboard" style="display:none; position:fixed; inset:0; z-index:90; background:rgba(40,30,60,.55); align-items:center; justify-content:center; padding:20px;">
+      <div style="background:#fff; border-radius:20px; padding:30px 28px; max-width:400px; width:100%; box-shadow:0 24px 60px rgba(0,0,0,.35);">
+        <div style="font-size:42px; text-align:center;">🏫</div>
+        <h3 style="text-align:center; margin:6px 0 4px; font-size:20px;">담당 반을 알려주세요</h3>
+        <p style="text-align:center; color:var(--muted); font-size:13.5px; margin:0 0 16px;">한 줄에 한 반씩 적어주세요. 자리배치·수업계획에서 자동으로 쓰여요. (설정에서 언제든 바꿀 수 있어요.)</p>
+        <textarea id="onboardCls" rows="5" class="in" style="width:100%;" placeholder="1-1&#10;1-2&#10;1-3"></textarea>
+        <button class="btn" style="width:100%; margin-top:12px; justify-content:center;" onclick="onboardSave()">저장하고 시작하기</button>
+        <button class="mini gray" style="width:100%; margin-top:8px;" onclick="document.getElementById('onboard').style.display='none'">나중에 하기</button>
       </div>
     </div>
-
-    <!-- ============ 미술시장 ============ -->
-    <section class="page" id="page-market">
-      <h2>💰 현재 미술시장 이야기</h2>
-      <p class="lead">그림은 어떻게 사고팔릴까요? 미술도 하나의 '시장'이 있어요. 쉽게 알아봐요.</p>
-
-      <div class="card">
-        <h3>🛒 미술 작품은 어디서 거래될까?</h3>
-        <div class="grid g3" style="margin-top:8px;">
-          <div class="tile"><h4>① 갤러리(화랑)</h4><p>작가의 작품을 처음 소개하고 판매하는 곳. '1차 시장'이라고 해요.</p></div>
-          <div class="tile"><h4>② 경매(옥션)</h4><p>이미 있던 작품을 다시 사고파는 곳. 가장 높은 값을 부른 사람이 사요. (서울옥션·K옥션, 세계적으론 크리스티·소더비)</p></div>
-          <div class="tile"><h4>③ 아트페어</h4><p>수많은 갤러리가 한자리에 모이는 큰 미술 장터예요.</p></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>🇰🇷 요즘 한국 미술시장의 큰 흐름 (2026)</h3>
-        <ul class="clean">
-          <li>매년 9월, 서울은 세계 미술의 중심이 돼요. 세계적 아트페어 <b>프리즈 서울(Frieze Seoul)</b>과 한국 대표 아트페어 <b>키아프 서울(Kiaf SEOUL)</b>이 함께 열려요.</li>
-          <li><b>2026년 일정:</b> 두 행사 모두 9월 서울 코엑스(COEX)에서 개최 — Kiaf 9월 2~6일, Frieze 9월 2~5일. 30여 개국 갤러리가 참여해요.</li>
-          <li>NFT·디지털 아트, 미디어아트처럼 <b>기술과 만난 새로운 미술</b>이 계속 주목받고 있어요.</li>
-          <li>젊은 세대도 미술에 관심이 많아지면서, 작품을 감상하고 수집하는 문화가 넓어지고 있어요.</li>
-        </ul>
-        <div class="note" style="margin-top:12px;">💡 작품 가격은 작가의 인지도, 작품의 희귀함, 그때그때의 유행에 따라 달라져요. 비싸다고 무조건 좋은 그림은 아니랍니다!</div>
-      </div>
-
-      <div class="card">
-        <h3>📰 실시간 미술시장 뉴스</h3>
-        <p style="font-size:14px; line-height:1.7;">아래 버튼을 누르면 <b>지금 이 순간의 최신 뉴스</b>가 새 창으로 열려요. 항상 자동으로 최신 소식이 나옵니다.</p>
-        <div class="row" style="margin-top:10px;">
-          <a class="btn" href="https://news.google.com/search?q=%EB%AF%B8%EC%88%A0%EC%8B%9C%EC%9E%A5%20OR%20%EC%95%84%ED%8A%B8%ED%8E%98%EC%96%B4&hl=ko&gl=KR&ceid=KR:ko" target="_blank" rel="noopener">📈 미술시장 뉴스</a>
-          <a class="btn ghost" href="https://search.naver.com/search.naver?where=news&query=%EB%AF%B8%EC%88%A0%EC%8B%9C%EC%9E%A5" target="_blank" rel="noopener">🟢 네이버: 미술시장</a>
-          <a class="btn ghost" href="https://search.naver.com/search.naver?where=news&query=%EC%95%84%ED%8A%B8%ED%8E%98%EC%96%B4" target="_blank" rel="noopener">🎪 아트페어 소식</a>
-        </div>
-        <div class="note" style="margin-top:12px;">🔑 이 방식은 인증키 없이도 늘 최신 뉴스를 보여줘서, 학교에서 안전하고 간편하게 쓸 수 있어요.</div>
-      </div>
-    </section>
-
-    <!-- ============ 추천 화가 ============ -->
-    <section class="page" id="page-artist">
-      <h2>⭐ 추천 화가·디자이너</h2>
-      <p class="lead">작품 미리보기 그림을 눌러보세요! 작가 소개가 팝업으로 열리고, 실제 작품도 볼 수 있어요.</p>
-
-      <div class="card">
-        <h3>🌍 세계의 거장</h3>
-        <div class="grid g3" id="worldArtists"></div>
-      </div>
-
-      <div class="card">
-        <h3>🇰🇷 우리나라의 예술가</h3>
-        <div class="grid g3" id="koreaArtists"></div>
-      </div>
-
-      <div class="card">
-        <h3>✏️ 알아두면 좋은 디자이너</h3>
-        <div class="grid g3" id="designers"></div>
-        <div class="note" style="margin-top:12px;">🖼️ 마음에 드는 작가를 한 명 골라, 그 작가의 스타일을 따라 그려보는 것도 아주 좋은 미술 공부예요!</div>
-      </div>
-
-      <div class="card">
-        <h3>🧠 미술 퀴즈</h3>
-        <p class="lead" style="margin-bottom:12px;">배운 내용을 재미있는 퀴즈로 확인해 봐요!</p>
-        <div id="quizBox"></div>
-        <div id="quizScore" style="margin-top:6px; font-weight:800; font-size:16px; color:#e8590c;"></div>
-        <button class="btn ghost" style="margin-top:12px;" onclick="resetQuiz()">🔄 다시 풀기</button>
-      </div>
-    </section>
-
-    <!-- 작가 상세 팝업 -->
-    <div id="artistModal" class="modal" onclick="closeArtist(event)">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <button class="modal-x" onclick="closeArtist()">✕</button>
-        <div id="modalThumb" class="modal-thumb"></div>
-        <h3 id="modalName"></h3>
-        <div id="modalTag" style="margin-bottom:10px;"></div>
-        <p id="modalDesc" style="font-size:14.5px; line-height:1.7;"></p>
-        <p id="modalWork" style="font-size:13.5px; color:var(--muted); margin:0 0 14px;"></p>
-        <a id="modalLink" class="btn" target="_blank" rel="noopener">🔗 실제 작품 보러 가기</a>
-      </div>
-    </div>
-
-    <!-- ============ 전시회 ============ -->
-    <section class="page" id="page-expo">
-      <h2>🖼️ 전시회 정보</h2>
-      <p class="lead">직접 미술관에 가면 화면으로 볼 때와는 다른 감동이 있어요. 지금 가볼 만한 전시를 확인해요.</p>
-
-      <div class="card">
-        <h3>🔄 지금 열리는 전시 <span style="font-size:12px;color:var(--muted);font-weight:600;">(매주 자동 갱신 · 문화정보 API)</span></h3>
-        <div id="expoTabs" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;"></div>
-        <div id="expoStatus" style="color:var(--muted); font-size:14px; margin-bottom:10px;">전시 정보를 불러오는 중...</div>
-        <div id="expoList" class="grid g2"></div>
-      </div>
-
-      <div class="card">
-        <h3>🎪 큰 미술 축제 — 9월의 서울</h3>
-        <p style="font-size:14px; line-height:1.7;">해마다 <b>9월</b>이면 서울 코엑스에서 <b>프리즈 서울(Frieze Seoul)</b>과 <b>키아프 서울(Kiaf SEOUL)</b>이 함께 열려요. 전 세계 갤러리의 작품을 한자리에서 볼 수 있는 큰 미술 축제예요. 구체적인 날짜는 해마다 조금씩 달라지니 아래 공식 홈페이지에서 확인하세요.</p>
-        <div class="row" style="margin-top:10px;">
-          <a class="btn ghost" href="https://frieze.com/fairs/frieze-seoul" target="_blank" rel="noopener">프리즈 서울 일정</a>
-          <a class="btn ghost" href="https://kiaf.org" target="_blank" rel="noopener">키아프 서울 일정</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>🔗 전시 정보를 찾는 곳</h3>
-        <div class="row">
-          <a class="btn" href="https://www.mmca.go.kr" target="_blank" rel="noopener">국립현대미술관</a>
-          <a class="btn ghost" href="https://sema.seoul.go.kr" target="_blank" rel="noopener">서울시립미술관</a>
-          <a class="btn ghost" href="https://www.leeumhoam.org" target="_blank" rel="noopener">리움미술관</a>
-        </div>
-        <div class="note" style="margin-top:12px;">🎫 많은 미술관이 <b>청소년 할인·무료 관람일</b>을 운영해요. 방문 전에 확인하면 알뜰하게 감상할 수 있어요!</div>
-      </div>
-    </section>
-
-    <!-- 학교 상세 팝업 -->
-    <div id="schoolModal" class="modal" onclick="closeSchool(event)">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <button class="modal-x" onclick="closeSchool()">✕</button>
-        <div style="font-size:40px; text-align:center; margin-bottom:2px;">🏫</div>
-        <h3 id="schName" style="text-align:center; margin-bottom:6px;"></h3>
-        <div id="schType" style="text-align:center; margin-bottom:14px;"></div>
-        <p style="font-size:13px; font-weight:800; color:var(--accent); margin:0 0 3px;">📍 지역 · 개설 계열</p>
-        <p id="schMeta" style="font-size:14px; line-height:1.65; margin:0 0 12px;"></p>
-        <p style="font-size:13px; font-weight:800; color:var(--accent); margin:0 0 3px;">📝 소개</p>
-        <p id="schDesc" style="font-size:14px; line-height:1.65; margin:0 0 16px;"></p>
-        <a id="schHome" class="btn" target="_blank" rel="noopener">🏠 학교 홈페이지 바로가기</a>
-      </div>
-    </div>
-
-    <!-- 전공 → 대학 팝업 -->
-    <div id="majorModal" class="modal" onclick="closeMajor(event)">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <button class="modal-x" onclick="closeMajor()">✕</button>
-        <div style="font-size:38px; text-align:center;">🎓</div>
-        <h3 id="majName" style="text-align:center; margin:4px 0 6px;"></h3>
-        <p id="majDesc" style="font-size:14px; line-height:1.6; text-align:center; color:var(--muted); margin:0 0 14px;"></p>
-        <p style="font-size:13px; font-weight:800; color:var(--accent); margin:0 0 4px;">🏛️ 이 전공이 있는 대표 대학</p>
-        <div class="unilist" id="majUnis"></div>
-        <div class="note" style="margin:14px 0;">※ 대표 예시예요. 대학마다 학과 이름·모집이 달라질 수 있으니 아래 버튼으로 최신 정보를 꼭 확인하세요.</div>
-        <a id="majSearch" class="btn ghost" target="_blank" rel="noopener">🔎 이 전공 있는 대학 더 찾아보기</a>
-      </div>
-    </div>
-
-    <!-- 그림 크게 보기 -->
-    <div id="lightbox" class="modal" onclick="this.classList.remove('open')">
-      <div class="modal-box" style="max-width:520px; padding:14px;" onclick="event.stopPropagation()">
-        <button class="modal-x" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
-        <img id="lbImg" alt="학생 그림" style="width:100%; border-radius:10px; display:block;">
-      </div>
-    </div>
-
-  </main>
+  </div>
 
 <script>
-/* ============ 네비게이션 ============ */
-function toggleSub(btn, subId){
-  const sub = document.getElementById(subId);
-  const caret = btn.querySelector('.caret');
-  // activate this top tab
-  activateTab(btn,'play');
-  // show play page
-  showPage('play');
-  sub.classList.add('open');
-  caret.classList.add('rot');
+/* ================= 로그인 ================= */
+function pwGet(){ try{ return localStorage.getItem('tbook_pw')||'0000'; }catch(e){ return '0000'; } }
+function doLogin(){
+  const v=document.getElementById('loginPw').value.trim();
+  if(v===pwGet()){ document.getElementById('login').style.display='none'; document.getElementById('app').style.display='flex'; bootApp(); }
+  else { document.getElementById('loginErr').textContent='비밀번호가 틀렸어요.'; document.getElementById('loginPw').value=''; }
 }
-function activateTab(btn){
-  document.querySelectorAll('.nav .item').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+function doLogout(){ document.getElementById('app').style.display='none'; document.getElementById('login').style.display='flex'; document.getElementById('loginPw').value=''; document.getElementById('loginErr').textContent=''; }
+function changePw(){
+  const a=document.getElementById('pwNew').value.trim(), b=document.getElementById('pwNew2').value.trim();
+  if(!a){ alert('새 비밀번호를 입력하세요.'); return; }
+  if(a!==b){ document.getElementById('pwMsg').style.color='#c92a2a'; document.getElementById('pwMsg').textContent='두 비밀번호가 달라요.'; return; }
+  try{ localStorage.setItem('tbook_pw',a); }catch(e){}
+  document.getElementById('pwNew').value=''; document.getElementById('pwNew2').value='';
+  document.getElementById('pwMsg').style.color='#2b8a3e'; document.getElementById('pwMsg').textContent='비밀번호를 바꿨어요.';
 }
-function showPage(tab){
+
+/* ================= 네비게이션 ================= */
+function navBtn(tab){ return document.querySelector('.nav button[data-tab="'+tab+'"]'); }
+function go(tab, btn){
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  (btn||navBtn(tab)).classList.add('active');
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
   document.getElementById('page-'+tab).classList.add('show');
-}
-function go(tab, btn, sub){
-  // top-level menu (non-play) click
-  if(tab!=='play'){
-    activateTab(btn);
-    showPage(tab);
-    // close play submenu visually
-    document.getElementById('sub-play').classList.remove('open');
-    document.querySelector('[data-tab="play"] .caret').classList.remove('rot');
-    if(tab==='color'){}
-    if(tab==='value') drawSphere();
-    if(tab==='ai') buildPrompt();
-    if(tab==='expo') loadExpo();
-    return;
-  }
-  // play submenu click
-  document.querySelectorAll('.nav .item').forEach(b=>b.classList.remove('active'));
-  document.querySelector('[data-tab="play"]').classList.add('active');
-  showPage('play');
-  document.querySelectorAll('#sub-play button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.sub-play').forEach(s=> s.style.display='none');
-  document.querySelector('.sub-play[data-sub="'+sub+'"]').style.display='block';
-  if(sub==='color'){ drawWheel(); updHSL(); updHarm(); }
-  if(sub==='value'){ drawSphere(); initLightLab(); updVal(); }
-  if(sub==='comp'){ initOp(); refreshCompActivities(); }
-}
-function goMain(){ go('home', document.querySelector('[data-tab="home"]')); window.scrollTo(0,0); }
-function homeGo(tab){
-  if(tab==='play'){
-    document.getElementById('sub-play').classList.add('open');
-    document.querySelector('[data-tab="play"] .caret').classList.add('rot');
-    go('play', document.querySelector('#sub-play [data-sub="draw"]'), 'draw');
-  } else {
-    go(tab, document.querySelector('[data-tab="'+tab+'"]'));
-  }
+  if(tab==='seat') seatRenderAll();
+  if(tab==='materials') matRender();
+  if(tab==='checklist') clRender();
+  if(tab==='planner') planRender();
+  if(tab==='timer') timerShow();
   window.scrollTo(0,0);
 }
+function esc(s){ return (s==null?'':''+s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c])); }
+function lsGet(k,def){ try{ const s=localStorage.getItem(k); return s?JSON.parse(s):def; }catch(e){ return def; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
 
-/* ============ 그리기 캔버스 ============ */
-const cv = document.getElementById('paint');
-const ctx = cv.getContext('2d');
-ctx.lineCap='round'; ctx.lineJoin='round';
-let drawing=false, color='#ff6b6b', size=8, tool='brush', startX=0, startY=0, snapshot=null;
-const palette=['#000000','#ffffff','#e03131','#f76707','#f5d90a','#2b9e6e',
-               '#1971c2','#7048e8','#e64980','#a9611f','#ff8787','#495057'];
-const sw=document.getElementById('swatches');
-palette.forEach((c,i)=>{
-  const s=document.createElement('span');
-  s.style.background=c;
-  if(i===2)s.classList.add('sel');
-  s.onclick=()=>{ color=c;
-    document.querySelectorAll('#swatches span').forEach(x=>x.classList.remove('sel'));
-    s.classList.add('sel'); document.getElementById('picker').value=(c.length===7?c:'#ff6b6b');};
-  sw.appendChild(s);
-});
-/* 도구 선택 (그리기 도구 툴바에 한정) */
-document.querySelectorAll('#tools .tbtn').forEach(b=>{
-  b.onclick=()=>{ tool=b.dataset.tool;
-    document.querySelectorAll('#tools .tbtn').forEach(x=>x.classList.remove('sel'));
-    b.classList.add('sel'); };
-});
-document.getElementById('picker').oninput=e=>{color=e.target.value;
-  document.querySelectorAll('#swatches span').forEach(x=>x.classList.remove('sel'));};
-document.getElementById('brushSize').oninput=e=>{size=+e.target.value; document.getElementById('sizeLabel').textContent=size;};
-document.getElementById('clearBtn').onclick=()=>{ctx.clearRect(0,0,cv.width,cv.height);};
-document.getElementById('saveBtn').onclick=()=>{
-  const tmp=document.createElement('canvas'); tmp.width=cv.width; tmp.height=cv.height;
-  const t=tmp.getContext('2d'); t.fillStyle='#fff'; t.fillRect(0,0,tmp.width,tmp.height); t.drawImage(cv,0,0);
-  const a=document.createElement('a'); a.download='나의그림.png'; a.href=tmp.toDataURL('image/png'); a.click();
-};
-/* 이미지 불러오기 (사진 위에 그리기) */
-document.getElementById('uploadBtn').onclick=()=>document.getElementById('imgInput').click();
-document.getElementById('imgInput').onchange=e=>{
-  const f=e.target.files[0]; if(!f)return;
-  const url=URL.createObjectURL(f); const img=new Image();
-  img.onload=()=>{
-    const r=Math.min(cv.width/img.width, cv.height/img.height);
-    const w=img.width*r, h=img.height*r;
-    ctx.globalCompositeOperation='source-over';
-    ctx.drawImage(img,(cv.width-w)/2,(cv.height-h)/2,w,h);
-    URL.revokeObjectURL(url);
-  };
-  img.src=url; e.target.value='';
-};
-function pos(e){
-  const r=cv.getBoundingClientRect();
-  const x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
-  const y=(e.touches?e.touches[0].clientY:e.clientY)-r.top;
-  return {x:x*(cv.width/r.width), y:y*(cv.height/r.height)};
+/* ================= 자리배치 ================= */
+let SEAT=null, seatSel=null;
+function seatDefault(){ return { current:'우리 반', roles:{A:'바닥쓸기',B:'나누미',C:'정돈이',D:'제출이'}, classes:{ '우리 반':{students:[],groupSize:4,groupCount:6,seats:new Array(24).fill(null),roleOffset:{}} } }; }
+function seatLoad(){ SEAT=lsGet('tbook_seat',null)||seatDefault(); if(!SEAT.classes||!Object.keys(SEAT.classes).length) SEAT=seatDefault(); if(!SEAT.roles) SEAT.roles={A:'바닥쓸기',B:'나누미',C:'정돈이',D:'제출이'}; if(!SEAT.current||!SEAT.classes[SEAT.current]) SEAT.current=Object.keys(SEAT.classes)[0]; }
+function seatSave(msg){ lsSet('tbook_seat',SEAT); if(msg){ const m=document.getElementById('seatMsg'); if(m){ m.textContent=msg; setTimeout(()=>{m.textContent='';},2600);} } }
+function cur(){ return SEAT.classes[SEAT.current]; }
+function seatResize(){ const c=cur(); const t=c.groupSize*c.groupCount; const o=c.seats||[]; c.seats=new Array(t).fill(null).map((_,i)=>o[i]||null); }
+function sShuf(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=a[i];a[i]=a[j];a[j]=t; } return a; }
+function seatRenderAll(){
+  if(!SEAT) seatLoad();
+  document.getElementById('classTabs').innerHTML=Object.keys(SEAT.classes).map(n=>'<button class="seg'+(n===SEAT.current?' sel':'')+'" onclick="seatPickClass(\''+n.replace(/'/g,"\\'")+'\')">'+esc(n)+'</button>').join('');
+  const c=cur();
+  document.getElementById('seatRoster').value=(c.students||[]).join('\n');
+  const sizes=[[1,'1인'],[2,'2인'],[4,'4인 모둠'],[6,'6인 모둠'],[8,'8인 모둠']];
+  document.getElementById('groupSizeSeg').innerHTML=sizes.map(s=>'<button class="seg'+(c.groupSize===s[0]?' sel':'')+'" onclick="seatSetSize('+s[0]+')">'+s[1]+'</button>').join('');
+  document.getElementById('groupCount').value=c.groupCount; document.getElementById('gcVal').textContent=c.groupCount;
+  document.getElementById('roleA').value=SEAT.roles.A; document.getElementById('roleB').value=SEAT.roles.B; document.getElementById('roleC').value=SEAT.roles.C; document.getElementById('roleD').value=SEAT.roles.D;
+  document.getElementById('roleBox').style.display=(c.groupSize===4?'block':'none');
+  seatRenderPairs(); seatRenderLayouts(); seatRenderGrid();
 }
-function start(e){
-  drawing=true; const p=pos(e); startX=p.x; startY=p.y;
-  if(tool==='brush'||tool==='eraser'){ ctx.beginPath(); ctx.moveTo(p.x,p.y); }
-  else { snapshot=ctx.getImageData(0,0,cv.width,cv.height); }
-  e.preventDefault();
+function seatRenderGrid(){
+  const c=cur(); const gs=c.groupSize, gc=c.groupCount;
+  const cols=gs===1?1:(gs===2?2:(gs===4?2:(gs===6?3:(gs===8?4:2))));
+  const grid=document.getElementById('seatGrid'); grid.innerHTML='';
+  for(let g=0;g<gc;g++){ const box=document.createElement('div'); box.className='group'; box.style.gridTemplateColumns='repeat('+cols+',1fr)';
+    for(let p=0;p<gs;p++){ const idx=g*gs+p; const name=c.seats[idx]||null;
+      const seat=document.createElement('div'); seat.className='seat'+(name?'':' empty')+(seatSel===idx?' sel':'');
+      let h='<div class="nm">'+(name?esc(name):'빈자리')+'</div>';
+      if(gs===4){ const off=(c.roleOffset&&c.roleOffset[g])||0; const role=['A','B','C','D'][(p+off)%4]; h+='<div class="role '+role+'">'+role+'·'+esc(SEAT.roles[role]||'')+'</div>'; }
+      seat.innerHTML=h; seat.onclick=(function(i){return function(){seatClick(i);};})(idx); box.appendChild(seat); }
+    grid.appendChild(box); }
 }
-function move(e){
-  if(!drawing)return;
-  const p=pos(e); ctx.lineWidth=size;
-  if(tool==='eraser'){ ctx.globalCompositeOperation='destination-out'; ctx.strokeStyle='rgba(0,0,0,1)'; ctx.lineTo(p.x,p.y); ctx.stroke(); }
-  else if(tool==='brush'){ ctx.globalCompositeOperation='source-over'; ctx.strokeStyle=color; ctx.lineTo(p.x,p.y); ctx.stroke(); }
-  else { ctx.globalCompositeOperation='source-over'; ctx.putImageData(snapshot,0,0); drawShape(tool,startX,startY,p.x,p.y); }
-  e.preventDefault();
+function seatClick(i){ if(seatSel===null) seatSel=i; else if(seatSel===i) seatSel=null; else { const c=cur(); const t=c.seats[seatSel]||null; c.seats[seatSel]=c.seats[i]||null; c.seats[i]=t; seatSel=null; seatSave(); } seatRenderGrid(); }
+function seatPickClass(n){ SEAT.current=n; seatSel=null; document.getElementById('seatWarn').textContent=''; seatSave(); seatRenderAll(); }
+function seatAddClass(){ const el=document.getElementById('newClass'); const n=(el.value||'').trim(); if(!n)return; if(!SEAT.classes[n]) SEAT.classes[n]={students:[],groupSize:4,groupCount:6,seats:new Array(24).fill(null),roleOffset:{}}; SEAT.current=n; el.value=''; seatSave(); seatRenderAll(); }
+function seatDelClass(){ if(Object.keys(SEAT.classes).length<=1){ alert('반이 하나뿐이라 삭제할 수 없어요.'); return; } if(!confirm("'"+SEAT.current+"' 반을 삭제할까요?"))return; delete SEAT.classes[SEAT.current]; SEAT.current=Object.keys(SEAT.classes)[0]; seatSave(); seatRenderAll(); }
+function seatSaveRoster(){ cur().students=document.getElementById('seatRoster').value.split('\n').map(s=>s.trim()).filter(Boolean); seatSave('명단을 저장했어요 ('+cur().students.length+'명).'); seatRenderPairs(); }
+function seatSetSize(v){ cur().groupSize=v; seatResize(); seatSave(); seatRenderAll(); }
+function seatRenderPairs(){
+  const c=cur(); const opts='<option value="">학생 선택</option>'+(c.students||[]).map(s=>'<option value="'+esc(s)+'">'+esc(s)+'</option>').join('');
+  ['apartA','apartB','togetherA','togetherB'].forEach(id=>{ const el=document.getElementById(id); if(el) el.innerHTML=opts; });
+  function lh(type){ const a=c[type]||[]; if(!a.length) return '<span style="font-size:12.5px;color:var(--muted);">아직 없음</span>'; return a.map((pr,i)=>'<span class="pill '+(type==='together'?'ok':'no')+'" style="margin:2px;">'+esc(pr[0])+' ↔ '+esc(pr[1])+' <b style="cursor:pointer;" onclick="seatDelPair(\''+type+'\','+i+')">✕</b></span>').join(''); }
+  document.getElementById('apartList').innerHTML=lh('apart'); document.getElementById('togetherList').innerHTML=lh('together');
 }
-function end(){drawing=false;}
-function drawShape(t,x1,y1,x2,y2){
-  const fill=document.getElementById('fillChk').checked;
-  ctx.lineWidth=size; ctx.strokeStyle=color; ctx.fillStyle=color; ctx.beginPath();
-  if(t==='line'){ ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); return; }
-  if(t==='rect'){ ctx.rect(x1,y1,x2-x1,y2-y1); }
-  else if(t==='circle'){ ctx.ellipse((x1+x2)/2,(y1+y2)/2,Math.abs(x2-x1)/2,Math.abs(y2-y1)/2,0,0,Math.PI*2); }
-  else if(t==='triangle'){ ctx.moveTo((x1+x2)/2,y1); ctx.lineTo(x1,y2); ctx.lineTo(x2,y2); ctx.closePath(); }
-  else if(t==='star'){ starPath((x1+x2)/2,(y1+y2)/2,Math.max(Math.abs(x2-x1),Math.abs(y2-y1))/2); }
-  if(fill) ctx.fill(); else ctx.stroke();
+function seatAddPair(type){ const a=document.getElementById(type+'A').value, b=document.getElementById(type+'B').value; if(!a||!b||a===b){ alert('서로 다른 두 학생을 선택하세요.'); return; } const c=cur(); c[type]=c[type]||[]; if(c[type].some(pr=>(pr[0]===a&&pr[1]===b)||(pr[0]===b&&pr[1]===a)))return; c[type].push([a,b]); seatSave(); seatRenderPairs(); }
+function seatDelPair(type,i){ cur()[type].splice(i,1); seatSave(); seatRenderPairs(); }
+function seatRandom(){
+  const c=cur(); const gs=c.groupSize, gc=c.groupCount, total=gs*gc; const students=(c.students||[]).slice(); seatSel=null;
+  const parent={}; students.forEach(s=>parent[s]=s); function find(x){ while(parent[x]!==x){ parent[x]=parent[parent[x]]; x=parent[x]; } return x; }
+  (c.together||[]).forEach(pr=>{ if(parent[pr[0]]!==undefined&&parent[pr[1]]!==undefined) parent[find(pr[0])]=find(pr[1]); });
+  const cm={}; students.forEach(s=>{ const r=find(s); (cm[r]=cm[r]||[]).push(s); }); const clusters=Object.keys(cm).map(k=>cm[k]);
+  const tooBig=clusters.some(cl=>cl.length>gs);
+  const apart={}; (c.apart||[]).forEach(pr=>{ apart[[pr[0],pr[1]].sort().join('|')]=1; });
+  function viol(bins){ let v=0; bins.forEach(bin=>{ for(let i=0;i<bin.length;i++)for(let j=i+1;j<bin.length;j++){ if(apart[[bin[i],bin[j]].sort().join('|')])v++; } }); return v; }
+  let best=null,bestV=Infinity;
+  for(let a=0;a<1500;a++){ const order=sShuf(clusters.slice()); const bins=[]; for(let g=0;g<gc;g++)bins.push([]); let ok=true;
+    for(let ci=0;ci<order.length;ci++){ const cl=order[ci]; if(cl.length>gs){ok=false;break;} const cand=[]; for(let g=0;g<gc;g++){ if(bins[g].length+cl.length<=gs)cand.push(g); } if(!cand.length){ok=false;break;} sShuf(cand); let ch=cand[0];
+      for(let k=0;k<cand.length;k++){ const g=cand[k]; let bad=false; for(let x=0;x<cl.length&&!bad;x++)for(let y=0;y<bins[g].length;y++){ if(apart[[cl[x],bins[g][y]].sort().join('|')]){bad=true;break;} } if(!bad){ch=g;break;} }
+      bins[ch]=bins[ch].concat(cl); }
+    if(!ok)continue; const v=viol(bins); if(v<bestV){bestV=v;best=bins; if(v===0)break;} }
+  const seats=new Array(total).fill(null); let warn='';
+  if(best){ for(let g=0;g<gc;g++)for(let p=0;p<best[g].length;p++)seats[g*gs+p]=best[g][p]; if(bestV>0) warn+='⚠️ "붙이면 안 되는" 짝 '+bestV+'쌍을 다 못 떨어뜨렸어요. '; }
+  else { const st=sShuf(students.slice()); for(let i=0;i<Math.min(total,st.length);i++)seats[i]=st[i]; warn+='⚠️ 규칙대로 다 넣지 못했어요. '; }
+  c.seats=seats; const extra=students.length-total; if(extra>0) warn='⚠️ 학생이 자리보다 '+extra+'명 많아요. '+warn; if(tooBig) warn+='⚠️ "꼭 붙여야 하는" 인원이 모둠 크기보다 많아요. ';
+  document.getElementById('seatWarn').textContent=warn; seatSave(); seatRenderGrid();
 }
-function starPath(cx,cy,r){
-  const spikes=5, outer=r, inner=r*0.45, step=Math.PI/spikes; let rot=-Math.PI/2;
-  ctx.moveTo(cx+Math.cos(rot)*outer, cy+Math.sin(rot)*outer);
-  for(let i=0;i<spikes;i++){
-    rot+=step; ctx.lineTo(cx+Math.cos(rot)*inner, cy+Math.sin(rot)*inner);
-    rot+=step; ctx.lineTo(cx+Math.cos(rot)*outer, cy+Math.sin(rot)*outer);
+function seatClearAssign(){ const c=cur(); c.seats=new Array(c.groupSize*c.groupCount).fill(null); seatSel=null; document.getElementById('seatWarn').textContent=''; seatSave(); seatRenderGrid(); }
+function seatApplyAll(){ const c=cur(); Object.keys(SEAT.classes).forEach(k=>{ const cl=SEAT.classes[k]; cl.groupSize=c.groupSize; cl.groupCount=c.groupCount; const t=cl.groupSize*cl.groupCount; const o=cl.seats||[]; cl.seats=new Array(t).fill(null).map((_,i)=>o[i]||null); }); seatSave('전체 반에 적용했어요.'); seatRenderAll(); }
+function seatRotateRoles(){ const c=cur(); c.roleOffset=c.roleOffset||{}; for(let g=0;g<c.groupCount;g++)c.roleOffset[g]=((c.roleOffset[g]||0)+1)%4; seatSave(); seatRenderGrid(); }
+function seatRandomRoles(){ const c=cur(); c.roleOffset=c.roleOffset||{}; for(let g=0;g<c.groupCount;g++)c.roleOffset[g]=Math.floor(Math.random()*4); seatSave(); seatRenderGrid(); }
+function seatSaveLayout(){ const el=document.getElementById('layoutName'); const nm=(el.value||'').trim(); if(!nm){ alert('자리표 이름을 적어주세요.'); return; } const c=cur(); c.saved=c.saved||[]; const snap={name:nm,groupSize:c.groupSize,groupCount:c.groupCount,seats:(c.seats||[]).slice(),roleOffset:JSON.parse(JSON.stringify(c.roleOffset||{}))}; const ex=c.saved.findIndex(s=>s.name===nm); if(ex>=0){ if(!confirm("'"+nm+"' 이름이 있어요. 덮어쓸까요?"))return; c.saved[ex]=snap; } else c.saved.push(snap); el.value=''; seatSave('자리표를 저장했어요.'); seatRenderLayouts(); }
+function seatRenderLayouts(){ const c=cur(); const box=document.getElementById('layoutList'); const a=c.saved||[]; if(!a.length){ box.innerHTML='<span style="font-size:12.5px;color:var(--muted);">저장된 자리표가 없어요.</span>'; return; } box.innerHTML=a.map((s,i)=>'<div class="row" style="margin:5px 0;"><span class="pill" style="background:#eceaff;color:var(--brand);">📌 '+esc(s.name)+' ('+s.groupSize+'인·'+s.groupCount+'모둠)</span><button class="mini" onclick="seatLoadLayout('+i+')">불러오기</button><button class="mini gray" onclick="seatDelLayout('+i+')">삭제</button></div>').join(''); }
+function seatLoadLayout(i){ const c=cur(); const s=(c.saved||[])[i]; if(!s)return; c.groupSize=s.groupSize; c.groupCount=s.groupCount; c.seats=(s.seats||[]).slice(); c.roleOffset=JSON.parse(JSON.stringify(s.roleOffset||{})); seatSel=null; seatSave('자리표를 불러왔어요.'); seatRenderAll(); }
+function seatDelLayout(i){ if(!confirm('이 자리표를 삭제할까요?'))return; cur().saved.splice(i,1); seatSave(); seatRenderLayouts(); }
+function seatBoardMode(on){ const pg=document.getElementById('page-seat'); pg.classList.toggle('board',on); document.getElementById('boardExit').style.display=on?'block':'none'; try{ if(on){ if(pg.requestFullscreen)pg.requestFullscreen(); } else if(document.fullscreenElement) document.exitFullscreen(); }catch(e){} window.scrollTo(0,0); }
+
+/* ================= 재료 정리 ================= */
+let MAT=[], matView='all';
+function matLoad(){ MAT=lsGet('tbook_mat',[]); }
+function matSaveLs(){ lsSet('tbook_mat',MAT); }
+function matAdd(){ const n=document.getElementById('matName').value.trim(); if(!n){ alert('재료 이름을 입력하세요.'); return; }
+  MAT.push({name:n,cat:document.getElementById('matCat').value,qty:document.getElementById('matQty').value.trim(),place:document.getElementById('matPlace').value.trim(),status:document.getElementById('matStatus').value});
+  document.getElementById('matName').value=''; document.getElementById('matQty').value=''; document.getElementById('matPlace').value='';
+  matSaveLs(); matRender(); }
+function matFilter(v){ matView=v; matRender(); }
+function matSetStatus(i,v){ MAT[i].status=v; matSaveLs(); matRender(); }
+function matDel(i){ MAT.splice(i,1); matSaveLs(); matRender(); }
+function matRender(){
+  const body=document.getElementById('matBody'); if(!body)return;
+  const rows=MAT.map((m,i)=>({m,i})).filter(o=>matView==='all'||o.m.status!=='ok');
+  document.getElementById('matCount').textContent='('+MAT.length+'개, 부족·없음 '+MAT.filter(m=>m.status!=='ok').length+'개)';
+  if(!rows.length){ body.innerHTML='<tr><td colspan="6" style="color:var(--muted);padding:16px;">'+(MAT.length?'부족·없음 재료가 없어요 👍':'아직 등록된 재료가 없어요. 위에서 추가해 보세요.')+'</td></tr>'; return; }
+  const badge={ok:'<span class="pill ok">충분</span>',low:'<span class="pill low">부족</span>',no:'<span class="pill no">없음</span>'};
+  body.innerHTML=rows.map(o=>{ const m=o.m,i=o.i; return '<tr><td><b>'+esc(m.name)+'</b></td><td>'+esc(m.cat)+'</td><td>'+esc(m.qty||'-')+'</td><td>'+esc(m.place||'-')+'</td>'+
+    '<td><select class="in" style="padding:5px;" onchange="matSetStatus('+i+',this.value)"><option value="ok"'+(m.status==='ok'?' selected':'')+'>충분</option><option value="low"'+(m.status==='low'?' selected':'')+'>부족</option><option value="no"'+(m.status==='no'?' selected':'')+'>없음</option></select> '+badge[m.status]+'</td>'+
+    '<td><button class="mini gray" onclick="matDel('+i+')">삭제</button></td></tr>'; }).join('');
+}
+function matExport(){ dl('미술재료.json', MAT); }
+document.addEventListener('DOMContentLoaded',()=>{});
+
+/* ================= 체크리스트 ================= */
+let CL={lists:[], cur:0};
+function clLoad(){ CL=lsGet('tbook_cl',null)||{lists:[{name:'기본 목록',items:[]}],cur:0}; if(!CL.lists.length) CL={lists:[{name:'기본 목록',items:[]}],cur:0}; if(CL.cur>=CL.lists.length)CL.cur=0; }
+function clSave(){ lsSet('tbook_cl',CL); }
+function clAddList(){ const el=document.getElementById('clNew'); const n=(el.value||'').trim(); if(!n)return; CL.lists.push({name:n,items:[]}); CL.cur=CL.lists.length-1; el.value=''; clSave(); clRender(); }
+function clPick(i){ CL.cur=i; clRender(); }
+function clDelList(i){ if(CL.lists.length<=1){ alert('목록이 하나뿐이에요.'); return; } if(!confirm('이 목록을 삭제할까요?'))return; CL.lists.splice(i,1); CL.cur=0; clSave(); clRender(); }
+function clAddItem(){ const el=document.getElementById('clItem'); const t=(el.value||'').trim(); if(!t)return; CL.lists[CL.cur].items.push({text:t,done:false}); el.value=''; clSave(); clRender(); }
+function clToggle(i){ const it=CL.lists[CL.cur].items[i]; it.done=!it.done; clSave(); clRender(); }
+function clDelItem(i){ CL.lists[CL.cur].items.splice(i,1); clSave(); clRender(); }
+function clClearDone(){ CL.lists[CL.cur].items=CL.lists[CL.cur].items.filter(it=>!it.done); clSave(); clRender(); }
+function clRender(){
+  const tabs=document.getElementById('clTabs'); if(!tabs)return;
+  tabs.innerHTML=CL.lists.map((l,i)=>'<button class="seg'+(i===CL.cur?' sel':'')+'" onclick="clPick('+i+')">'+esc(l.name)+'</button>').join('')+
+    ' <button class="mini gray" onclick="clDelList('+CL.cur+')">현재 목록 삭제</button>';
+  const list=CL.lists[CL.cur].items;
+  document.getElementById('clList').innerHTML = list.length? list.map((it,i)=>
+    '<div class="row" style="padding:7px 0;border-bottom:1px solid var(--line);"><label style="flex:1;display:flex;gap:10px;align-items:center;cursor:pointer;font-size:15px;'+(it.done?'text-decoration:line-through;color:var(--muted);':'')+'"><input type="checkbox" '+(it.done?'checked':'')+' onchange="clToggle('+i+')" style="width:18px;height:18px;">'+esc(it.text)+'</label><button class="mini gray" onclick="clDelItem('+i+')">✕</button></div>'
+  ).join('') : '<div style="color:var(--muted);font-size:14px;">준비물을 추가해 보세요.</div>';
+}
+
+/* ================= 랜덤 뽑기 ================= */
+function pickNames(){ return document.getElementById('pickRoster').value.split('\n').map(s=>s.trim()).filter(Boolean); }
+function pickLoadClass(){ if(!SEAT) seatLoad(); const st=(cur().students||[]); if(!st.length){ alert('자리배치에 저장된 명단이 없어요.'); return; } document.getElementById('pickRoster').value=st.join('\n'); }
+function pickOne(){ const n=pickNames(); const out=document.getElementById('pickResult'); document.getElementById('pickGroupsOut').innerHTML=''; if(!n.length){ out.textContent='이름을 먼저 넣어주세요'; return; }
+  let cnt=0; const iv=setInterval(()=>{ out.textContent=n[Math.floor(Math.random()*n.length)]; if(++cnt>12){ clearInterval(iv); out.textContent='🎉 '+n[Math.floor(Math.random()*n.length)]; } },70); }
+function pickGroups(){ const n=sShuf(pickNames()); const out=document.getElementById('pickGroupsOut'); document.getElementById('pickResult').textContent='👥 모둠 편성'; const k=Math.max(2,+document.getElementById('pickGroupN').value||4); if(!n.length){ out.innerHTML=''; return; }
+  const groups=[]; for(let i=0;i<n.length;i+=k) groups.push(n.slice(i,i+k));
+  out.innerHTML='<div style="display:flex;flex-wrap:wrap;gap:12px;">'+groups.map((g,i)=>'<div class="group" style="min-width:150px;"><div style="font-weight:800;margin-bottom:6px;color:var(--brand);">'+(i+1)+'모둠</div>'+g.map(x=>'<div class="seat" style="cursor:default;min-height:38px;">'+esc(x)+'</div>').join('')+'</div>').join('')+'</div>'; }
+
+/* ================= 타이머 ================= */
+let timerSec=600, timerIv=null;
+function timerFmt(s){ s=Math.max(0,s); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+function timerShow(){ document.getElementById('timerDisp').textContent=timerFmt(timerSec); }
+function timerAdd(d){ timerSec=Math.max(0,timerSec+d); timerShow(); }
+function timerSet(s){ timerSec=s; timerShow(); }
+function timerPreset(m){ timerSec=m*60; timerShow(); if(timerIv){ timerToggle(); } }
+function timerReset(){ if(timerIv){ clearInterval(timerIv); timerIv=null; document.getElementById('timerStartBtn').textContent='▶ 시작'; } }
+function timerToggle(){ const btn=document.getElementById('timerStartBtn');
+  if(timerIv){ clearInterval(timerIv); timerIv=null; btn.textContent='▶ 계속'; return; }
+  if(timerSec<=0)return; btn.textContent='⏸ 멈춤';
+  timerIv=setInterval(()=>{ timerSec--; timerShow(); if(timerSec<=0){ clearInterval(timerIv); timerIv=null; btn.textContent='▶ 시작'; timerBeep(); } },1000);
+}
+function timerBeep(){ try{ const a=new (window.AudioContext||window.webkitAudioContext)(); let t=a.currentTime;
+  for(let i=0;i<3;i++){ const o=a.createOscillator(),g=a.createGain(); o.frequency.value=880; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(0.001,t); g.gain.exponentialRampToValueAtTime(0.3,t+0.02); g.gain.exponentialRampToValueAtTime(0.001,t+0.35); o.start(t); o.stop(t+0.37); t+=0.45; }
+  }catch(e){} alert('⏰ 시간이 다 됐어요!'); }
+
+/* ================= 메모 ================= */
+function memoInit(){ const a=document.getElementById('memoArea'); a.value=lsGet('tbook_memo',''); let tm=null; a.addEventListener('input',()=>{ clearTimeout(tm); document.getElementById('memoMsg').textContent='저장 중...'; tm=setTimeout(()=>{ lsSet('tbook_memo',a.value); document.getElementById('memoMsg').textContent='자동 저장됨 ✓'; },500); }); }
+
+/* ================= 백업/복원 & 유틸 ================= */
+function dl(name,obj){ const b=new Blob([JSON.stringify(obj,null,1)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; a.click(); }
+function backupAll(){ dl('미술교사비법책_백업.json',{ seat:lsGet('tbook_seat',null), mat:lsGet('tbook_mat',[]), cl:lsGet('tbook_cl',null), memo:lsGet('tbook_memo',''), plan:lsGet('tbook_plan',null), classes:lsGet('tbook_classes',[]) }); }
+document.getElementById('restoreAll').onchange=function(e){ const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d.seat)lsSet('tbook_seat',d.seat); if(d.mat)lsSet('tbook_mat',d.mat); if(d.cl)lsSet('tbook_cl',d.cl); if(d.memo!==undefined)lsSet('tbook_memo',d.memo); if(d.plan)lsSet('tbook_plan',d.plan); if(d.classes)lsSet('tbook_classes',d.classes); alert('불러왔어요. 화면을 새로고침합니다.'); location.reload(); }catch(err){ alert('올바른 백업 파일이 아니에요.'); } }; r.readAsText(f); e.target.value=''; };
+document.getElementById('matImport').onchange=function(e){ const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(Array.isArray(d)){ MAT=d; matSaveLs(); matRender(); } else alert('재료 목록 파일이 아니에요.'); }catch(err){ alert('파일을 읽을 수 없어요.'); } }; r.readAsText(f); e.target.value=''; };
+
+/* seating 슬라이더/역할 입력 바인딩 */
+document.getElementById('groupCount').addEventListener('input',function(e){ cur().groupCount=+e.target.value; document.getElementById('gcVal').textContent=e.target.value; seatResize(); seatSave(); seatRenderGrid(); });
+['A','B','C','D'].forEach(function(r){ document.getElementById('role'+r).addEventListener('input',function(){ SEAT.roles[r]=this.value; seatSave(); seatRenderGrid(); }); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape' && document.getElementById('page-seat').classList.contains('board')) seatBoardMode(false); });
+
+/* ================= 학생 앱 이동 ================= */
+function studentUrl(){ return lsGet('tbook_studenturl','https://hongji33.github.io/artclass/'); }
+function goStudent(){ const u=studentUrl(); if(!u){ alert('설정에서 학생 앱 주소를 먼저 넣어주세요.'); go('settings',navBtn('settings')); return; } window.open(u,'_blank'); }
+function saveStudentUrl(){ lsSet('tbook_studenturl',(document.getElementById('setStudentUrl').value||'').trim()); const m=document.getElementById('stuMsg'); m.textContent='저장했어요.'; setTimeout(()=>m.textContent='',2000); }
+
+/* ================= 담당 반(공용) ================= */
+function getMyClasses(){ return lsGet('tbook_classes',[]); }
+function applyMyClasses(list){
+  lsSet('tbook_classes', list);
+  if(!SEAT) seatLoad();
+  const keys=Object.keys(SEAT.classes);
+  const onlyEmpty = keys.length===1 && SEAT.classes[keys[0]] && (SEAT.classes[keys[0]].students||[]).length===0 && (SEAT.classes[keys[0]].seats||[]).every(s=>!s);
+  if(onlyEmpty && list.length){
+    SEAT.classes={}; list.forEach(n=>{ SEAT.classes[n]={students:[],groupSize:4,groupCount:6,seats:new Array(24).fill(null),roleOffset:{}}; }); SEAT.current=list[0]; seatSave();
   }
-  ctx.closePath();
+  const s=document.getElementById('setCls'); if(s) s.value=list.join('\n');
 }
-cv.addEventListener('mousedown',start); cv.addEventListener('mousemove',move);
-window.addEventListener('mouseup',end);
-cv.addEventListener('touchstart',start,{passive:false}); cv.addEventListener('touchmove',move,{passive:false});
-cv.addEventListener('touchend',end);
+function onboardSave(){ const list=document.getElementById('onboardCls').value.split('\n').map(s=>s.trim()).filter(Boolean); if(list.length) applyMyClasses(list); document.getElementById('onboard').style.display='none'; seatRenderAll(); }
+function saveMyClassesFromSettings(){ const list=document.getElementById('setCls').value.split('\n').map(s=>s.trim()).filter(Boolean); applyMyClasses(list); const m=document.getElementById('setClsMsg'); m.textContent='저장했어요. 자리배치·수업계획에 반영돼요.'; setTimeout(()=>m.textContent='',2600); seatRenderAll(); }
 
-/* ============ 색상환 ============ */
-function drawWheel(){
-  const w=document.getElementById('wheel'); if(!w)return;
-  const wx=w.getContext('2d'), R=115, cx=115, cy=115;
-  for(let a=0;a<360;a++){
-    wx.beginPath(); wx.moveTo(cx,cy);
-    wx.arc(cx,cy,R,(a-1)*Math.PI/180,(a+1)*Math.PI/180);
-    wx.closePath(); wx.fillStyle='hsl('+a+',85%,55%)'; wx.fill();
-  }
-  wx.beginPath(); wx.arc(cx,cy,42,0,2*Math.PI); wx.fillStyle='#fff'; wx.fill();
-  w.onclick=(e)=>{
-    const r=w.getBoundingClientRect();
-    const x=e.clientX-r.left-cx, y=e.clientY-r.top-cy;
-    let ang=Math.atan2(y,x)*180/Math.PI; if(ang<0)ang+=360;
-    const col='hsl('+Math.round(ang)+',85%,55%)';
-    document.getElementById('wheelSwatch').style.background=col;
-    document.getElementById('wheelHex').textContent='색상 각도: '+Math.round(ang)+'°';
-    document.getElementById('wheelName').textContent=hueName(ang)+' 계열';
-  };
+/* ================= 주별 수업계획 ================= */
+let PLAN=null;
+function planLoad(){ PLAN=lsGet('tbook_plan',null)||{start:'',weeks:16,classes:[],rows:[]}; if(!PLAN.rows)PLAN.rows=[]; if(!PLAN.classes)PLAN.classes=[]; }
+function planSaveLs(msg){ lsSet('tbook_plan',PLAN); if(msg){ const m=document.getElementById('planMsg'); if(m){ m.textContent=msg; setTimeout(()=>m.textContent='',2200);} } }
+function planRender(){ if(!PLAN)planLoad();
+  document.getElementById('planStart').value=PLAN.start||'';
+  document.getElementById('planWeeks').value=PLAN.weeks||16;
+  const cls=(PLAN.classes&&PLAN.classes.length)?PLAN.classes:getMyClasses();
+  document.getElementById('planClasses').value=cls.join(', ');
+  planRenderTable();
 }
-function hueName(a){
-  if(a<20||a>=340)return '빨강'; if(a<45)return '주황'; if(a<70)return '노랑';
-  if(a<160)return '초록'; if(a<200)return '청록'; if(a<260)return '파랑';
-  if(a<300)return '보라'; return '자홍';
+function planBuild(){
+  PLAN.start=document.getElementById('planStart').value;
+  PLAN.weeks=Math.max(1,Math.min(30,+document.getElementById('planWeeks').value||16));
+  PLAN.classes=document.getElementById('planClasses').value.split(',').map(s=>s.trim()).filter(Boolean); if(!PLAN.classes.length)PLAN.classes=['우리 반'];
+  const old=PLAN.rows||[]; PLAN.rows=[]; for(let i=0;i<PLAN.weeks;i++)PLAN.rows.push(old[i]||{lesson:'',event:false,eventName:'',done:{}});
+  planSaveLs('표를 만들었어요.'); planRenderTable();
 }
+function planWeekStr(i){ if(!PLAN.start)return '-'; const d=new Date(PLAN.start+'T00:00:00'); if(isNaN(d.getTime()))return '-'; d.setDate(d.getDate()+i*7); const e=new Date(d.getTime()); e.setDate(e.getDate()+4); const f=x=>(x.getMonth()+1)+'.'+x.getDate(); return f(d)+'~'+f(e); }
+function planRenderTable(){
+  const t=document.getElementById('planTable'); if(!t)return;
+  if(!PLAN.rows.length){ t.innerHTML='<tr><td style="padding:16px;color:var(--muted);border:none;">위에서 학기 시작일·주차 수·반 목록을 정하고 \'표 만들기\'를 눌러주세요.</td></tr>'; return; }
+  let html='<tr><th class="wk">주차</th><th class="dt">날짜</th><th>수업 내용</th><th style="width:190px;">반별 완료 / 행사</th></tr>';
+  html+=PLAN.rows.map((r,i)=>{
+    const lc = r.event
+      ? '<input class="in" style="width:100%;" placeholder="행사 이름 (예: 중간고사, 체험학습)" value="'+esc(r.eventName||'')+'" oninput="planSetEvent('+i+',this.value)">'
+      : '<textarea oninput="planSetLesson('+i+',this.value)" placeholder="이 주 수업 내용">'+esc(r.lesson||'')+'</textarea>';
+    const dc = r.event
+      ? '<span style="color:#a00;font-weight:700;font-size:12.5px;">행사 주간 (수업 없음)</span>'
+      : '<div class="donerow">'+(PLAN.classes||[]).map(c=>'<span class="donechk'+(r.done&&r.done[c]?' on':'')+'" onclick="planToggleDone('+i+',\''+c.replace(/'/g,"\\'")+'\')">'+esc(c)+(r.done&&r.done[c]?' ✓':'')+'</span>').join('')+'</div>';
+    return '<tr class="'+(r.event?'event':'')+'"><td class="wk">'+(i+1)+'주</td><td class="dt">'+planWeekStr(i)+'</td><td>'+lc+'</td>'+
+      '<td>'+dc+'<div style="margin-top:8px;"><label style="font-size:12px;font-weight:700;cursor:pointer;"><input type="checkbox" '+(r.event?'checked':'')+' onchange="planToggleEvent('+i+')"> 행사(수업 없음)</label></div></td></tr>';
+  }).join('');
+  t.innerHTML=html;
+}
+function planSetLesson(i,v){ PLAN.rows[i].lesson=v; planSaveLs(); }
+function planSetEvent(i,v){ PLAN.rows[i].eventName=v; planSaveLs(); }
+function planToggleDone(i,c){ const r=PLAN.rows[i]; r.done=r.done||{}; r.done[c]=!r.done[c]; planSaveLs(); planRenderTable(); }
+function planToggleEvent(i){ PLAN.rows[i].event=!PLAN.rows[i].event; planSaveLs(); planRenderTable(); }
+function planPrint(){ window.print(); }
 
-/* ============ 색 섞기 (색의 혼합 vs 빛의 혼합) ============ */
-const mixData={
-  pig:{
-    primaries:[['빨강','#e03131'],['노랑','#f5d90a'],['파랑','#1971c2']],
-    map:{ '#e03131_#f5d90a':['#f76707','주황'], '#f5d90a_#e03131':['#f76707','주황'],
-          '#e03131_#1971c2':['#7048e8','보라'], '#1971c2_#e03131':['#7048e8','보라'],
-          '#f5d90a_#1971c2':['#2b9e6e','초록'], '#1971c2_#f5d90a':['#2b9e6e','초록'] }
-  },
-  light:{
-    primaries:[['빨강','#ff2d2d'],['초록','#22c55e'],['파랑','#2d6bff']],
-    map:{ '#ff2d2d_#22c55e':['#f5e000','노랑'], '#22c55e_#ff2d2d':['#f5e000','노랑'],
-          '#22c55e_#2d6bff':['#22d3ee','청록(사이언)'], '#2d6bff_#22c55e':['#22d3ee','청록(사이언)'],
-          '#ff2d2d_#2d6bff':['#e83fd6','자홍(마젠타)'], '#2d6bff_#ff2d2d':['#e83fd6','자홍(마젠타)'] }
-  }
-};
-let mixMode='pig', mixA=null, mixB=null;
-function setMixMode(m){
-  mixMode=m; mixA=null; mixB=null;
-  document.getElementById('modePig').classList.toggle('sel',m==='pig');
-  document.getElementById('modeLight').classList.toggle('sel',m==='light');
-  document.getElementById('mixIntro').innerHTML = (m==='pig')
-    ? '🎨 <b>색(물감)의 혼합</b>은 <b>감산혼합</b>이에요. 섞을수록 점점 <b>어두워져요.</b> 색의 3원색은 <b>빨강·노랑·파랑</b>! (미술 시간에 물감으로 하는 것과 같아요.)'
-    : '💡 <b>빛의 혼합</b>은 <b>가산혼합</b>이에요. 빛을 섞을수록 점점 <b>밝아져요.</b> 빛의 3원색은 <b>빨강·초록·파랑(RGB)</b>! (TV·스마트폰 화면이 바로 이 방식이에요.)';
-  renderMixBtns();
-  document.getElementById('mixResult').style.background='#eee';
-  document.getElementById('mixText').textContent='두 색을 골라보세요!';
+/* ================= 부팅 ================= */
+function bootApp(){ seatLoad(); matLoad(); clLoad(); planLoad(); seatRenderAll(); matRender(); clRender(); memoInit(); timerShow();
+  const my=getMyClasses(); const s=document.getElementById('setCls'); if(s) s.value=my.join('\n');
+  const su=document.getElementById('setStudentUrl'); if(su) su.value=studentUrl();
+  if(!my.length) document.getElementById('onboard').style.display='flex';
 }
-function renderMixBtns(){
-  ['A','B'].forEach(slot=>{
-    const box=document.getElementById('mixBtns'+slot); box.innerHTML='';
-    mixData[mixMode].primaries.forEach(([name,c])=>{
-      const b=document.createElement('button'); b.className='quiz-opt'; b.textContent=name;
-      b.style.borderLeft='10px solid '+c;
-      b.onclick=()=>{ [...box.children].forEach(x=>{x.style.borderColor='var(--line)';});
-        b.style.borderColor='var(--accent)';
-        if(slot==='A')mixA=c; else mixB=c; computeMix(); };
-      box.appendChild(b);
-    });
-  });
-}
-function computeMix(){
-  if(!mixA||!mixB)return;
-  const res=document.getElementById('mixResult'), txt=document.getElementById('mixText');
-  if(mixA===mixB){ res.style.background=mixA; txt.textContent='같은 색은 섞어도 그대로예요 🙂'; return; }
-  const m=mixData[mixMode].map[mixA+'_'+mixB];
-  if(m){ res.style.background=m[0];
-    txt.textContent=(mixMode==='pig'? '➡️ '+m[1]+'이(가) 만들어졌어요! (2차색)' : '➡️ '+m[1]+'! 빛은 섞을수록 밝아져요 ✨'); }
-}
-
-/* ============ 명암 구 ============ */
-function drawSphere(){
-  const s=document.getElementById('sphere'); if(!s)return;
-  const sc=s.getContext('2d');
-  const light=+document.getElementById('light').value;
-  document.getElementById('lightVal').textContent=light;
-  sc.clearRect(0,0,220,220);
-  sc.fillStyle='#f1f3f5'; sc.fillRect(0,0,220,220);
-  const lx=110-(light-60)*0.6, ly=90-(light-60)*0.5;
-  const g=sc.createRadialGradient(lx,ly,10, 110,110,95);
-  const b=Math.round(light*2.4);
-  g.addColorStop(0,'rgb('+Math.min(255,b+90)+','+Math.min(255,b+90)+','+Math.min(255,b+110)+')');
-  g.addColorStop(0.5,'rgb('+Math.round(b*0.7)+','+Math.round(b*0.7)+','+Math.round(b*0.8)+')');
-  g.addColorStop(1,'rgb('+Math.round(b*0.15)+','+Math.round(b*0.15)+','+Math.round(b*0.25)+')');
-  // shadow on ground
-  sc.beginPath(); sc.ellipse(120,200,70,14,0,0,7); sc.fillStyle='rgba(0,0,0,0.18)'; sc.fill();
-  sc.beginPath(); sc.arc(110,110,88,0,7); sc.fillStyle=g; sc.fill();
-}
-const lightSlider=document.getElementById('light');
-if(lightSlider) lightSlider.oninput=drawSphere;
-
-/* ============ 보색 + 보색 활동 ============ */
-let currentComp={c1:'#e03131',n1:'빨강',c2:'#2b9e6e',n2:'초록'};
-function showComp(c1,n1,c2,n2){
-  currentComp={c1:c1,n1:n1,c2:c2,n2:n2};
-  document.getElementById('compDemo').innerHTML=
-    '<div style="background:'+c1+';color:#fff;">'+n1+'</div>'+
-    '<div style="background:'+c2+';color:#fff;">'+n2+' (보색)</div>';
-  refreshCompActivities();
-}
-function refreshCompActivities(){
-  const b1=document.getElementById('opC1'), b2=document.getElementById('opC2');
-  if(b1){ b1.style.background=currentComp.c1; b1.style.color='#fff'; b1.textContent=currentComp.n1; }
-  if(b2){ b2.style.background=currentComp.c2; b2.style.color='#fff'; b2.textContent=currentComp.n2; }
-  opPick(opActive);
-  if(opCanvas) opDraw();
-  const stage=document.getElementById('afterStage');
-  if(stage){ stage.style.background=currentComp.c1; const dot=document.getElementById('afterDot'); if(dot)dot.style.display='block';
-    document.getElementById('afterMsg').textContent='가운데 흰 점을 15초 동안 가만히 바라보세요.'; }
-}
-/* 잔상 실험 */
-let afterTimer=null;
-function startAfter(){
-  const stage=document.getElementById('afterStage'), msg=document.getElementById('afterMsg'), dot=document.getElementById('afterDot');
-  clearInterval(afterTimer);
-  stage.style.background=currentComp.c1; dot.style.display='block';
-  let t=15; msg.textContent=t+'초 동안 흰 점을 바라보세요...';
-  afterTimer=setInterval(()=>{
-    t--;
-    if(t>0){ msg.textContent=t+'초 동안 흰 점을 바라보세요...'; }
-    else{ clearInterval(afterTimer); stage.style.background='#ffffff'; dot.style.display='none';
-      msg.innerHTML='👀 지금 <b>'+currentComp.n2+'</b> 빛(보색)이 어른거리지 않나요?'; }
-  },1000);
-}
-/* 옵아트 무늬 */
-const opN=10; let opCells=[], opActive=1, opCanvas=null, opCtx=null, opCell=0;
-function initOp(){
-  opCanvas=document.getElementById('opCanvas'); if(!opCanvas)return;
-  opCtx=opCanvas.getContext('2d'); opCell=opCanvas.width/opN;
-  if(!opCanvas.dataset.bound){
-    opCanvas.addEventListener('click',opClick);
-    opCanvas.addEventListener('touchstart',e=>{ if(e.touches[0]){opClick(e.touches[0]); e.preventDefault();} },{passive:false});
-    opCanvas.dataset.bound='1';
-    opCells=Array.from({length:opN},()=>Array(opN).fill(0));
-  }
-  opDraw();
-}
-function opColor(v){ return v===2?currentComp.c2:(v===1?currentComp.c1:'#ffffff'); }
-function opDraw(){
-  if(!opCtx)return;
-  for(let r=0;r<opN;r++)for(let c=0;c<opN;c++){
-    opCtx.fillStyle=opColor(opCells[r][c]); opCtx.fillRect(c*opCell,r*opCell,opCell,opCell);
-  }
-  opCtx.strokeStyle='rgba(0,0,0,.06)';
-  for(let i=0;i<=opN;i++){
-    opCtx.beginPath(); opCtx.moveTo(i*opCell,0); opCtx.lineTo(i*opCell,opCanvas.height); opCtx.stroke();
-    opCtx.beginPath(); opCtx.moveTo(0,i*opCell); opCtx.lineTo(opCanvas.width,i*opCell); opCtx.stroke();
-  }
-}
-function opClick(e){
-  const rect=opCanvas.getBoundingClientRect();
-  const x=(e.clientX-rect.left)*(opCanvas.width/rect.width), y=(e.clientY-rect.top)*(opCanvas.height/rect.height);
-  const c=Math.floor(x/opCell), r=Math.floor(y/opCell);
-  if(r<0||r>=opN||c<0||c>=opN)return;
-  opCells[r][c]=opActive; opDraw();
-}
-function opPick(n){
-  opActive=n;
-  const b1=document.getElementById('opC1'), b2=document.getElementById('opC2');
-  if(b1)b1.style.outline=n===1?'3px solid #33272a':'none';
-  if(b2)b2.style.outline=n===2?'3px solid #33272a':'none';
-  if(b1)b1.style.outlineOffset='1px'; if(b2)b2.style.outlineOffset='1px';
-}
-function opPattern(t){
-  if(t==='clear'){ opCells=Array.from({length:opN},()=>Array(opN).fill(0)); opDraw(); return; }
-  for(let r=0;r<opN;r++)for(let c=0;c<opN;c++){
-    opCells[r][c]= (t==='check') ? (((r+c)%2)?2:1) : ((c%2)?2:1);
-  }
-  opDraw();
-}
-function opSave(){
-  const a=document.createElement('a'); a.download='보색무늬.png'; a.href=opCanvas.toDataURL('image/png'); a.click();
-}
-/* 보색으로 그리기 이어가기 */
-function drawWithComp(){
-  const swx=document.getElementById('swatches');
-  [currentComp.c1,currentComp.c2].forEach(c=>{
-    if(![...swx.children].some(s=>s.dataset.cc===c)){
-      const s=document.createElement('span'); s.style.background=c; s.dataset.cc=c;
-      s.onclick=()=>{ color=c; document.querySelectorAll('#swatches span').forEach(x=>x.classList.remove('sel')); s.classList.add('sel'); document.getElementById('picker').value=c; };
-      swx.appendChild(s);
-    }
-  });
-  color=currentComp.c1; document.getElementById('picker').value=currentComp.c1;
-  const drawBtn=document.querySelector('#sub-play [data-sub="draw"]');
-  go('play',drawBtn,'draw');
-}
-
-/* ============ AI 프롬프트 빌더 ============ */
-const pWhat=['🐱 귀여운 고양이','🚀 우주로 가는 로켓','🏰 신비한 성','🐉 멋진 용','🌸 꽃밭','🤖 친근한 로봇'];
-const pWhere=['달빛 아래','바닷속에서','미래 도시에서','숲속에서','구름 위에서','눈 내리는 날'];
-const pStyle=['수채화 스타일','만화(카툰) 스타일','픽셀아트','유화 느낌','동화책 삽화','네온 사이버펑크'];
-let selWhat='', selWhere='', selStyle='';
-function makeChips(arr,boxId,setter){
-  const box=document.getElementById(boxId); if(!box||box.dataset.done)return;
-  arr.forEach(v=>{
-    const b=document.createElement('button'); b.className='quiz-opt'; b.textContent=v;
-    b.style.fontSize='13px'; b.style.padding='7px 12px';
-    b.onclick=()=>{
-      [...box.children].forEach(x=>x.style.borderColor='var(--line)');
-      b.style.borderColor='var(--accent)'; setter(v); buildPrompt();
-    };
-    box.appendChild(b);
-  });
-  box.dataset.done='1';
-}
-function buildPrompt(){
-  makeChips(pWhat,'pWhat',v=>selWhat=v);
-  makeChips(pWhere,'pWhere',v=>selWhere=v);
-  makeChips(pStyle,'pStyle',v=>selStyle=v);
-  const out=document.getElementById('promptOut'); if(!out)return;
-  if(selWhat||selWhere||selStyle){
-    const w=(selWhat||'( ? )').replace(/^\S+\s/,'');
-    out.textContent='"'+(selWhere||'')+' '+(selWhat?selWhat.replace(/^\S+\s/,''):'( ? )')+'을(를) '+(selStyle||'( ? )')+'로 그려줘"';
-  }
-}
-function useBuiltPrompt(){
-  const t=document.getElementById('promptOut').textContent.trim().replace(/^"|"$/g,'');
-  if(t && t.indexOf('골라보세요')===-1) document.getElementById('genPrompt').value=t;
-}
-let genSeed=1;
-function genImage(){
-  const p=document.getElementById('genPrompt').value.trim();
-  const status=document.getElementById('genStatus'), img=document.getElementById('genImg'), acts=document.getElementById('genActions');
-  if(!p){ status.textContent='✏️ 먼저 만들고 싶은 그림을 적어주세요!'; return; }
-  status.textContent='🎨 AI가 그림을 그리는 중이에요... (10~20초 정도 걸려요)';
-  img.style.display='none'; acts.style.display='none';
-  genSeed=(genSeed+7)%99999;
-  const url='https://image.pollinations.ai/prompt/'+encodeURIComponent(p)+'?width=640&height=640&nologo=true&safe=true&seed='+genSeed;
-  img.onload=()=>{ status.textContent='✅ 완성! 마음에 안 들면 버튼을 다시 눌러 새로 만들어요.'; img.style.display='inline-block'; acts.style.display='block'; document.getElementById('genDownload').href=url; };
-  img.onerror=()=>{ status.textContent='⚠️ 지금은 그림을 못 만들었어요. 인터넷 연결을 확인하고 다시 시도해 주세요.'; };
-  img.src=url;
-}
-
-/* ============ 추천 작가 + 상세 팝업 ============ */
-const ARTISTS={
- world:[
-  {id:'vangogh',name:'빈센트 반 고흐',tag:'후기인상주의',work:'대표작: 〈별이 빛나는 밤〉',
-   img:'https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=420',
-   thumb:'radial-gradient(circle at 70% 28%, #ffe066 0 6px, transparent 7px), radial-gradient(circle at 24% 60%, #ffd43b 0 5px, transparent 6px), conic-gradient(from 200deg at 45% 45%, #123a63, #2f74c0, #123a63, #0d2743, #123a63)',
-   desc:'소용돌이치는 강렬한 붓질과 노란 별빛으로 유명해요. 마음속 감정을 색과 붓 자국으로 표현한 화가랍니다.'},
-  {id:'monet',name:'클로드 모네',tag:'인상주의',work:'대표작: 〈인상, 해돋이〉·〈수련〉',
-   img:'https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet,_Impression,_soleil_levant.jpg?width=420',
-   thumb:'radial-gradient(ellipse at 38% 62%, #f4a6c0 0 9%, transparent 10%), radial-gradient(ellipse at 66% 42%, #f7c6d9 0 6%, transparent 7%), linear-gradient(160deg,#9ed3c6,#5f9bb0,#3f6f95)',
-   desc:'빛과 순간의 느낌을 그렸어요. 같은 장소도 시간에 따라 색이 달라지는 걸 포착한 화가예요.'},
-  {id:'picasso',name:'파블로 피카소',tag:'입체주의',work:'대표작: 〈게르니카〉',
-   thumb:'conic-gradient(#f4c542 0 90deg, #3a6ea5 0 180deg, #c1432e 0 270deg, #2b2b2b 0)',
-   desc:'사물을 여러 각도에서 본 모습으로 조각내 다시 붙였어요. 미술의 규칙을 새롭게 바꾼 천재예요.'},
-  {id:'frida',name:'프리다 칼로',tag:'멕시코',work:'대표작: 자화상 연작',
-   thumb:'radial-gradient(circle at 50% 42%, #d94c6a 0 15%, transparent 16%), radial-gradient(circle at 20% 80%, #f0a5b5 0 8%, transparent 9%), linear-gradient(160deg,#2f8f5b,#1f6b45)',
-   desc:'자신의 아픔과 삶을 강렬한 자화상으로 그렸어요. 멕시코의 색과 문화가 가득 담겨 있어요.'},
-  {id:'klimt',name:'구스타프 클림트',tag:'아르누보',work:'대표작: 〈키스〉',
-   img:'https://commons.wikimedia.org/wiki/Special:FilePath/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?width=420',
-   thumb:'conic-gradient(from 0deg, #d4af37, #f1d16b, #b8860b, #f5e08a, #d4af37)',
-   desc:'금빛으로 반짝이는 화려한 장식과 패턴이 특징이에요. 그림이 보석처럼 빛나 보여요.'},
-  {id:'kusama',name:'쿠사마 야요이',tag:'현대미술',work:'대표작: 물방울·노란 호박',
-   thumb:'radial-gradient(circle at 25% 25%, #fff 0 6px, transparent 7px), radial-gradient(circle at 62% 55%, #fff 0 7px, transparent 8px), radial-gradient(circle at 82% 30%, #fff 0 5px, transparent 6px), radial-gradient(circle at 42% 82%, #fff 0 6px, transparent 7px), #d6294a',
-   desc:'물방울무늬(도트)로 온 세상을 채우는 현대미술 스타예요. 노란 호박 작품도 아주 유명해요.'}
- ],
- korea:[
-  {id:'kimwhanki',name:'김환기',tag:'추상',work:'대표작: 점화(點畵) 연작',
-   thumb:'radial-gradient(circle at 30% 30%, #1f4e79 0 6px, transparent 7px), radial-gradient(circle at 62% 60%, #2a5f96 0 6px, transparent 7px), radial-gradient(circle at 82% 26%, #24568a 0 5px, transparent 6px), #cfe0ef',
-   desc:'파란 점을 하나하나 찍어 우주와 고향을 표현한 한국 추상미술의 거장이에요.'},
-  {id:'leejungseop',name:'이중섭',tag:'근대',work:'대표작: 〈소〉',
-   thumb:'radial-gradient(circle at 50% 55%, #8a5a2b 0 18%, transparent 19%), linear-gradient(160deg,#efd9b4,#d3a869)',
-   desc:'힘찬 소 그림과 따뜻한 가족 그림으로 사랑받는 화가예요. 은박지에 그린 그림도 유명해요.'},
-  {id:'paiknamjune',name:'백남준',tag:'미디어아트',work:'대표작: 〈다다익선〉',
-   thumb:'conic-gradient(#ff5d5d 0 60deg,#ffd93d 0 120deg,#6bcb77 0 180deg,#4d96ff 0 240deg,#b06bff 0 300deg,#ff8fab 0)',
-   desc:"TV와 영상으로 예술을 만든 '비디오 아트'의 창시자예요. 한국이 낳은 세계적 예술가랍니다."},
-  {id:'leeufan',name:'이우환',tag:'현대',work:'대표작: 〈점으로부터〉',
-   thumb:'radial-gradient(circle at 60% 45%, #16324f 0 6%, #3f6ea3 12%, transparent 22%), #eef1f4',
-   desc:'붓질 하나, 점 하나와 그 주변의 여백까지 작품으로 삼았어요. 절제된 아름다움이 특징이에요.'},
-  {id:'suhdoho',name:'서도호',tag:'설치미술',work:'대표작: 〈집 속의 집〉',
-   thumb:'linear-gradient(160deg, rgba(120,180,220,.85), rgba(90,140,200,.6)), repeating-linear-gradient(45deg, rgba(255,255,255,.25) 0 8px, transparent 8px 16px)',
-   desc:'얇은 천으로 자신이 살던 집을 실제 크기로 만드는 세계적 설치미술가예요.'},
-  {id:'dancheong',name:'단청·전통 장인',tag:'전통',work:'한국의 전통 색과 무늬',
-   thumb:'repeating-linear-gradient(90deg,#2e7d32 0 12px,#c62828 12px 24px,#1565c0 24px 36px,#f9a825 36px 48px)',
-   desc:'궁궐과 절을 수놓은 단청처럼, 우리 전통의 색과 무늬를 잇는 공예·디자인의 아름다움이에요.'}
- ],
- design:[
-  {id:'morris',name:'윌리엄 모리스',tag:'패턴디자인',work:'식물 무늬 벽지·직물',
-   thumb:'radial-gradient(circle at 30% 30%, #4b7f52 0 10%, transparent 11%), radial-gradient(circle at 72% 70%, #a63d40 0 8%, transparent 9%), #234b32',
-   desc:"자연의 식물을 아름다운 반복 무늬로 만든 '패턴 디자인의 아버지'예요."},
-  {id:'rams',name:'디터 람스',tag:'제품디자인',work:"'적을수록 좋다'",
-   thumb:'radial-gradient(circle at 50% 50%, #adb5bd 0 16%, transparent 17%), linear-gradient(160deg,#f1f3f5,#dee2e6)',
-   desc:'꼭 필요한 것만 남기는 단순함의 제품디자인 거장이에요. 오늘날 스마트폰 디자인에도 영향을 줬어요.'},
-  {id:'graphic',name:'그래픽 디자인의 세계',tag:'시각디자인',work:'포스터·브랜드·타이포그래피',
-   thumb:'conic-gradient(#ff6b6b,#ffd93d,#6bcb77,#4d96ff,#b06bff,#ff6b6b)',
-   desc:'글자(타이포그래피), 색, 이미지를 배치해 메시지를 멋지게 전달하는 분야예요. 로고와 포스터가 대표적이에요.'}
- ]
-};
-const artistIndex={};
-function artistCard(a){
-  const img=a.img?'<img src="'+a.img+'" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.remove()">':'';
-  return '<div class="tile artist-card" onclick="openArtist(\''+a.id+'\')">'+
-    '<div class="thumb" style="background:'+a.thumb+'; overflow:hidden;">'+img+'</div>'+
-    '<h4>'+a.name+'</h4><p>'+a.desc.slice(0,30)+'…</p>'+
-    '<span class="pill" style="margin-top:6px;">'+a.tag+'</span></div>';
-}
-function renderArtists(){
-  ['world','korea','design'].forEach(cat=>{
-    const box=document.getElementById(cat+'Artists'); if(!box)return;
-    box.innerHTML=ARTISTS[cat].map(artistCard).join('');
-    ARTISTS[cat].forEach(a=>artistIndex[a.id]=a);
-  });
-}
-function openArtist(id){
-  const a=artistIndex[id]; if(!a)return;
-  const mt=document.getElementById('modalThumb');
-  mt.style.background=a.thumb; mt.style.overflow='hidden';
-  mt.innerHTML=a.img?'<img src="'+a.img+'" alt="'+a.name+' 작품" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.remove()">':'';
-  document.getElementById('modalName').textContent=a.name;
-  document.getElementById('modalTag').innerHTML='<span class="pill">'+a.tag+'</span>';
-  document.getElementById('modalDesc').textContent=a.desc;
-  document.getElementById('modalWork').textContent=a.work;
-  document.getElementById('modalLink').href='https://artsandculture.google.com/search?q='+encodeURIComponent(a.name);
-  document.getElementById('artistModal').classList.add('open');
-}
-function closeArtist(){ document.getElementById('artistModal').classList.remove('open'); }
-document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeArtist(); });
-
-/* ============ 미술 퀴즈 ============ */
-const QUIZ=[
- {q:"'별이 빛나는 밤'을 그린 화가는 누구일까요?",opts:['클로드 모네','빈센트 반 고흐','파블로 피카소'],ans:1},
- {q:'물방울(도트)무늬로 온 세상을 채우는 현대미술가는?',opts:['쿠사마 야요이','프리다 칼로','구스타프 클림트'],ans:0},
- {q:"TV와 영상으로 '비디오 아트'를 만든 한국 예술가는?",opts:['김환기','이중섭','백남준'],ans:2},
- {q:'물감을 섞을수록 색은 어떻게 될까요? (색의 혼합)',opts:['점점 밝아진다','점점 어두워진다','변하지 않는다'],ans:1},
- {q:'빨강의 보색(정반대 색)은 무엇일까요?',opts:['초록','노랑','파랑'],ans:0}
-];
-let quizDone=0, quizScore=0;
-function renderQuiz(){
-  quizDone=0; quizScore=0;
-  document.getElementById('quizBox').innerHTML=QUIZ.map((it,qi)=>
-    '<div class="qitem"><div class="q">Q'+(qi+1)+'. '+it.q+'</div>'+
-    it.opts.map((o,oi)=>'<button class="qopt" data-q="'+qi+'" onclick="answerQuiz('+qi+','+oi+')">'+o+'</button>').join('')+
-    '</div>').join('');
-  document.getElementById('quizScore').textContent='';
-}
-function answerQuiz(qi,oi){
-  const item=QUIZ[qi];
-  const btns=document.querySelectorAll('.qopt[data-q="'+qi+'"]');
-  if(btns[0].disabled)return;
-  btns.forEach((b,i)=>{ b.disabled=true;
-    if(i===item.ans)b.classList.add('correct');
-    if(i===oi&&oi!==item.ans)b.classList.add('wrong'); });
-  if(oi===item.ans)quizScore++;
-  quizDone++;
-  if(quizDone===QUIZ.length){
-    document.getElementById('quizScore').textContent='🎉 '+QUIZ.length+'문제 중 '+quizScore+'개 정답! '+
-      (quizScore===QUIZ.length?'완벽해요!':(quizScore>=3?'잘했어요!':'다시 도전해 봐요!'));
-  }
-}
-function resetQuiz(){ renderQuiz(); }
-
-/* ============ 미술 직업 (클릭 상세) ============ */
-const JOBS=[
- {g:1,name:'화가·작가',e:'🎨',tag:'순수미술',work:'자신의 생각과 감정을 그림·조형으로 표현해 전시하고 작품을 발표해요.',skill:'꾸준한 드로잉 실력과 나만의 표현, 미술사 지식이 필요해요.'},
- {g:1,name:'조각가',e:'🗿',tag:'순수미술',work:'흙·돌·금속·나무 등으로 입체 작품을 만들어요.',skill:'입체 감각과 재료를 다루는 손기술, 공간 이해력이 필요해요.'},
- {g:1,name:'그래픽 디자이너',e:'🖥️',tag:'시각디자인',work:'포스터·로고·광고 등 눈에 보이는 정보를 멋지게 디자인해요.',skill:'색·타이포그래피 감각과 디자인 프로그램(포토샵·일러스트레이터) 활용 능력.'},
- {g:1,name:'UX/UI 디자이너',e:'📱',tag:'시각디자인',work:'앱·웹사이트를 쓰기 편하고 예쁘게 화면을 설계해요.',skill:'사용자를 이해하는 관찰력과 디자인 도구(피그마 등) 활용 능력.'},
- {g:1,name:'편집 디자이너',e:'📗',tag:'시각디자인',work:'책·잡지·카드뉴스의 글과 사진을 보기 좋게 배치해요.',skill:'레이아웃 감각과 글·이미지를 정리하는 능력.'},
- {g:1,name:'브랜드 디자이너',e:'🏷️',tag:'시각디자인',work:'회사·제품의 이미지(로고·색·패키지)를 하나의 개성으로 만들어요.',skill:'개념을 시각으로 바꾸는 기획력과 디자인 감각.'},
- {g:2,name:'웹툰 작가',e:'💬',tag:'콘텐츠',work:'이야기를 그림으로 그려 웹툰 플랫폼에 연재해요.',skill:'그림 실력과 스토리 구성력, 꾸준함이 중요해요.'},
- {g:2,name:'일러스트레이터',e:'✏️',tag:'콘텐츠',work:'책·광고·굿즈 등에 들어가는 그림을 그려요.',skill:'개성 있는 그림체와 디지털 드로잉 능력.'},
- {g:2,name:'애니메이터',e:'🎬',tag:'영상',work:'그림에 움직임을 불어넣어 애니메이션을 만들어요.',skill:'동작을 관찰하는 눈과 인내심, 애니메이션 소프트웨어 활용.'},
- {g:2,name:'게임 콘셉트 아티스트',e:'🎮',tag:'게임',work:'게임 속 캐릭터·배경·아이템의 첫 모습을 디자인해요.',skill:'상상력과 드로잉 실력, 3D 감각이 있으면 좋아요.'},
- {g:2,name:'제품(산업) 디자이너',e:'🪑',tag:'제품',work:'가구·가전·생활용품을 예쁘고 편리하게 디자인해요.',skill:'입체 감각과 사용자 편의를 생각하는 능력, 스케치·3D 모델링.'},
- {g:2,name:'공예가·도예가',e:'🏺',tag:'공예',work:'흙·유리·금속으로 그릇·장신구 등 손으로 만드는 작품을 만들어요.',skill:'재료를 다루는 섬세한 손기술과 꾸준한 연습.'},
- {g:2,name:'패션 디자이너',e:'👗',tag:'패션',work:'옷과 스타일을 기획하고 디자인해요.',skill:'유행 감각과 드로잉, 옷의 구조(패턴) 이해.'},
- {g:3,name:'큐레이터(학예사)',e:'🖼️',tag:'미술관',work:'전시를 기획하고 작품을 연구·관리하며 관람객에게 설명해요.',skill:'미술사 지식과 기획력, 글쓰기·소통 능력. (보통 대학원 공부)'},
- {g:3,name:'문화재 보존·복원가',e:'🔧',tag:'문화재',work:'오래된 그림·유물을 과학적으로 되살리고 지켜요.',skill:'미술+과학 지식과 아주 꼼꼼한 손기술.'},
- {g:3,name:'미술 교사',e:'🧑‍🏫',tag:'교육',work:'학교에서 학생들에게 미술을 가르쳐요.',skill:'미술 실력과 가르치는 능력, 사범대·교직 이수와 임용시험.'},
- {g:3,name:'미술 치료사',e:'💚',tag:'치유',work:'그림 그리는 활동으로 마음을 돌보고 치유를 도와요.',skill:'미술+심리학 지식과 따뜻한 공감 능력. (관련 자격·대학원)'},
- {g:3,name:'AI 아트 디렉터',e:'🤖',tag:'미래',work:'AI 도구로 이미지를 만들고 방향을 정해 작품·광고를 완성해요.',skill:'미술 감각과 AI 도구를 잘 다루고 좋은 프롬프트를 쓰는 능력.'},
- {g:3,name:'3D·메타버스 디자이너',e:'🕶️',tag:'미래',work:'가상 공간·캐릭터·아이템을 3D로 만들어요.',skill:'3D 모델링 프로그램과 공간·입체 감각.'}
-];
-function jobCard(j,idx){
-  return '<div class="tile artist-card" onclick="openJob('+idx+')"><h4>'+j.e+' '+j.name+'</h4><p>'+j.tag+' · 눌러서 자세히</p></div>';
-}
-function renderJobs(){
-  [1,2,3].forEach(g=>{ const box=document.getElementById('jobGrid'+g); if(!box)return;
-    box.innerHTML=JOBS.map((j,idx)=>({j:j,idx:idx})).filter(o=>o.j.g===g).map(o=>jobCard(o.j,o.idx)).join('');
-  });
-}
-function openJob(idx){
-  const j=JOBS[idx]; if(!j)return;
-  document.getElementById('jobIcon').textContent=j.e;
-  document.getElementById('jobModalName').textContent=j.name;
-  document.getElementById('jobModalTag').innerHTML='<span class="pill">'+j.tag+'</span>';
-  document.getElementById('jobWork').textContent=j.work;
-  document.getElementById('jobSkillTxt').textContent=j.skill;
-  document.getElementById('jobInfoLink').href='https://www.google.com/search?q='+encodeURIComponent(j.name+' 직업 하는 일');
-  document.getElementById('jobPeopleLink').href='https://www.youtube.com/results?search_query='+encodeURIComponent(j.name+' 인터뷰');
-  document.getElementById('jobModal').classList.add('open');
-}
-function closeJob(){ document.getElementById('jobModal').classList.remove('open'); }
-document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeJob(); });
-
-/* ============ 창직 놀이 ============ */
-const JOB_INTERESTS=[
- {k:'게임',e:'🎮',ctx:'게임 속 세계와 캐릭터를 만드는'},
- {k:'음악',e:'🎵',ctx:'음악과 무대를 시각적으로 표현하는'},
- {k:'환경',e:'🌱',ctx:'환경 보호 메시지를 아름답게 전하는'},
- {k:'요리',e:'🍳',ctx:'음식과 요리를 먹음직스럽게 보여주는'},
- {k:'스포츠',e:'⚽',ctx:'스포츠의 역동적인 순간을 담아내는'},
- {k:'우주',e:'🚀',ctx:'우주와 미래를 상상해 그리는'},
- {k:'동물',e:'🐾',ctx:'동물과 자연을 생생하게 표현하는'},
- {k:'패션',e:'👗',ctx:'옷과 스타일을 새롭게 디자인하는'},
- {k:'역사',e:'🏛️',ctx:'역사와 문화유산을 시각으로 되살리는'},
- {k:'의료',e:'🩺',ctx:'어려운 의학 정보를 그림으로 쉽게 풀어내는'},
- {k:'로봇',e:'🤖',ctx:'로봇과 기술을 멋지게 디자인하는'},
- {k:'여행',e:'✈️',ctx:'여행지의 매력을 담아내는'}
-];
-const JOB_SKILLS=[
- {k:'그림·일러스트',role:'일러스트레이터'},
- {k:'캐릭터 디자인',role:'캐릭터 디자이너'},
- {k:'3D 모델링',role:'3D 아티스트'},
- {k:'영상·애니메이션',role:'애니메이터'},
- {k:'전시 기획',role:'전시 기획자(큐레이터)'},
- {k:'제품 디자인',role:'제품 디자이너'},
- {k:'브랜드 디자인',role:'브랜드 디자이너'},
- {k:'사진',role:'포토그래퍼'}
-];
-let jobI=null, jobS=null;
-function renderJobPickers(){
-  const bi=document.getElementById('jobInterest'), bs=document.getElementById('jobSkill');
-  if(!bi||bi.dataset.done)return;
-  JOB_INTERESTS.forEach((it,idx)=>{ const b=document.createElement('button'); b.className='quiz-opt'; b.style.cssText='font-size:13px;padding:7px 11px;'; b.textContent=it.e+' '+it.k;
-    b.onclick=()=>{ [...bi.children].forEach(x=>x.style.borderColor='var(--line)'); b.style.borderColor='var(--accent)'; jobI=idx; computeJob(); }; bi.appendChild(b); });
-  JOB_SKILLS.forEach((sk,idx)=>{ const b=document.createElement('button'); b.className='quiz-opt'; b.style.cssText='font-size:13px;padding:7px 11px;'; b.textContent=sk.k;
-    b.onclick=()=>{ [...bs.children].forEach(x=>x.style.borderColor='var(--line)'); b.style.borderColor='var(--accent)'; jobS=idx; computeJob(); }; bs.appendChild(b); });
-  bi.dataset.done='1';
-}
-function computeJob(){
-  if(jobI===null||jobS===null)return;
-  const it=JOB_INTERESTS[jobI], sk=JOB_SKILLS[jobS];
-  document.getElementById('jobResult').innerHTML=
-    '✨ 새로운 직업: <b style="font-size:16px;">'+it.e+' '+it.k+' '+sk.role+'</b><br><br>'+
-    it.ctx+' <b>'+sk.role+'</b>예요.<br>「'+it.k+'」에 대한 관심과 「'+sk.k+'」 실력을 합친, 세상에 하나뿐인 나만의 직업이랍니다!';
-}
-function rollJob(){
-  jobI=Math.floor(Math.random()*JOB_INTERESTS.length);
-  jobS=Math.floor(Math.random()*JOB_SKILLS.length);
-  const bi=document.getElementById('jobInterest').children, bs=document.getElementById('jobSkill').children;
-  [...bi].forEach((x,i)=>x.style.borderColor=i===jobI?'var(--accent)':'var(--line)');
-  [...bs].forEach((x,i)=>x.style.borderColor=i===jobS?'var(--accent)':'var(--line)');
-  computeJob();
-}
-
-/* ============ 색채 실험실 (HSL) ============ */
-function updHSL(){
-  const h=+document.getElementById('hueR').value, s=+document.getElementById('satR').value, l=+document.getElementById('litR').value;
-  document.getElementById('hueV').textContent=h; document.getElementById('satV').textContent=s; document.getElementById('litV').textContent=l;
-  document.getElementById('hslSwatch').style.background='hsl('+h+','+s+'%,'+l+'%)';
-  const bright=l>66?'밝은':(l<33?'어두운':'보통 밝기의');
-  const vivid=s>66?'선명한':(s<33?'탁한(회색빛)':'적당한');
-  document.getElementById('hslName').textContent=hueName(h)+' 계열 · '+vivid+' '+bright+' 색';
-}
-/* 배색 실험실 */
-function hslToHex(h,s,l){
-  s/=100; l/=100;
-  const k=n=>(n+h/30)%12, a=s*Math.min(l,1-l);
-  const f=n=>{ const c=l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1))); return Math.round(255*c).toString(16).padStart(2,'0'); };
-  return '#'+f(0)+f(8)+f(4);
-}
-function harmChip(h,base){
-  const hh=(((h%360)+360)%360);
-  return '<div style="background:hsl('+hh+',75%,55%);'+(base?'outline:3px solid #33272a;outline-offset:-3px;':'')+'"></div>';
-}
-function updHarm(){
-  const h=+document.getElementById('harmR').value; document.getElementById('harmV').textContent=h;
-  document.getElementById('harmBase').style.background='hsl('+h+',75%,55%)';
-  document.getElementById('harmBaseName').textContent='내가 고른 색 · '+hueName(h)+' 계열';
-  document.getElementById('harmBaseHex').textContent='HSL('+h+', 75%, 55%)  ·  '+hslToHex(h,75,55).toUpperCase();
-  document.getElementById('harmComp').innerHTML=harmChip(h,true)+harmChip(h+180);
-  document.getElementById('harmAnalog').innerHTML=harmChip(h-30)+harmChip(h,true)+harmChip(h+30);
-  document.getElementById('harmTriad').innerHTML=harmChip(h,true)+harmChip(h+120)+harmChip(h+240);
-}
-/* ============ 명암 실험실 — 빛의 방향 ============ */
-let lightLab=null, llCtx=null, lx=95, ly=80;
-function initLightLab(){
-  lightLab=document.getElementById('lightLab'); if(!lightLab)return;
-  llCtx=lightLab.getContext('2d');
-  if(!lightLab.dataset.bound){
-    const set=(cx,cy)=>{ const r=lightLab.getBoundingClientRect(); lx=(cx-r.left)*(lightLab.width/r.width); ly=(cy-r.top)*(lightLab.height/r.height); drawLightLab(); };
-    lightLab.addEventListener('click',e=>set(e.clientX,e.clientY));
-    lightLab.addEventListener('touchstart',e=>{ if(e.touches[0]){ set(e.touches[0].clientX,e.touches[0].clientY); e.preventDefault(); } },{passive:false});
-    lightLab.dataset.bound='1';
-  }
-  drawLightLab();
-}
-function drawLightLab(){
-  if(!llCtx)return;
-  const W=280,H=280,cx=140,cy=148,R=78;
-  llCtx.clearRect(0,0,W,H);
-  llCtx.fillStyle='#eef1f4'; llCtx.fillRect(0,0,W,H);
-  const dx=lx-cx, dy=ly-cy, d=Math.hypot(dx,dy)||1, ux=dx/d, uy=dy/d;
-  // cast shadow (opposite side, on ground)
-  llCtx.beginPath(); llCtx.ellipse(cx-ux*34, cy+R*0.96, R*0.82, 15, 0,0,Math.PI*2); llCtx.fillStyle='rgba(0,0,0,.18)'; llCtx.fill();
-  // sphere shaded toward light
-  const hx=cx+ux*R*0.55, hy=cy+uy*R*0.55;
-  const g=llCtx.createRadialGradient(hx,hy,5, cx,cy,R*1.35);
-  g.addColorStop(0,'#fff6e6'); g.addColorStop(0.32,'#f0b46b'); g.addColorStop(0.75,'#a8621f'); g.addColorStop(1,'#4a2a0c');
-  llCtx.beginPath(); llCtx.arc(cx,cy,R,0,Math.PI*2); llCtx.fillStyle=g; llCtx.fill();
-  // sun marker
-  llCtx.beginPath(); llCtx.arc(lx,ly,11,0,Math.PI*2); llCtx.fillStyle='#ffd43b'; llCtx.fill();
-  llCtx.lineWidth=2; llCtx.strokeStyle='#f59f00'; llCtx.stroke();
-}
-/* 색의 명도 실험 */
-function updVal(){
-  const hex=document.getElementById('valPick').value;
-  const r=parseInt(hex.substr(1,2),16), g=parseInt(hex.substr(3,2),16), b=parseInt(hex.substr(5,2),16);
-  const lum=0.299*r+0.587*g+0.114*b, pct=Math.round(lum/255*100);
-  document.getElementById('valColor').style.background=hex;
-  document.getElementById('valGray').style.background='rgb('+Math.round(lum)+','+Math.round(lum)+','+Math.round(lum)+')';
-  const desc=pct>75?'아주 밝아요':(pct>50?'밝은 편이에요':(pct>28?'어두운 편이에요':'아주 어두워요'));
-  document.getElementById('valText').textContent='밝기(명도): '+pct+'% — '+desc;
-}
-/* 실험실 슬라이더 연결 */
-['hueR','satR','litR'].forEach(id=>{ const el=document.getElementById(id); if(el)el.addEventListener('input',updHSL); });
-(function(){ const h=document.getElementById('harmR'); if(h)h.addEventListener('input',updHarm);
-  const v=document.getElementById('valPick'); if(v)v.addEventListener('input',updVal); })();
-
-/* ============ 예술고 클릭 상세 + 홈페이지 ============ */
-const SCHOOLS=[
- {g:'metro',name:'서울예술고등학교',type:'사립',region:'서울',majors:'미술과·음악과',desc:'국내 최정상 예술고 중 하나로, 미술과와 음악과를 운영해요. 예원학교와 이어지는 명문이에요.'},
- {g:'metro',name:'선화예술고등학교',type:'사립',region:'서울',majors:'미술·음악·무용',desc:'미술·음악·무용과를 갖춘 서울의 대표 예술고예요.',url:'https://www.sunhwa.org/'},
- {g:'metro',name:'덕원예술고등학교',type:'사립',region:'서울',majors:'미술·음악',desc:'미술과 음악 중심의 서울 예술고예요.'},
- {g:'metro',name:'국립전통예술고등학교',type:'국립',region:'서울',majors:'전통미술·국악·무용',desc:'우리 전통예술을 전문으로 배우는 국립 예술고예요. 전통미술 분야도 있어요.'},
- {g:'metro',name:'계원예술고등학교',type:'사립',region:'경기 의왕',majors:'미술·디자인',desc:'미술·디자인 입시로 특히 잘 알려진 경기권 예술고예요.'},
- {g:'metro',name:'고양예술고등학교',type:'사립',region:'경기 고양',majors:'미술·음악·무용',desc:'미술·음악·무용과를 운영하는 경기(고양) 예술고예요.'},
- {g:'metro',name:'안양예술고등학교',type:'사립',region:'경기 안양',majors:'미술·음악·무용',desc:'미술·음악·무용과가 있는 경기(안양) 예술고예요.'},
- {g:'metro',name:'경기예술고등학교',type:'공립',region:'경기 고양',majors:'미술·음악·무용',desc:'경기도의 공립 예술고예요.'},
- {g:'metro',name:'인천예술고등학교',type:'공립',region:'인천',majors:'미술·음악·무용',desc:'미술·음악·무용과를 운영하는 인천의 공립 예술고예요.'},
- {g:'metro',name:'서울미술고등학교',type:'사립',region:'서울',majors:'미술(특성화고)',desc:'미술 중심의 사립 특성화고로, 실용·입시 미술을 배워요.'},
- {g:'metro',name:'예림디자인고등학교',type:'사립',region:'서울',majors:'디자인(특성화고)',desc:'디자인 중심의 특성화고예요.'},
- {g:'local',name:'부산예술고등학교',type:'사립',region:'부산',majors:'미술·음악·무용',desc:'영남권을 대표하는 부산의 예술고예요.'},
- {g:'local',name:'브니엘예술고등학교',type:'사립',region:'부산',majors:'미술·음악·무용 등',desc:'부산의 사립 예술고로, 미술과를 포함한 다양한 예술 계열을 운영해요.'},
- {g:'local',name:'경북예술고등학교',type:'사립',region:'대구',majors:'미술·음악·무용',desc:'대구에 위치한 예술고예요.'},
- {g:'local',name:'경남예술고등학교',type:'사립',region:'경남 진주',majors:'미술·음악·무용',desc:'진주에 있는 경남의 예술고예요.'},
- {g:'local',name:'광주예술고등학교',type:'사립',region:'광주',majors:'미술·음악·무용',desc:'광주의 예술고로 미술·음악·무용과를 운영해요.'},
- {g:'local',name:'전남예술고등학교',type:'공립',region:'전남',majors:'미술·음악·무용',desc:'전남의 공립 예술고예요.'},
- {g:'local',name:'전주예술고등학교',type:'사립',region:'전북 전주',majors:'미술·음악·무용',desc:'전북(전주)의 예술고예요.'},
- {g:'local',name:'충북예술고등학교',type:'공립',region:'충북',majors:'미술·음악·무용',desc:'충북의 예술고예요.'},
- {g:'local',name:'충남예술고등학교',type:'예술고',region:'충남',majors:'미술·음악·무용',desc:'충남의 예술고예요.'},
- {g:'local',name:'충남디자인예술고등학교',type:'특성화고',region:'충남',majors:'디자인 중심',desc:'디자인 중심의 특성화 예술고예요.'},
- {g:'local',name:'강원예술고등학교',type:'공립',region:'강원',majors:'미술·음악·무용',desc:'강원의 공립 예술고예요.'},
- {g:'local',name:'세종예술고등학교',type:'예술고',region:'세종',majors:'미술·음악·무용',desc:'세종의 예술고예요.'}
-];
-function schoolCard(s,idx){
-  return '<div class="tile artist-card" onclick="openSchool('+idx+')"><h4>'+s.name.replace('등학교','')+'</h4><p>'+s.region+' · '+s.type+'</p></div>';
-}
-function renderSchools(){
-  const m=document.getElementById('schoolMetro'), l=document.getElementById('schoolLocal'); if(!m)return;
-  m.innerHTML=SCHOOLS.map((s,i)=>({s:s,i:i})).filter(o=>o.s.g==='metro').map(o=>schoolCard(o.s,o.i)).join('');
-  l.innerHTML=SCHOOLS.map((s,i)=>({s:s,i:i})).filter(o=>o.s.g==='local').map(o=>schoolCard(o.s,o.i)).join('');
-}
-function openSchool(i){
-  const s=SCHOOLS[i]; if(!s)return;
-  document.getElementById('schName').textContent=s.name;
-  document.getElementById('schType').innerHTML='<span class="pill">'+s.type+'</span>';
-  document.getElementById('schMeta').textContent=s.region+' · '+s.majors;
-  document.getElementById('schDesc').textContent=s.desc;
-  document.getElementById('schHome').href=s.url||('https://www.google.com/search?q='+encodeURIComponent(s.name+' 홈페이지'));
-  document.getElementById('schoolModal').classList.add('open');
-}
-function closeSchool(){ document.getElementById('schoolModal').classList.remove('open'); }
-
-/* ============ 전공 → 대학 ============ */
-const MAJORS=[
- {cat:'pure',key:'한국화(동양화)',desc:'먹과 한국 전통 재료로 그리는 회화예요.',unis:['서울대','홍익대','이화여대','성신여대','추계예술대','원광대']},
- {cat:'pure',key:'서양화·회화',desc:'유화·아크릴 등으로 그리는 회화예요.',unis:['홍익대','서울대','이화여대','국민대','중앙대','성신여대']},
- {cat:'pure',key:'조소(조각)',desc:'흙·금속·돌로 입체 작품을 만들어요.',unis:['홍익대','서울대','이화여대','성신여대','경희대']},
- {cat:'pure',key:'판화',desc:'찍어내는 방식으로 표현하는 미술이에요.',unis:['홍익대','성신여대']},
- {cat:'design',key:'시각디자인',desc:'포스터·로고·브랜드 등 시각 정보를 디자인해요.',unis:['홍익대','서울대','국민대','이화여대','건국대','서울과학기술대']},
- {cat:'design',key:'산업(제품)디자인',desc:'제품·가전·생활용품을 디자인해요.',unis:['홍익대','국민대','서울대','KAIST','서울과학기술대']},
- {cat:'design',key:'공예·도예·금속',desc:'손으로 만드는 공예 작품을 배워요.',unis:['홍익대','국민대','서울대','이화여대']},
- {cat:'design',key:'패션·텍스타일',desc:'옷과 섬유를 디자인해요.',unis:['홍익대','국민대','건국대','이화여대','한양대']},
- {cat:'media',key:'애니메이션',desc:'움직이는 그림(애니)을 만들어요.',unis:['세종대','상명대','청강문화산업대','공주대']},
- {cat:'media',key:'만화·웹툰',desc:'만화와 웹툰을 그려요.',unis:['세종대','청강문화산업대','공주대','상명대']},
- {cat:'media',key:'게임·캐릭터',desc:'게임 그래픽과 캐릭터를 디자인해요.',unis:['청강문화산업대','상명대','세종대']},
- {cat:'media',key:'영상·미디어아트',desc:'영상과 새로운 매체로 예술을 만들어요.',unis:['홍익대','국민대','중앙대','한국예술종합학교']},
- {cat:'theory',key:'미술사학',desc:'미술의 역사를 연구해요.',unis:['서울대','홍익대','명지대','이화여대','덕성여대']},
- {cat:'theory',key:'예술학·미학',desc:'예술과 아름다움을 이론으로 탐구해요.',unis:['홍익대','서울대']},
- {cat:'theory',key:'미술교육과',desc:'미술 선생님이 되는 길이에요.',unis:['홍익대','한국교원대','공주대','경북대','대구대']}
-];
-function renderMajors(){
-  const map={pure:'majPure',design:'majDesign',media:'majMedia',theory:'majTheory'};
-  Object.keys(map).forEach(cat=>{ const box=document.getElementById(map[cat]); if(!box)return;
-    box.innerHTML=MAJORS.map((m,i)=>({m:m,i:i})).filter(o=>o.m.cat===cat).map(o=>'<span class="majchip" onclick="openMajor('+o.i+')">'+o.m.key+'</span>').join('');
-  });
-}
-function openMajor(i){
-  const m=MAJORS[i]; if(!m)return;
-  document.getElementById('majName').textContent=m.key;
-  document.getElementById('majDesc').textContent=m.desc;
-  document.getElementById('majUnis').innerHTML=m.unis.map(u=>'<span>'+u+'</span>').join('');
-  document.getElementById('majSearch').href='https://www.google.com/search?q='+encodeURIComponent(m.key+' 학과 있는 대학');
-  document.getElementById('majorModal').classList.add('open');
-}
-function closeMajor(){ document.getElementById('majorModal').classList.remove('open'); }
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeSchool(); closeMajor(); document.getElementById('lightbox').classList.remove('open'); } });
-
-/* ============ 우리 반 그림 갤러리 ============ */
-let gallery=[];
-function snapshotCanvas(){ const t=document.createElement('canvas'); t.width=cv.width; t.height=cv.height; const c=t.getContext('2d'); c.fillStyle='#fff'; c.fillRect(0,0,t.width,t.height); c.drawImage(cv,0,0); return t.toDataURL('image/png'); }
-function addToGallery(){ gallery.unshift(snapshotCanvas()); if(gallery.length>10) gallery=gallery.slice(0,10); renderGallery(); }
-function renderGallery(){
-  const g=document.getElementById('gallery'), e=document.getElementById('galleryEmpty'); if(!g)return;
-  e.style.display=gallery.length?'none':'block';
-  g.innerHTML=gallery.map((src,i)=>'<div style="position:relative;"><img src="'+src+'" onclick="viewGallery('+i+')" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:2px solid var(--line);cursor:pointer;box-shadow:0 2px 8px rgba(120,80,70,.08);"><button onclick="event.stopPropagation();delGallery('+i+')" title="삭제" style="position:absolute;top:5px;right:5px;border:0;background:rgba(0,0,0,.55);color:#fff;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:12px;line-height:1;">✕</button></div>').join('');
-}
-function delGallery(i){ gallery.splice(i,1); renderGallery(); }
-function viewGallery(i){ document.getElementById('lbImg').src=gallery[i]; document.getElementById('lightbox').classList.add('open'); }
-(function(){ const gb=document.getElementById('galleryBtn'); if(gb) gb.onclick=addToGallery; })();
-
-/* ============ 전시 정보 (자동 갱신 exhibitions.json) ============ */
-let expoData=null, expoRegion='전체';
-function expEsc(s){ return (s==null?'':''+s).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])); }
-function loadExpo(){
-  fetch('exhibitions.json',{cache:'no-store'}).then(r=>{ if(!r.ok)throw 0; return r.json(); })
-    .then(d=>{ expoData=d; expoRegion='전체'; renderExpoTabs(); renderExpo();
-      document.getElementById('expoTabs').style.display='flex';
-      document.getElementById('expoStatus').textContent='📅 갱신일: '+(d.updated||'-')+' · 총 '+((d.items||[]).length)+'건';
-    })
-    .catch(()=>{
-      const t=document.getElementById('expoTabs'); if(t)t.style.display='none';
-      const s=document.getElementById('expoStatus'); if(s)s.innerHTML='ℹ️ 아직 자동 전시 데이터가 없어요. 아래 <b>참고 전시</b>와 미술관 링크를 이용하세요. (GitHub에 올린 뒤 자동 갱신이 처음 실행되면 여기에 최신 전시가 지역별로 표시돼요.)';
-      const l=document.getElementById('expoList'); if(l)l.innerHTML='';
-    });
-}
-function renderExpoTabs(){
-  const regions=['전체'].concat(expoData.regions||[]);
-  document.getElementById('expoTabs').innerHTML=regions.map(r=>'<button class="tbtn'+(r===expoRegion?' sel':'')+'" onclick="setExpoRegion(\''+r+'\')">'+expEsc(r)+'</button>').join('');
-}
-function setExpoRegion(r){ expoRegion=r; renderExpoTabs(); renderExpo(); }
-function renderExpo(){
-  const items=(expoData.items||[]).filter(it=>expoRegion==='전체'||it.region===expoRegion);
-  const box=document.getElementById('expoList');
-  if(!items.length){ box.innerHTML='<p style="color:var(--muted);">이 지역에는 등록된 전시가 없어요.</p>'; return; }
-  box.innerHTML=items.map(it=>
-    '<div class="tile"><h4>'+expEsc(it.title)+'</h4>'+
-    '<p>📍 '+expEsc(it.place||'-')+'<br>📅 '+expEsc(it.period||'-')+'<br>🏷️ '+expEsc(it.region||'')+(it.realm?' · '+expEsc(it.realm):'')+'</p>'+
-    (it.url?'<a class="btn ghost" style="margin-top:10px;" href="'+expEsc(it.url)+'" target="_blank" rel="noopener">자세히 보기</a>':'')+
-    '</div>').join('');
-}
-
-/* 초기화 */
-loadExpo();
-drawWheel();
-setMixMode('pig');
-renderArtists();
-renderQuiz();
-renderJobs();
-renderJobPickers();
-updHSL();
-updHarm();
-updVal();
-renderSchools();
-renderMajors();
-renderGallery();
 </script>
 </body>
 </html>
