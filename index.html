@@ -245,7 +245,6 @@
     </div>
     <ul class="nav">
       <li><button class="item active" data-tab="home" onclick="go('home',this)"><span class="emoji">🏠</span> 홈</button></li>
-      <li><button class="item lesson-menu" data-tab="class" onclick="go('class',this)"><span class="emoji">📚</span> 수업 바로가기</button></li>
       <li>
         <button class="item" data-tab="play" onclick="toggleSub(this,'sub-play')">
           <span class="emoji">🖌️</span> 미술놀이 <span class="caret">▶</span>
@@ -276,10 +275,6 @@
         <p>그리기·색채·명암 놀이부터 AI 미술 체험, 멋진 화가 감상, 미래 직업과 진로까지 — 미술의 모든 것을 재미있게 만나봐요. 아래에서 하고 싶은 활동을 골라 시작하세요!</p>
       </div>
       <div class="home-grid">
-        <div class="home-card" style="grid-column:1/-1; border-top-color:#e8590c; background:linear-gradient(135deg,#fff,#fff4ec);" onclick="homeGo('class')">
-          <span class="hemoji">📚</span><h4>수업 바로가기</h4>
-          <p>선생님이 안내한 학년·수업으로 바로 들어가요. (오늘의 수업 · 오늘의 활동)</p>
-        </div>
         <div class="home-card" style="border-top-color:#ff6b6b;" onclick="homeGo('play')">
           <span class="hemoji">🖌️</span><h4>미술놀이</h4>
           <p>그리기·색칠, 색채 이론, 명암·보색 놀이와 실험실</p>
@@ -308,25 +303,6 @@
           <span class="hemoji">🖼️</span><h4>전시회 정보</h4>
           <p>지금 가볼 만한 미술 전시를 확인해요</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ 수업 바로가기 ============ -->
-    <section class="page" id="page-class">
-      <div id="classGrade">
-        <h2>📚 수업 바로가기</h2>
-        <p class="lead">오늘 선생님이 안내한 <b>학년</b>을 먼저 골라주세요.</p>
-        <div class="grade-grid" id="gradeGrid"></div>
-      </div>
-      <div id="classList" style="display:none;">
-        <div class="crumb"><button onclick="classHome()">📚 수업 바로가기</button> <span>▸</span> <b id="clGradeName"></b></div>
-        <h2 id="clListTitle" style="font-size:24px; margin:0 0 4px; font-weight:800;"></h2>
-        <p class="lead">오늘 배울 수업을 골라주세요.</p>
-        <div id="lessonListBox"></div>
-      </div>
-      <div id="classDetail" style="display:none;">
-        <div class="crumb"><button onclick="classHome()">📚 수업 바로가기</button> <span>▸</span> <button id="clBackGrade">학년</button> <span>▸</span> <b id="clLessonName"></b></div>
-        <div id="lessonBody"></div>
       </div>
     </section>
 
@@ -1072,7 +1048,6 @@ function go(tab, btn, sub){
     if(tab==='ai') buildPrompt();
     if(tab==='expo') loadExpo();
     if(tab==='seat') seatRenderAll();
-    if(tab==='class') classHome();
     return;
   }
   // play submenu click
@@ -2205,19 +2180,10 @@ renderSchools();
 renderMajors();
 renderGallery();
 
-/* ===== 선생님이 올린 수업·화가 자료 불러오기 (있을 때만 덮어쓰기) =====
-   교사용 앱(arty)에서 내보낸 lessons.json / artists.json 을
-   이 사이트(artclass) 저장소에 올리면, 모든 학생 화면에 반영돼요.
+/* ===== 선생님이 올린 화가 자료 불러오기 (있을 때만 덮어쓰기) =====
+   교사용 앱(arty)에서 내보낸 artists.json 을 이 사이트(artclass) 저장소에
+   올리면, 이 사이트를 보는 모든 사람에게 반영돼요.
    파일이 없으면 기본 내용이 그대로 보여요. */
-function mergeLessons(data){
-  try{
-    if(!data||typeof data!=='object')return;
-    const src=data.lessons||data; if(typeof src!=='object')return;
-    GRADES.forEach(g=>{ if(Array.isArray(src[g.id])) LESSONS[g.id]=src[g.id]; });
-    if(document.getElementById('page-class') && document.getElementById('page-class').classList.contains('show')) classHome();
-    else if(document.getElementById('gradeGrid')) renderGrades();
-  }catch(e){ console.log('lessons.json 처리 오류',e); }
-}
 function mergeArtists(data){
   try{
     if(!data||typeof data!=='object')return;
@@ -2226,7 +2192,6 @@ function mergeArtists(data){
     artistIndex={}; renderArtists();
   }catch(e){ console.log('artists.json 처리 오류',e); }
 }
-fetch('lessons.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(mergeLessons).catch(()=>{});
 fetch('artists.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(mergeArtists).catch(()=>{});
 </script>
 </body>
