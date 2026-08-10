@@ -1,0 +1,137 @@
+{
+ "updated": "선생님 편집",
+ "artists": {
+  "world": [
+   {
+    "id": "vangogh",
+    "name": "빈센트 반 고흐",
+    "tag": "후기인상주의",
+    "work": "대표작: 〈별이 빛나는 밤〉",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=420",
+    "thumb": "radial-gradient(circle at 70% 28%, #ffe066 0 6px, transparent 7px), radial-gradient(circle at 24% 60%, #ffd43b 0 5px, transparent 6px), conic-gradient(from 200deg at 45% 45%, #123a63, #2f74c0, #123a63, #0d2743, #123a63)",
+    "desc": "소용돌이치는 강렬한 붓질과 노란 별빛으로 유명해요. 마음속 감정을 색과 붓 자국으로 표현한 화가랍니다."
+   },
+   {
+    "id": "monet",
+    "name": "클로드 모네",
+    "tag": "인상주의",
+    "work": "대표작: 〈인상, 해돋이〉·〈수련〉",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet,_Impression,_soleil_levant.jpg?width=420",
+    "thumb": "radial-gradient(ellipse at 38% 62%, #f4a6c0 0 9%, transparent 10%), radial-gradient(ellipse at 66% 42%, #f7c6d9 0 6%, transparent 7%), linear-gradient(160deg,#9ed3c6,#5f9bb0,#3f6f95)",
+    "desc": "빛과 순간의 느낌을 그렸어요. 같은 장소도 시간에 따라 색이 달라지는 걸 포착한 화가예요."
+   },
+   {
+    "id": "picasso",
+    "name": "파블로 피카소",
+    "tag": "입체주의",
+    "work": "대표작: 〈게르니카〉",
+    "thumb": "conic-gradient(#f4c542 0 90deg, #3a6ea5 0 180deg, #c1432e 0 270deg, #2b2b2b 0)",
+    "desc": "사물을 여러 각도에서 본 모습으로 조각내 다시 붙였어요. 미술의 규칙을 새롭게 바꾼 천재예요.",
+    "img": "https://i.namu.wiki/i/ULo5TBD3btRqcwelijjydz6Bg-ZvX9zotpwrbSiVLAVhDgu_Fe3x4mqib7vUt_qW7a_C7bvKy2mrseudNIygSA.webp"
+   },
+   {
+    "id": "frida",
+    "name": "프리다 칼로",
+    "tag": "멕시코",
+    "work": "대표작: 자화상 연작",
+    "thumb": "radial-gradient(circle at 50% 42%, #d94c6a 0 15%, transparent 16%), radial-gradient(circle at 20% 80%, #f0a5b5 0 8%, transparent 9%), linear-gradient(160deg,#2f8f5b,#1f6b45)",
+    "desc": "자신의 아픔과 삶을 강렬한 자화상으로 그렸어요. 멕시코의 색과 문화가 가득 담겨 있어요.",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR01_BuxTjjXImbT4_APxCYwpaDup1qra88iRPC669HOfDetPcUP8AIcgc&s=10"
+   },
+   {
+    "id": "klimt",
+    "name": "구스타프 클림트",
+    "tag": "아르누보",
+    "work": "대표작: 〈키스〉",
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?width=420",
+    "thumb": "conic-gradient(from 0deg, #d4af37, #f1d16b, #b8860b, #f5e08a, #d4af37)",
+    "desc": "금빛으로 반짝이는 화려한 장식과 패턴이 특징이에요. 그림이 보석처럼 빛나 보여요."
+   },
+   {
+    "id": "kusama",
+    "name": "쿠사마 야요이",
+    "tag": "현대미술",
+    "work": "대표작: 물방울·노란 호박",
+    "thumb": "radial-gradient(circle at 25% 25%, #fff 0 6px, transparent 7px), radial-gradient(circle at 62% 55%, #fff 0 7px, transparent 8px), radial-gradient(circle at 82% 30%, #fff 0 5px, transparent 6px), radial-gradient(circle at 42% 82%, #fff 0 6px, transparent 7px), #d6294a",
+    "desc": "물방울무늬(도트)로 온 세상을 채우는 현대미술 스타예요. 노란 호박 작품도 아주 유명해요.",
+    "img": "https://media.artnedition.com/media/artist/image/web/%E1%84%8F%E1%85%AE%E1%84%89%E1%85%A1%E1%84%86%E1%85%A1.png"
+   }
+  ],
+  "korea": [
+   {
+    "id": "kimwhanki",
+    "name": "김환기",
+    "tag": "추상",
+    "work": "대표작: 점화(點畵) 연작",
+    "thumb": "radial-gradient(circle at 30% 30%, #1f4e79 0 6px, transparent 7px), radial-gradient(circle at 62% 60%, #2a5f96 0 6px, transparent 7px), radial-gradient(circle at 82% 26%, #24568a 0 5px, transparent 6px), #cfe0ef",
+    "desc": "파란 점을 하나하나 찍어 우주와 고향을 표현한 한국 추상미술의 거장이에요."
+   },
+   {
+    "id": "leejungseop",
+    "name": "이중섭",
+    "tag": "근대",
+    "work": "대표작: 〈소〉",
+    "thumb": "radial-gradient(circle at 50% 55%, #8a5a2b 0 18%, transparent 19%), linear-gradient(160deg,#efd9b4,#d3a869)",
+    "desc": "힘찬 소 그림과 따뜻한 가족 그림으로 사랑받는 화가예요. 은박지에 그린 그림도 유명해요."
+   },
+   {
+    "id": "paiknamjune",
+    "name": "백남준",
+    "tag": "미디어아트",
+    "work": "대표작: 〈다다익선〉",
+    "thumb": "conic-gradient(#ff5d5d 0 60deg,#ffd93d 0 120deg,#6bcb77 0 180deg,#4d96ff 0 240deg,#b06bff 0 300deg,#ff8fab 0)",
+    "desc": "TV와 영상으로 예술을 만든 '비디오 아트'의 창시자예요. 한국이 낳은 세계적 예술가랍니다."
+   },
+   {
+    "id": "leeufan",
+    "name": "이우환",
+    "tag": "현대",
+    "work": "대표작: 〈점으로부터〉",
+    "thumb": "radial-gradient(circle at 60% 45%, #16324f 0 6%, #3f6ea3 12%, transparent 22%), #eef1f4",
+    "desc": "붓질 하나, 점 하나와 그 주변의 여백까지 작품으로 삼았어요. 절제된 아름다움이 특징이에요."
+   },
+   {
+    "id": "suhdoho",
+    "name": "서도호",
+    "tag": "설치미술",
+    "work": "대표작: 〈집 속의 집〉",
+    "thumb": "linear-gradient(160deg, rgba(120,180,220,.85), rgba(90,140,200,.6)), repeating-linear-gradient(45deg, rgba(255,255,255,.25) 0 8px, transparent 8px 16px)",
+    "desc": "얇은 천으로 자신이 살던 집을 실제 크기로 만드는 세계적 설치미술가예요."
+   },
+   {
+    "id": "dancheong",
+    "name": "단청·전통 장인",
+    "tag": "전통",
+    "work": "한국의 전통 색과 무늬",
+    "thumb": "repeating-linear-gradient(90deg,#2e7d32 0 12px,#c62828 12px 24px,#1565c0 24px 36px,#f9a825 36px 48px)",
+    "desc": "궁궐과 절을 수놓은 단청처럼, 우리 전통의 색과 무늬를 잇는 공예·디자인의 아름다움이에요."
+   }
+  ],
+  "design": [
+   {
+    "id": "morris",
+    "name": "윌리엄 모리스",
+    "tag": "패턴디자인",
+    "work": "식물 무늬 벽지·직물",
+    "thumb": "radial-gradient(circle at 30% 30%, #4b7f52 0 10%, transparent 11%), radial-gradient(circle at 72% 70%, #a63d40 0 8%, transparent 9%), #234b32",
+    "desc": "자연의 식물을 아름다운 반복 무늬로 만든 '패턴 디자인의 아버지'예요."
+   },
+   {
+    "id": "rams",
+    "name": "디터 람스",
+    "tag": "제품디자인",
+    "work": "'적을수록 좋다'",
+    "thumb": "radial-gradient(circle at 50% 50%, #adb5bd 0 16%, transparent 17%), linear-gradient(160deg,#f1f3f5,#dee2e6)",
+    "desc": "꼭 필요한 것만 남기는 단순함의 제품디자인 거장이에요. 오늘날 스마트폰 디자인에도 영향을 줬어요."
+   },
+   {
+    "id": "graphic",
+    "name": "그래픽 디자인의 세계",
+    "tag": "시각디자인",
+    "work": "포스터·브랜드·타이포그래피",
+    "thumb": "conic-gradient(#ff6b6b,#ffd93d,#6bcb77,#4d96ff,#b06bff,#ff6b6b)",
+    "desc": "글자(타이포그래피), 색, 이미지를 배치해 메시지를 멋지게 전달하는 분야예요. 로고와 포스터가 대표적이에요."
+   }
+  ]
+ }
+}
