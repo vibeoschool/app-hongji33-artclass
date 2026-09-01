@@ -1,0 +1,480 @@
+{
+  "materials": [
+    {
+      "id": "pastel",
+      "name": "파스텔",
+      "emoji": "🎨",
+      "category": "그리기 재료",
+      "description": "파스텔은 안료를 분말 상태로 압축한 것으로, 종이 위에서 부드러운 질감을 만듭니다. 색상이 매우 풍부하고 빠르게 칠할 수 있어 색칠화, 풍경화, 초상화 등에 자주 사용됩니다. 물을 사용하지 않아 언제 어디서나 쉽게 그릴 수 있습니다.",
+      "types": "소프트 파스텔(부드럽고 색감 좋음), 하드 파스텔(세부묘사 가능), 오일 파스텔(윤기 있는 마무리)",
+      "usage": "1. 두꺼운 종이(파스텔 종이) 준비\n2. 밝은 색부터 어두운 색으로 칠하기\n3. 손가락이나 휴지로 부드럽게 펴서 혼합\n4. 최종 손질 후 고착제 분무",
+      "characteristics": "빠른 표현, 풍부한 색감, 부드러운 질감, 물 불필요",
+      "examples": [
+        {"title": "찬란한 해질녘 풍경", "description": "주황, 분홍, 보라색 파스텔로 표현한 저녁 하늘"},
+        {"title": "인물 초상화", "description": "부드러운 파스텔 톤으로 표현한 얼굴의 음영"},
+        {"title": "꽃 정물화", "description": "생생한 색상의 파스텔로 표현한 꽃의 섬세한 질감"}
+      ],
+      "youtubeSearch": "파스텔 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=파스텔+사용법+튜토리얼"
+    },
+    {
+      "id": "charcoal",
+      "name": "목탄",
+      "emoji": "⚫",
+      "category": "그리기 재료",
+      "description": "나무를 특수하게 구워 만든 검은색 막대로, 종이에 선을 그으면 검은 분말이 묻습니다. 가장 표현력 있는 명암 표현이 가능하며, 소거도 쉬워 스케치나 명암 연습에 최고의 재료입니다. 뛰어난 농담 표현으로 드라마틱한 작품을 만들 수 있습니다.",
+      "types": "나무 목탄(일반적), 분말 목탄(넓은 면 칠하기), 압축 목탄(진한 검은색)",
+      "usage": "1. 스케치용 종이 준비\n2. 가볍게 스케치하기\n3. 점진적으로 명암 표현\n4. 지우개나 휴지로 소거해 명도 조절\n5. 고착제 분무로 완성",
+      "characteristics": "우수한 명암 표현, 쉬운 수정, 풍부한 톤, 전문적 질감",
+      "examples": [
+        {"title": "풍경 명암 표현", "description": "밝은 하늘부터 어두운 나무까지 표현한 풍경"},
+        {"title": "초상화 음영", "description": "얼굴의 입체감을 살린 명암 표현"},
+        {"title": "질감 표현 연습", "description": "다양한 표면의 질감을 표현한 정물화"}
+      ],
+      "youtubeSearch": "목탄 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=목탄+스케치+사용법"
+    },
+    {
+      "id": "pencil",
+      "name": "연필",
+      "emoji": "✏️",
+      "category": "그리기 재료",
+      "description": "가장 기본적이고 필수적인 그리기 도구입니다. 선명한 선 표현이 가능하며 톤(명암)도 표현할 수 있습니다. 가격이 저렴하고 휴대가 편해 어디서나 사용할 수 있으며, 미술 기초를 배우는 데 가장 좋은 재료입니다.",
+      "types": "HB~H(단단한 선, 스케치), B~10B(부드럽고 검은색, 톤 표현), 색연필과 구별",
+      "usage": "1. 좋은 질의 스케치용 종이 준비\n2. H~HB 연필로 가볍게 스케치\n3. 톤 표현은 B 연필 사용\n4. 흰 지우개로 하이라이트 표현\n5. 정교한 선은 끝이 날카로울 때 사용",
+      "characteristics": "기본 도구, 다양한 톤, 정교한 선, 수정 용이",
+      "examples": [
+        {"title": "소묘 기초 연습", "description": "기하학 형태의 명암 표현"},
+        {"title": "인물 데생", "description": "얼굴의 비례와 톤을 정교하게 표현"},
+        {"title": "풍경 스케치", "description": "다양한 연필의 농도를 사용한 풍경 표현"}
+      ],
+      "youtubeSearch": "연필 그리기 기초",
+      "youtubeLink": "https://www.youtube.com/results?search_query=연필+데생+기초+튜토리얼"
+    },
+    {
+      "id": "acrylicpaint",
+      "name": "아크릴물감",
+      "emoji": "🎨",
+      "category": "물감",
+      "description": "물에 녹는 합성 물감으로, 빠르게 마르는 특징이 있습니다. 물로 농도를 조절할 수 있으며 투명부터 불투명까지 다양한 표현이 가능합니다. 캔버스, 종이, 나무, 돌 등 많은 재료에 사용할 수 있어 가장 다재다능한 물감입니다.",
+      "types": "학생용(가격 저렴), 전문가용(높은 색상 순도), 두꺼운 질감용, 유동성 아크릴",
+      "usage": "1. 캔버스나 아크릴 종이에 하층 칠하기(프라이머 생략 가능)\n2. 물로 물감 농도 조절\n3. 마른 후 덧칠 가능\n4. 빠르게 마르므로 빠른 작업 진행\n5. 물로 세척, 마르면 방수 완성",
+      "characteristics": "빠른 건조, 다양한 재료 적용, 물 사용, 높은 색감, 변색 적음",
+      "examples": [
+        {"title": "추상화 표현", "description": "여러 색의 아크릴을 겹쳐 표현한 현대미술"},
+        {"title": "풍경화 작품", "description": "불투명한 아크릴의 생생한 색감"},
+        {"title": "혼합 재료 미술", "description": "아크릴과 다른 재료를 함께 사용한 작품"}
+      ],
+      "youtubeSearch": "아크릴물감 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=아크릴물감+페인팅+튜토리얼"
+    },
+    {
+      "id": "watercolor",
+      "name": "수채화물감",
+      "emoji": "💧",
+      "category": "물감",
+      "description": "투명한 색감이 가장 큰 특징으로, 물을 많이 사용해 밝고 산뜻한 색감을 표현할 수 있습니다. 종이의 흰색을 살려 명도 표현이 우수하며, 가볍고 우아한 분위기의 작품을 만들기에 이상적입니다. 여행이나 야외 스케치에도 자주 사용됩니다.",
+      "types": "팔레트형(고체 물감), 튜브형(더 쉬운 사용), 전문가용, 학생용",
+      "usage": "1. 두께 있는 수채화 전용 종이 준비(일반 종이 금지)\n2. 종이를 미리 물에 적시기(선택사항)\n3. 밝은 색부터 어두운 색 순서로 칠하기\n4. 물의 양을 조절해 투명도 표현\n5. 오버래핑(덧칠)으로 깊이 표현",
+      "characteristics": "투명한 색감, 밝은 표현, 물의 유동성, 우아한 분위기",
+      "examples": [
+        {"title": "꽃 정물화", "description": "투명한 수채화로 표현한 생생한 꽃"},
+        {"title": "풍경화", "description": "물이 흘러내리는 효과를 활용한 하늘"},
+        {"title": "인물화", "description": "섬세한 투명층을 쌓아 표현한 얼굴"}
+      ],
+      "youtubeSearch": "수채화 기초",
+      "youtubeLink": "https://www.youtube.com/results?search_query=수채화+기초+튜토리얼"
+    },
+    {
+      "id": "watercolorbrush",
+      "name": "수채화 붓",
+      "emoji": "🖌️",
+      "category": "도구",
+      "description": "부드러운 모(동물 털)나 인공 모로 만든 붓으로, 물을 많이 머금을 수 있습니다. 넓은 면 칠하기에서부터 섬세한 선 표현까지 가능한 다양한 크기와 모양이 있습니다. 수채화의 표현력을 크게 결정하는 중요한 도구입니다.",
+      "types": "원형붓(일반 칠하기), 평붓(넓은 면), 스파텍 붓(텍스처), 리글러(세밀한 선)",
+      "usage": "1. 적절한 크기의 붓 선택\n2. 물에 충분히 적시기\n3. 무늬판에서 여분의 물 제거\n4. 물감 담아 칠하기\n5. 사용 후 즉시 깨끗이 씻기 (건조 방지)",
+      "characteristics": "물 흡수력 우수, 다양한 크기, 부드러운 터치, 관리 필수",
+      "examples": [
+        {"title": "넓은 하늘 표현", "description": "큰 평붓으로 신선하게 표현한 하늘"},
+        {"title": "세밀한 가지", "description": "작은 원형붓으로 표현한 나뭇가지"},
+        {"title": "그래디�션", "description": "적절한 습도 조절로 만든 색의 단계적 변화"}
+      ],
+      "youtubeSearch": "수채화 붓 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=수채화+붓+선택+및+사용법"
+    },
+    {
+      "id": "sculptingknife",
+      "name": "조각도",
+      "emoji": "🔪",
+      "category": "도구",
+      "description": "찰흙, 클레이, 점토 등을 조각하고 다듬기 위한 도구입니다. 다양한 모양의 끝으로 다양한 표현이 가능하며, 섬세한 디테일부터 거친 질감까지 만들 수 있습니다. 조소 미술의 필수 도구입니다.",
+      "types": "뾰족한 끝(세밀한 선각), 넓은 끝(큰 면 다듬기), 루프형(곡선), 다양한 각도의 끝",
+      "usage": "1. 찰흙이나 클레이를 준비\n2. 큰 형태부터 조각하기\n3. 점진적으로 세부 사항 추가\n4. 조각도의 각도를 바꿔가며 다양한 표현\n5. 필요시 물로 표면 부드럽게 다듬기",
+      "characteristics": "다양한 형태, 세밀한 표현, 텍스처 가능, 필수 조소 도구",
+      "examples": [
+        {"title": "인물 흉상", "description": "조각도로 섬세하게 표현한 얼굴의 입체감"},
+        {"title": "추상 형태", "description": "다양한 각도의 조각도로 만든 기하학적 형태"},
+        {"title": "부조 작업", "description": "평면 위에 조각도로 표현한 부조 미술"}
+      ],
+      "youtubeSearch": "조각도 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=조각도+클레이+조소+튜토리얼"
+    },
+    {
+      "id": "marbling",
+      "name": "마블링",
+      "emoji": "🌊",
+      "category": "특수 기법",
+      "description": "물 위에 뜨는 물감의 특성을 이용하여 대리석 무늬처럼 아름다운 패턴을 만드는 기법입니다. 종이에 옮기면 독특하고 예측 불가능한 패턴이 나타나, 우연의 미를 활용한 미술 표현입니다. 책 표지, 선물 포장 디자인 등에도 사용됩니다.",
+      "types": "전통 마블링, 아크릴 물감 사용, 액체 마블링 키트",
+      "usage": "1. 넓은 그릇에 물을 가득 채우기\n2. 물위에 뜨는 물감 떨어뜨리기(소량)\n3. 막대나 빗으로 패턴 만들기\n4. 종이를 물 위에 천천히 놓고 뜨기\n5. 마른 후 액자에 전시 또는 스캔",
+      "characteristics": "예측 불가능한 패턴, 독특한 질감, 재미있는 표현, 한번만 시도 가능",
+      "examples": [
+        {"title": "우아한 소용돌이 무늬", "description": "파란색과 분홍색의 마블링 패턴"},
+        {"title": "책 표지 디자인", "description": "마블링 무늬를 활용한 독특한 책 표지"},
+        {"title": "카드 만들기", "description": "마블링으로 만든 독특한 그리팅 카드"}
+      ],
+      "youtubeSearch": "마블링 기법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=마블링+기법+튜토리얼"
+    },
+    {
+      "id": "crayon",
+      "name": "크레파스",
+      "emoji": "🖍️",
+      "category": "그리기 재료",
+      "description": "밀랍을 주성분으로 한 부드러운 그리기 도구로, 어린이부터 전문가까지 사용합니다. 색상이 매우 풍부하고 섞일 때 선명하고 예쁜 색을 만들 수 있으며, 종이에 부드럽게 칠해집니다. 유화 같은 효과를 낼 수도 있습니다.",
+      "types": "일반 크레파스, 굵은 크레파스(어린이용), 유성 크레파스(더 부드러움)",
+      "usage": "1. 종이에 가볍게 밑칠하기\n2. 겹쳐서 여러 색 섞기\n3. 흰 크레파스로 하이라이트 추가\n4. 떼제(긁어내기) 기법으로 특수 효과\n5. 헤어드라이어로 약간 녹여 부드럽게 마무리",
+      "characteristics": "부드러운 질감, 선명한 색, 혼합 용이, 다양한 효과 가능",
+      "examples": [
+        {"title": "무지개 풍경", "description": "크레파스의 선명한 색으로 표현한 무지개 하늘"},
+        {"title": "유화 스타일", "description": "두터운 크레파스로 표현한 유화 같은 작품"},
+        {"title": "스크래치 기법", "description": "크레파스 위에 검은 크레파스를 칠해 긁어낸 작품"}
+      ],
+      "youtubeSearch": "크레파스 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=크레파스+기법+아트+튜토리얼"
+    },
+    {
+      "id": "colorpencil",
+      "name": "색연필",
+      "emoji": "🎨",
+      "category": "그리기 재료",
+      "description": "가는 색상의 심을 가진 연필로, 정교한 선 표현과 섬세한 색칠이 가능합니다. 1000가지 이상의 색상이 있어 미묘한 색감 표현이 뛰어나며, 전문가적인 수준의 작품부터 캐주얼한 스케치까지 모두 가능합니다.",
+      "types": "유성 색연필, 수성 색연필, 전문가용, 학생용",
+      "usage": "1. 고급 색연필용 종이 선택\n2. 가볍게 스케치하기\n3. 밝은 색부터 어두운 색으로 칠하기\n4. 칼라 블렌딩(색 섞기) 시도\n5. 블렌더나 무색 연필로 부드럽게 마무리",
+      "characteristics": "정교한 선, 섬세한 색감, 다양한 색상, 칼라 블렌딩 가능",
+      "examples": [
+        {"title": "정밀한 식물 삽화", "description": "색연필로 표현한 세밀한 잎과 꽃"},
+        {"title": "인물 초상화", "description": "색연필의 미묘한 색감으로 표현한 얼굴"},
+        {"title": "풍경 세밀화", "description": "여러 색의 색연필을 겹쳐 표현한 풍경"}
+      ],
+      "youtubeSearch": "색연필 기법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=색연필+드로잉+기초"
+    },
+    {
+      "id": "marker",
+      "name": "마카펜",
+      "emoji": "🖊️",
+      "category": "그리기 재료",
+      "description": "액상 물감으로 채운 펜으로, 빠르고 강렬한 색상 표현이 가능합니다. 포스터, 일러스트, 만화, 디자인 등에 광범위하게 사용되며, 종이뿐만 아니라 여러 재료에 칠할 수 있습니다.",
+      "types": "프로 마카펜, 일반 마카펜, 알코올성, 수성, 두께별 다양한 펜촉",
+      "usage": "1. 목표 종이나 재료 선택\n2. 밑그림을 연필로 가볍게 그리기\n3. 펜의 각도를 조절해 선의 굵기 변화\n4. 레이어를 쌓아 깊이 표현\n5. 세세한 디테일은 얇은 펜촉으로 마무리",
+      "characteristics": "빠른 칠하기, 강렬한 색, 다양한 용도, 건조 방지 필요",
+      "examples": [
+        {"title": "포스터 디자인", "description": "마카펜의 생생한 색으로 만든 광고 포스터"},
+        {"title": "만화 캐릭터", "description": "마카펜으로 표현한 애니메이션 스타일 인물"},
+        {"title": "그래피티 아트", "description": "마카펜으로 표현한 거리 미술"}
+      ],
+      "youtubeSearch": "마카펜 일러스트 기법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=마카펜+일러스트+튜토리얼"
+    },
+    {
+      "id": "acrylicpen",
+      "name": "아크릴펜",
+      "emoji": "✏️",
+      "category": "그리기 재료",
+      "description": "아크릴 물감으로 채운 펜으로, 마카펜보다 더 정교한 선 표현이 가능합니다. 건조 후 방수가 되므로 보존성이 좋으며, 어두운 종이에도 밝은 색으로 표현할 수 있습니다.",
+      "types": "다양한 펜촉 굵기, 색상 옵션, 전문가용, 학생용",
+      "usage": "1. 어두운 종이(검은색, 짙은 색) 선택 가능\n2. 펜을 흔들어 내용물 균일하게 섞기\n3. 가벼운 터치로 정교하게 표현\n4. 층을 쌓아 색의 깊이 표현\n5. 완전히 말린 후 세밀한 디테일 추가",
+      "characteristics": "정교한 선, 방수 성질, 어두운 종이 사용 가능, 보존성 우수",
+      "examples": [
+        {"title": "검은 종이에 그린 밤하늘", "description": "아크릴펜으로 표현한 별과 달"},
+        {"title": "만다라 패턴", "description": "아크릴펜의 정교한 선으로 만든 복잡한 패턴"},
+        {"title": "흰색 강조 드로잉", "description": "검은 종이에 흰 아크릴펜으로 표현한 명암"}
+      ],
+      "youtubeSearch": "아크릴펜 드로잉",
+      "youtubeLink": "https://www.youtube.com/results?search_query=아크릴펜+화이트펜+드로잉"
+    },
+    {
+      "id": "dyemarker",
+      "name": "염색용 마카",
+      "emoji": "🎨",
+      "category": "염색 재료",
+      "description": "천, 면, 실 등의 텍스타일 재료에 색을 칠하는 특수 마카입니다. 일반 마카와 달리 섬유에 흡수되어 색이 오래 지속되며, 세탁해도 색이 잘 빠지지 않습니다.",
+      "types": "일반 염색용 마카, 영구 색상, 다양한 색상 옵션",
+      "usage": "1. 면 100% 또는 면 혼합 천 준비\n2. 밑그림을 연필로 그리거나 직접 드로잉\n3. 원하는 부분에 마카로 색칠\n4. 색상이 고정되도록 드라이어로 말리기\n5. 설정 및 보존을 위해 세탁 또는 다림질",
+      "characteristics": "텍스타일 적용 가능, 영구 색상, 세탁 강함, 다양한 창의성",
+      "examples": [
+        {"title": "커스텀 티셔츠", "description": "흰 티셔츠에 그린 개성 있는 디자인"},
+        {"title": "손수건 미술", "description": "염색용 마카로 그린 무늬와 패턴"},
+        {"title": "패브릭 포스터", "description": "천에 그린 대형 일러스트"}
+      ],
+      "youtubeSearch": "염색용 마카 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=옷+그리기+염색용마카+튜토리얼"
+    },
+    {
+      "id": "dyecolorpencil",
+      "name": "염색용 색연필",
+      "emoji": "🎨",
+      "category": "염색 재료",
+      "description": "물에 녹는 특수 색연필로, 천에 직접 칠한 후 물을 뿌려 색을 고정할 수 있습니다. 섬세한 표현이 가능하면서도 영구적인 색감을 유지하는 게 특징입니다.",
+      "types": "수성 염색색연필, 영구 염색색연필",
+      "usage": "1. 면 100% 또는 면 혼합 천 준비\n2. 가볍게 밑그림 스케치\n3. 원하는 색으로 칠하기\n4. 물을 분무해 색 고정\n5. 자연 건조 또는 드라이어로 말리기",
+      "characteristics": "섬세한 표현, 물로 색 고정, 영구 색상, 정교한 디테일",
+      "examples": [
+        {"title": "수채화 스타일 패브릭 아트", "description": "색연필과 물로 표현한 천의 수채화 효과"},
+        {"title": "정밀한 패턴 디자인", "description": "세밀한 색연필로 그린 천 디자인"},
+        {"title": "천연 염색 아트", "description": "유기적인 색감의 패브릭 미술"}
+      ],
+      "youtubeSearch": "염색용 색연필 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=천+칠하기+수성색연필+튜토리얼"
+    },
+    {
+      "id": "magic",
+      "name": "매직",
+      "emoji": "🖊️",
+      "category": "그리기 재료",
+      "description": "알코올성 액상 물감으로 채운 굵은 펜으로, 강렬하고 빠른 표현이 특징입니다. 포스터, 보드 표기, 대형 미술 작업에 자주 사용되며, 종이 외에도 여러 재료에 사용 가능합니다.",
+      "types": "일반 매직, 형광색 매직, 금색·은색 매직, 굵기별 다양",
+      "usage": "1. 표면을 깨끗이 준비\n2. 펜촉이 고르게 분포하도록 처음 몇 번 칠하기\n3. 강렬하고 빠른 스트로크로 표현\n4. 알코올성이므로 환기 충분히\n5. 완전히 말린 후 사용",
+      "characteristics": "빠른 표현, 강렬한 색, 다양한 표면 적용, 내구성",
+      "examples": [
+        {"title": "포스터 디자인", "description": "매직으로 그린 크고 분명한 포스터"},
+        {"title": "칠판 표기", "description": "학교나 매장 칠판에 기록하는 매직 글씨"},
+        {"title": "대형 벽화", "description": "매직으로 표현한 커다란 미술 작품"}
+      ],
+      "youtubeSearch": "매직 포스터 그리기",
+      "youtubeLink": "https://www.youtube.com/results?search_query=포스터+매직+글씨+디자인"
+    },
+    {
+      "id": "namepenpen",
+      "name": "네임펜",
+      "emoji": "✒️",
+      "category": "그리기 재료",
+      "description": "검은색이 주요 색상으로, 깔끔하고 정확한 선 표현이 가능한 펜입니다. 학생들의 이름 쓰기부터 세밀한 드로잉, 만화 잉크선까지 광범위하게 사용됩니다.",
+      "types": "일반 네임펜, 극세필, 중필, 굵은 선 옵션",
+      "usage": "1. 종이를 평평하게 준비\n2. 가볍고 균일한 압력으로 선 그리기\n3. 속도를 일정하게 유지해 선의 굵기 조절\n4. 세밀한 부분은 극세필 사용\n5. 충분히 말린 후 스캔하거나 색칠",
+      "characteristics": "정확한 선, 깔끔한 표현, 내구성, 경제적",
+      "examples": [
+        {"title": "만화 원고", "description": "네임펜으로 그린 만화의 검은 잉크선"},
+        {"title": "정밀 드로잉", "description": "네임펜의 정확한 선으로 표현한 건축도"},
+        {"title": "펜 따라 그리기", "description": "네임펜으로 선을 강조한 일러스트"}
+      ],
+      "youtubeSearch": "네임펜 만화 드로잉",
+      "youtubeLink": "https://www.youtube.com/results?search_query=만화펜+네임펜+사용법"
+    },
+    {
+      "id": "brushpen",
+      "name": "붓펜",
+      "emoji": "🖌️",
+      "category": "그리기 재료",
+      "description": "붓 모양의 유연한 펜촉으로, 서예와 같은 우아한 선부터 굵은 선까지 다양한 표현이 가능합니다. 캘리그래피, 현대 캘리그래피, 일러스트 등에 광범위하게 사용됩니다.",
+      "types": "연한 붓펜, 딱딱한 붓펜, 다양한 색상, 크기별",
+      "usage": "1. 종이를 매끄럽고 적당한 텍스처로 준비\n2. 붓의 방향과 각도를 조절해 선의 굵기 변화\n3. 가볍고 우아한 터치로 표현\n4. 속도와 압력을 조절해 미묘한 라인 표현\n5. 건조 후 잉크가 번지지 않도록 주의",
+      "characteristics": "다양한 선의 굵기, 우아한 표현, 유연한 필기감, 예술적 표현",
+      "examples": [
+        {"title": "현대 캘리그래피", "description": "붓펜으로 표현한 우아한 글씨"},
+        {"title": "일러스트레이션", "description": "붓펜의 선으로 표현한 캐릭터 일러스트"},
+        {"title": "서예 아트", "description": "전통 서예와 현대를 합친 붓펜 작품"}
+      ],
+      "youtubeSearch": "붓펜 캘리그래피",
+      "youtubeLink": "https://www.youtube.com/results?search_query=붓펜+캘리그래피+기초"
+    },
+    {
+      "id": "ink",
+      "name": "먹",
+      "emoji": "⚫",
+      "category": "동양화 재료",
+      "description": "검은색 안료를 가루로 만들어 건조한 것으로, 물에 갈아 사용합니다. 한국, 중국, 일본 전통 미술의 가장 중요한 재료이며, 먹의 농도를 조절해 다양한 톤을 표현할 수 있습니다.",
+      "types": "전통 먹(오래된 먹일수록 좋음), 액상 먹(편리함), 석묵(고급 먹)",
+      "usage": "1. 벼루에 먹을 준비하기\n2. 적절한 물을 넣고 부드럽게 갈기\n3. 원하는 농도가 될 때까지 갈기(10-30분)\n4. 한지나 생화선지에 붓으로 표현\n5. 건조 후 고정제 불필요",
+      "characteristics": "전통적 표현, 다양한 톤, 우아한 분위기, 시간이 필요",
+      "examples": [
+        {"title": "먹 산수화", "description": "먹의 농도로 표현한 전통 풍경화"},
+        {"title": "인물 초상화", "description": "먹으로 표현한 동양식 인물화"},
+        {"title": "추상 먹화", "description": "먹의 우연한 효과를 활용한 현대미술"}
+      ],
+      "youtubeSearch": "먹 갈기 동양화",
+      "youtubeLink": "https://www.youtube.com/results?search_query=먹+갈기+서예+기초"
+    },
+    {
+      "id": "inkwater",
+      "name": "먹물",
+      "emoji": "💧",
+      "category": "동양화 재료",
+      "description": "먹을 물에 미리 갈아 액체 상태로 준비한 것으로, 편리하게 바로 사용할 수 있습니다. 전통 먹을 갈 시간이 없을 때 훌륭한 대체제이며, 일정한 농도를 유지합니다.",
+      "types": "일반 먹물, 고급 먹물, 다양한 색상(갈색, 회색 등)",
+      "usage": "1. 한지나 생화선지 준비\n2. 물을 조금 더해 원하는 농도 조절\n3. 붓으로 직접 표현 가능\n4. 물의 양으로 톤 변화\n5. 건조 후 고정제 불필요",
+      "characteristics": "즉시 사용 가능, 일정한 품질, 편리함, 전통적 표현",
+      "examples": [
+        {"title": "서예 연습", "description": "먹물로 표현한 글씨와 서예"},
+        {"title": "빠른 스케치", "description": "먹물로 표현한 일상 스케치"},
+        {"title": "달인의 작품", "description": "먹물과 붓으로 표현한 전문가급 일러스트"}
+      ],
+      "youtubeSearch": "먹물 서예",
+      "youtubeLink": "https://www.youtube.com/results?search_query=먹물+붓글씨+튜토리얼"
+    },
+    {
+      "id": "koreanpaper",
+      "name": "화선지",
+      "emoji": "📄",
+      "category": "종이",
+      "description": "한국 전통 미술에 사용하는 얇고 부드러운 종이로, 먹이나 먹물이 자연스럽게 스며듭니다. 질감이 고르고 보존성이 우수하며, 한국 서예, 동양화, 캘리그래피에 최고의 종이입니다.",
+      "types": "얇은 화선지, 두꺼운 화선지, 색상 화선지(선택), 전통 한지",
+      "usage": "1. 화선지를 책상에 평평하게 깔기\n2. 먹이나 먹물을 준비\n3. 붓으로 소프트하게 표현\n4. 먹이 자연스럽게 스미도록 기다리기\n5. 충분히 건조 후 보관",
+      "characteristics": "가는 질감, 먹 스밈, 전통적 외관, 우수한 보존성",
+      "examples": [
+        {"title": "동양화 작품", "description": "화선지에 그린 전통 수묵화"},
+        {"title": "서예 원작", "description": "화선지에 표현한 아름다운 글씨"},
+        {"title": "캘리그래피", "description": "화선지의 질감을 살린 현대 캘리그래피"}
+      ],
+      "youtubeSearch": "화선지 선택",
+      "youtubeLink": "https://www.youtube.com/results?search_query=화선지+종류+선택+방법"
+    },
+    {
+      "id": "inkstone",
+      "name": "벼루",
+      "emoji": "⚫",
+      "category": "동양화 도구",
+      "description": "먹을 물에 갈아 먹물을 만드는 전통 도구입니다. 단순한 도구지만 곱고 세밀한 표면 덕에 먹물의 질감을 크게 좌우하며, 오래된 벼루일수록 더 좋은 먹물을 만들 수 있습니다.",
+      "types": "전통 벼루, 사각형 벼루, 원형 벼루, 경제적 벼루",
+      "usage": "1. 벼루에 물을 조금 담기\n2. 먹을 벼루 위에 올리기\n3. 부드러운 원형 움직임으로 천천히 갈기\n4. 10-30분 동안 꾸준히 갈기\n5. 원하는 농도가 되면 사용",
+      "characteristics": "전통적 도구, 수동 작업, 시간이 필요, 긴 수명",
+      "examples": [
+        {"title": "먹 갈기 준비", "description": "벼루로 갈아 만든 검은 먹물"},
+        {"title": "서예 기초", "description": "벼루 위에서 만든 다양한 톤의 먹물"},
+        {"title": "전통 예술", "description": "벼루로 준비하는 진정한 동양화 작업"}
+      ],
+      "youtubeSearch": "벼루 먹 갈기",
+      "youtubeLink": "https://www.youtube.com/results?search_query=벼루+먹+갈기+동양화"
+    },
+    {
+      "id": "clayadh",
+      "name": "지점토",
+      "emoji": "🎨",
+      "category": "입체 재료",
+      "description": "종이와 찰흙의 특성을 결합한 소재로, 가볍고 다루기 쉬우며 건조하면 단단해집니다. 초등학생부터 어른까지 모두 사용할 수 있으며, 신기한 세부 표현과 다양한 형태 만들기에 적합합니다.",
+      "types": "일반 지점토, 색상 지점토(색칠 필요 없음), 경량 지점토",
+      "usage": "1. 지점토를 손으로 부드럽게 준비\n2. 기본 형태 만들기\n3. 조각도로 세부 표현\n4. 물로 표면 부드럽게 다듬기\n5. 자연 건조(24시간) 후 색칠",
+      "characteristics": "가볍고 다루기 쉬움, 세부 표현 가능, 건조 후 단단함, 색칠 필요",
+      "examples": [
+        {"title": "동물 조각", "description": "지점토로 만든 사실적인 동물 모형"},
+        {"title": "장식 오브제", "description": "세밀한 디테일의 지점토 조각"},
+        {"title": "인물 버스트", "description": "지점토로 표현한 인물 흉상"}
+      ],
+      "youtubeSearch": "지점토 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=지점토+조각+튜토리얼"
+    },
+    {
+      "id": "clay",
+      "name": "클레이",
+      "emoji": "🎨",
+      "category": "입체 재료",
+      "description": "중합체 찰흙으로, 손으로 만들 수 있고 오븐에 구워 고정합니다. 매우 세밀한 표현이 가능하며, 다양한 색상의 클레이를 섞어 색칠 없이도 칼라풀한 작품을 만들 수 있습니다.",
+      "types": "일반 중합 클레이, 투명 클레이, 효과 클레이(글리터, 네온 등)",
+      "usage": "1. 클레이를 손이나 기계로 부드럽게 준비\n2. 기본 형태와 색상 만들기\n3. 세부 사항 조각도로 추가\n4. 원하는 형태 완성\n5. 오븐에서 지시 온도·시간으로 구우기",
+      "characteristics": "매우 세밀한 표현, 색상 혼합 가능, 영구적 고정, 작은 치수 작업 우수",
+      "examples": [
+        {"title": "미니어처 피규어", "description": "클레이로 만든 정교한 작은 인물 조각"},
+        {"title": "장신구 디자인", "description": "클레이로 만든 개성 있는 팬던트와 귀걸이"},
+        {"title": "컵케이크 토핑", "description": "클레이로 만든 식욕을 자극하는 미니 음식 모형"}
+      ],
+      "youtubeSearch": "클레이 피규어 만들기",
+      "youtubeLink": "https://www.youtube.com/results?search_query=폴리머+클레이+피규어+튜토리얼"
+    },
+    {
+      "id": "wire",
+      "name": "철사",
+      "emoji": "🔗",
+      "category": "입체 재료",
+      "description": "금속 재료로, 구부려서 다양한 형태를 만들 수 있습니다. 조각, 설치미술, 주얼리, 공예 등에 광범위하게 사용되며, 가볍고 다루기 쉬워 입체 표현에 최고의 재료입니다.",
+      "types": "얇은 철사(정교한 표현), 굵은 철사(구조), 구리선(따뜻한 톤), 은선(고급)",
+      "usage": "1. 원하는 길이의 철사 준비\n2. 플라이어로 구부려 형태 만들기\n3. 접거나 감아 세부 표현\n4. 여러 철사를 함께 편성해 구조 강화\n5. 필요시 도장이나 색칠",
+      "characteristics": "유연한 형태 표현, 가벼움, 지속성, 3차원 입체 가능",
+      "examples": [
+        {"title": "와이어 드로잉", "description": "철사로 표현한 3D 선화 작품"},
+        {"title": "인물 조각", "description": "철사의 유연함으로 표현한 동적인 몸짓"},
+        {"title": "추상 설치미술", "description": "철사 구조로 만든 현대미술 설치"}
+      ],
+      "youtubeSearch": "철사 조각 와이어 아트",
+      "youtubeLink": "https://www.youtube.com/results?search_query=와이어+아트+철사+조각"
+    },
+    {
+      "id": "woodglue",
+      "name": "목공풀",
+      "emoji": "🧴",
+      "category": "도구",
+      "description": "나무와 나무를 붙이는 특수 접착제로, 매우 강한 접착력이 특징입니다. 미술 프로젝트, 목공 공예, 조각 등에서 여러 부품을 함께 붙일 때 사용됩니다.",
+      "types": "일반 목공풀, 빠른 건조 목공풀, 방수 목공풀",
+      "usage": "1. 붙일 표면을 깨끗이 준비\n2. 목공풀을 얇게 펴 바르기\n3. 두 부분을 꼭 누르기\n4. 클램프나 무게로 고정 (30분-2시간)\n5. 완전히 경화된 후 사용 (24시간)",
+      "characteristics": "강력한 접착력, 건조 후 방수, 나무에 우수, 경제적",
+      "examples": [
+        {"title": "나무 조각 접착", "description": "목공풀로 붙인 여러 나무 조각 조합"},
+        {"title": "미니 목재 구조", "description": "목공풀로 조립한 나무 미니어처"},
+        {"title": "혼합 미술 작품", "description": "목공풀로 붙인 찾과 나무 조합 작품"}
+      ],
+      "youtubeSearch": "목공풀 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=목공풀+사용법+강도"
+    },
+    {
+      "id": "varnish",
+      "name": "바니시",
+      "emoji": "✨",
+      "category": "마무리 재료",
+      "description": "그림의 표면을 보호하고 광택을 더하는 투명한 코팅 재료입니다. 아크릴 그림, 목재 작품, 수채화 등의 표면을 보호하고 광택감을 높입니다.",
+      "types": "아크릴용 바니시, 유화용 바니시, 광택(글로시), 무광(매트)",
+      "usage": "1. 작품이 완전히 건조될 때까지 기다리기\n2. 평평한 표면에 그림 놓기\n3. 붓이나 스프레이로 균일하게 바르기\n4. 건조 시간 기다리기(제품별로 다름)\n5. 필요시 두 번째 코트 추가",
+      "characteristics": "보호 기능, 광택감 추가, 내구성 증가, 색감 유지",
+      "examples": [
+        {"title": "아크릴 그림 마무리", "description": "바니시로 광택을 더한 완성 그림"},
+        {"title": "목재 작품 보호", "description": "목재 표면을 보호하는 바니시 코팅"},
+        {"title": "전시 준비", "description": "프로페셔널한 완성을 위한 바니시 처리"}
+      ],
+      "youtubeSearch": "바니시 칠하기",
+      "youtubeLink": "https://www.youtube.com/results?search_query=아크릴+그림+바니시+칠하기"
+    },
+    {
+      "id": "posterpaint",
+      "name": "포스터칼라",
+      "emoji": "🎨",
+      "category": "물감",
+      "description": "불투명한 수성 물감으로, 아크릴과 수채화의 중간 특성을 가집니다. 카드, 포스터, 광고 등의 제작에 자주 사용되며, 선명한 색감과 빠른 건조가 특징입니다.",
+      "types": "학생용, 전문가용, 형광색, 다양한 색상",
+      "usage": "1. 포스터 보드나 일반 종이 준비\n2. 물로 농도 조절하기\n3. 붓으로 부드럽게 칠하기\n4. 빠르게 마르므로 레이어 쌓기 용이\n5. 완전히 말린 후 추가 코팅 가능",
+      "characteristics": "불투명한 색감, 빠른 건조, 선명한 표현, 경제적",
+      "examples": [
+        {"title": "포스터 디자인", "description": "포스터칼라로 만든 광고 포스터"},
+        {"title": "카드 만들기", "description": "포스터칼라로 칠한 컬러풀한 카드"},
+        {"title": "일러스트", "description": "포스터칼라의 선명한 색으로 표현한 일러스트"}
+      ],
+      "youtubeSearch": "포스터칼라 사용법",
+      "youtubeLink": "https://www.youtube.com/results?search_query=포스터칼라+칠하기+기법"
+    },
+    {
+      "id": "posterbrush",
+      "name": "포스터칼라 붓",
+      "emoji": "🖌️",
+      "category": "도구",
+      "description": "포스터칼라와 함께 사용하는 전용 붓으로, 합성 모로 만들어져 포스터칼라의 두꺼운 질감을 다룰 수 있습니다. 넓은 면 칠하기부터 세밀한 표현까지 가능합니다.",
+      "types": "원형붓(다양한 크기), 평붓(넓은 면), 라운드(세밀한 선)",
+      "usage": "1. 적절한 크기의 붓 선택\n2. 물에 충분히 적시기\n3. 포스터칼라 담아 칠하기\n4. 흘러내리지 않는 적절한 농도 유지\n5. 사용 후 즉시 깨끗이 씻기",
+      "characteristics": "합성 모, 두꺼운 물감 처리, 내구성, 다양한 크기",
+      "examples": [
+        {"title": "넓은 면 표현", "description": "큰 붓으로 신속하게 칠한 넓은 면"},
+        {"title": "세밀한 디테일", "description": "작은 붓으로 표현한 세밀한 부분"},
+        {"title": "포스터 레터링", "description": "포스터칼라 붓으로 쓴 큰 글씨"}
+      ],
+      "youtubeSearch": "포스터칼라 붓",
+      "youtubeLink": "https://www.youtube.com/results?search_query=포스터칼라+붓+사용법"
+    }
+  ]
+}
