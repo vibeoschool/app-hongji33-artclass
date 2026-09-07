@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-31",
+ "updated": "2026-09-07",
  "regions": [
   "서울",
   "경기·인천",
@@ -9,7 +9,7 @@
   "광주·전라",
   "강원·제주"
  ],
- "count": 48,
+ "count": 46,
  "items": [
   {
    "title": "2026 성북구립미술관 기획전시 《이정윤: 노래하는 집》",
@@ -48,31 +48,13 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202608/7791138aca924a22b60bffd8812b9205.jpg"
   },
   {
-   "title": "[소마미술관] 그림책이 살아있다!",
-   "place": "소마미술관 2관",
-   "period": "2026.04.17 ~ 2026.09.06",
+   "title": "MMCA 다원예술 2026: 탐정의 시간",
+   "place": "국립현대미술관 서울관",
+   "period": "2026.04.01 ~ 2026.12.06",
    "region": "서울",
    "realm": "전시",
    "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/92cca0b3f7e84e64b160ad3cf2da71af.jpg"
-  },
-  {
-   "title": "[소마미술관] 이승택 : 조각의 바깥에서",
-   "place": "소마미술관 1관",
-   "period": "2026.04.10 ~ 2026.09.06",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/aa17e53476e642788fb31780fe75d141.jpg"
-  },
-  {
-   "title": "[특별기획전] 2026년 서울시립과학관 &#39;지구의 맥박 : EARTH&#39;S PULSE&#39;",
-   "place": "서울시립과학관",
-   "period": "2026.06.16 ~ 2026.09.06",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/caedab589cb645b5932989f947228773.jpg"
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/2e5dd05740144ea68d2405a9776549f4.jpg"
   },
   {
    "title": "가나아트컬렉션 《기술의 저변: 경계에 선 장면들》",
@@ -84,6 +66,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/d75df319f1e94752b8e37e952da7a051.jpg"
   },
   {
+   "title": "개관 20주년 기념 「북적북적(BOOK的BOOK積) 20년: 우리가 자란 시간, 우리가 그릴 미래」",
+   "place": "국립어린이청소년도서관",
+   "period": "2026.06.26 ~ 2026.11.30",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/33cab048514b4a4db225ed92a3b294c2.png"
+  },
+  {
    "title": "기록으로 산책하기_서울의 공원",
    "place": "서울문화재단 본관",
    "period": "2023.12.01 ~ 2026.09.29",
@@ -91,15 +82,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/rdf/24/12/rdf_202412022124560550.jpg"
-  },
-  {
-   "title": "난지미술창작스튜디오 20주년 기념전 《사랑의 기원》",
-   "place": "서울시립미술관",
-   "period": "2026.04.30 ~ 2026.09.06",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/08ce7fb5df4c4db193c9068d3850b43b.JPG"
   },
   {
    "title": "내셔널지오그래픽 특별기획 《OCEAN》",
@@ -138,13 +120,13 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/0e1f142e4c704909997463777863c358.jpg"
   },
   {
-   "title": "어메이징 타일랜드: 태국미술명품전",
+   "title": "우리들의 밥상",
    "place": "국립중앙박물관",
-   "period": "2026.06.23 ~ 2026.09.06",
+   "period": "2026.07.01 ~ 2026.10.25",
    "region": "서울",
    "realm": "전시",
    "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/e93bf75ae63b4028bc3fc46632c1e51d.png"
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/c1730ad3436d45d09af680e156644719.jpg"
   },
   {
    "title": "이것은 개념미술이 (아니)다",
@@ -174,6 +156,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/e7daf4dcdc76418bbbbdc4a77f78d50c.png"
   },
   {
+   "title": "종로구립 박노수미술관 개관12주년 기념전시 「산수&middot;격물」",
+   "place": "종로구립 박노수미술관",
+   "period": "2025.09.19 ~ 2026.12.06",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202601/e0a7e01144474b71b7e691bada7de617.jpg"
+  },
+  {
    "title": "청계천의 별이 된 노무라 모토유키",
    "place": "청계천박물관",
    "period": "2026.06.13 ~ 2026.10.11",
@@ -181,15 +172,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/c53eb79a66ce418786d5a64bb71e4f17.jpg"
-  },
-  {
-   "title": "킹 오브 킹스 전시 : The Greatest Love",
-   "place": "롯데백화점 문화홀 [김포공항]",
-   "period": "2025.10.31 ~ 2026.08.31",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/25/11/show_2025111519111412761.jpg"
   },
   {
    "title": "2026 경기도박물관 개관 30주년 기념 기증 특별전 《혼자 보긴 아까워서》",
@@ -246,6 +228,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/0544719806c64b2a9a64a99745680c53.jpg"
   },
   {
+   "title": "[아트센터 화이트블럭] 선 너머 선",
+   "place": "아트센터 화이트블럭",
+   "period": "2026.07.03 ~ 2026.09.27",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/9720336bb2af42828b625982fadd397f.jpg"
+  },
+  {
    "title": "로드 무비: 1945년 이후 한&middot;일 미술",
    "place": "국립현대미술관 과천관",
    "period": "2026.05.14 ~ 2026.09.27",
@@ -264,13 +255,31 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/4a969df3309443f9b046834dbbc58400.png"
   },
   {
-   "title": "사랑(Deep Affection)",
-   "place": "창원시립마산문신미술관",
-   "period": "2025.12.16 ~ 2026.08.31",
+   "title": "국제 하이퍼-리얼리즘 &lt;가장 완벽한 환영&gt;",
+   "place": "울산시립미술관",
+   "period": "2026.07.02 ~ 2026.10.05",
    "region": "부산·경남",
    "realm": "전시",
    "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/25/12/show_202512171016759559.jpg"
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/c20f9ae0b7ae4d258dafe93d4f3bfc33.png"
+  },
+  {
+   "title": "로비상설전 &quot;행복이 머무는 순간&quot;",
+   "place": "울산북구문화예술회관",
+   "period": "2026.06.30 ~ 2026.09.23",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/07/rdf_202607022122496637.jpg"
+  },
+  {
+   "title": "부산항 개항 150주년 기념 기획전시 &lt;개항, 부산항 150년&gt;",
+   "place": "국립해양박물관",
+   "period": "2026.06.30 ~ 2026.09.27",
+   "region": "부산·경남",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/8fb66ccd7bc447e8817d9b39db124d50.png"
   },
   {
    "title": "클레이아크김해미술관 개관 20주년 특별기획전 &lt;주름과 덧댐&gt;",
@@ -280,15 +289,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/fd27b8691ec945a6bd0cdad83e649781.jpg"
-  },
-  {
-   "title": "《네이단 콜리: 마음이 그려낸 풍경》",
-   "place": "포항시립미술관",
-   "period": "2026.06.04 ~ 2026.09.06",
-   "region": "대구·경북",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202608/06616d1102c24023bbff6499eb9c4227.jpg"
   },
   {
    "title": "대구미술관 교육형 전시 《고양이도 임금을 볼 수 있다》",
@@ -307,15 +307,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/rdf/25/09/show_202509251024362832.jpg"
-  },
-  {
-   "title": "제21회 장두건미술상 수상작가 안효찬 《친근하면서도, 낯선》",
-   "place": "포항시립미술관",
-   "period": "2026.06.04 ~ 2026.09.06",
-   "region": "대구·경북",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202608/a850dd3c87c74bd0a9a723e2139f4e58.jpg"
   },
   {
    "title": "황룡사 목탑 사리장엄구",
@@ -363,15 +354,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/bafef63bcf7348c79795c33d589d0688.JPG"
   },
   {
-   "title": "한밭교육박물관, 국립임시정부기념관 공동전시 &lt;대한민국 임시정부 기억상자&gt;",
-   "place": "한밭교육박물관",
-   "period": "2026.06.16 ~ 2026.09.06",
-   "region": "대전·충청",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/26/06/rdf_2026063021264088620.jpg"
-  },
-  {
    "title": "ACC 필름앤비디오 《아시아의 장치들》",
    "place": "국립아시아문화전당 문화창조원 복합 2관",
    "period": "2026.03.19 ~ 2026.09.27",
@@ -390,13 +372,13 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/10dd591a1d65482ba49bd5ad1b9541e0.png"
   },
   {
-   "title": "해동문화예술촌 어린이 체험형 예술전시 &#39;장미 작가와 함께하는 마음보관소&#39; 展",
-   "place": "해동문화예술촌",
-   "period": "2026.03.21 ~ 2026.09.06",
+   "title": "순천 창작예술촌 3호 ｢2026 조강훈 컬렉션Ⅱ｣ 展",
+   "place": "순천창작예술촌 장안창작마당",
+   "period": "2026.07.01 ~ 2026.09.27",
    "region": "광주·전라",
    "realm": "전시",
    "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/a2f6092e7568455ab04fcaa03a6f33de.jpg"
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/ea9c7959cff04364b64a068839e6b510.png"
   },
   {
    "title": "2025 공공수장고 야외 전시 프로젝트 《강주현: 연결의 비정형》",
