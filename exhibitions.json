@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07",
+ "updated": "2026-09-14",
  "regions": [
   "서울",
   "경기·인천",
@@ -9,7 +9,7 @@
   "광주·전라",
   "강원·제주"
  ],
- "count": 46,
+ "count": 42,
  "items": [
   {
    "title": "2026 성북구립미술관 기획전시 《이정윤: 노래하는 집》",
@@ -102,15 +102,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/f8546ab1c3da40ada576098e7fc2ad10.jpg"
   },
   {
-   "title": "바람의 길목 DMZ",
-   "place": "대한민국역사박물관",
-   "period": "2026.06.11 ~ 2026.09.13",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/26/08/rdf_2026081921234462244.jpg"
-  },
-  {
    "title": "스페인의 거장 고야: 이성이 잠들 때, 괴물이 깨어난다",
    "place": "예술의전당(한가람미술관)",
    "period": "2026.06.26 ~ 2026.09.30",
@@ -118,15 +109,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/0e1f142e4c704909997463777863c358.jpg"
-  },
-  {
-   "title": "우리들의 밥상",
-   "place": "국립중앙박물관",
-   "period": "2026.07.01 ~ 2026.10.25",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/c1730ad3436d45d09af680e156644719.jpg"
   },
   {
    "title": "이것은 개념미술이 (아니)다",
@@ -183,6 +165,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/022fd48046864e57a06552c79d5dbab8.png"
   },
   {
+   "title": "2026 기형도문학관 기획전시 &lt;다시, 그 길 위의 우리: 길 위에서 중얼거리다&gt;",
+   "place": "기형도문학관",
+   "period": "2026.06.02 ~ 2026.12.13",
+   "region": "경기·인천",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/7eb1fa55aba44f849880d79043fffbcd.jpg"
+  },
+  {
    "title": "2026 수주문학관 기획전시 &lt;술로 자라서 글에 살고&gt;展",
    "place": "부천문화재단",
    "period": "2026.05.29 ~ 2026.10.31",
@@ -228,15 +219,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/0544719806c64b2a9a64a99745680c53.jpg"
   },
   {
-   "title": "[아트센터 화이트블럭] 선 너머 선",
-   "place": "아트센터 화이트블럭",
-   "period": "2026.07.03 ~ 2026.09.27",
-   "region": "경기·인천",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/9720336bb2af42828b625982fadd397f.jpg"
-  },
-  {
    "title": "로드 무비: 1945년 이후 한&middot;일 미술",
    "place": "국립현대미술관 과천관",
    "period": "2026.05.14 ~ 2026.09.27",
@@ -255,33 +237,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/4a969df3309443f9b046834dbbc58400.png"
   },
   {
-   "title": "국제 하이퍼-리얼리즘 &lt;가장 완벽한 환영&gt;",
-   "place": "울산시립미술관",
-   "period": "2026.07.02 ~ 2026.10.05",
-   "region": "부산·경남",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/c20f9ae0b7ae4d258dafe93d4f3bfc33.png"
-  },
-  {
-   "title": "로비상설전 &quot;행복이 머무는 순간&quot;",
-   "place": "울산북구문화예술회관",
-   "period": "2026.06.30 ~ 2026.09.23",
-   "region": "부산·경남",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/26/07/rdf_202607022122496637.jpg"
-  },
-  {
-   "title": "부산항 개항 150주년 기념 기획전시 &lt;개항, 부산항 150년&gt;",
-   "place": "국립해양박물관",
-   "period": "2026.06.30 ~ 2026.09.27",
-   "region": "부산·경남",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/8fb66ccd7bc447e8817d9b39db124d50.png"
-  },
-  {
    "title": "클레이아크김해미술관 개관 20주년 특별기획전 &lt;주름과 덧댐&gt;",
    "place": "클레이아크 김해미술관",
    "period": "2026.04.17 ~ 2026.11.29",
@@ -289,6 +244,15 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/fd27b8691ec945a6bd0cdad83e649781.jpg"
+  },
+  {
+   "title": "'Invisible Actors'",
+   "place": "갤러리 팔조",
+   "period": "2025.12.09 ~ 2026.12.10",
+   "region": "대구·경북",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/25/12/show_2025121121334580549.jpg"
   },
   {
    "title": "대구미술관 교육형 전시 《고양이도 임금을 볼 수 있다》",
@@ -354,6 +318,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/bafef63bcf7348c79795c33d589d0688.JPG"
   },
   {
+   "title": "열린수장고 상설전 《DMA 소장품 하이라이트 2026》",
+   "place": "대전시립미술관",
+   "period": "2026.03.03 ~ 2026.12.13",
+   "region": "대전·충청",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/ad18cf0a637e4b059ec687208c53b8a9.jpg"
+  },
+  {
    "title": "ACC 필름앤비디오 《아시아의 장치들》",
    "place": "국립아시아문화전당 문화창조원 복합 2관",
    "period": "2026.03.19 ~ 2026.09.27",
@@ -370,15 +343,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/10dd591a1d65482ba49bd5ad1b9541e0.png"
-  },
-  {
-   "title": "순천 창작예술촌 3호 ｢2026 조강훈 컬렉션Ⅱ｣ 展",
-   "place": "순천창작예술촌 장안창작마당",
-   "period": "2026.07.01 ~ 2026.09.27",
-   "region": "광주·전라",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/ea9c7959cff04364b64a068839e6b510.png"
   },
   {
    "title": "2025 공공수장고 야외 전시 프로젝트 《강주현: 연결의 비정형》",
