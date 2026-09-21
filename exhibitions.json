@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-14",
+ "updated": "2026-09-21",
  "regions": [
   "서울",
   "경기·인천",
@@ -9,7 +9,7 @@
   "광주·전라",
   "강원·제주"
  ],
- "count": 42,
+ "count": 38,
  "items": [
   {
    "title": "2026 성북구립미술관 기획전시 《이정윤: 노래하는 집》",
@@ -57,6 +57,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/2e5dd05740144ea68d2405a9776549f4.jpg"
   },
   {
+   "title": "MMCA 필름앤비디오 2026",
+   "place": "국립현대미술관 서울관",
+   "period": "2026.04.20 ~ 2026.12.20",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/d9e4dd01c2124e5c9981cb96f8979844.jpg"
+  },
+  {
    "title": "가나아트컬렉션 《기술의 저변: 경계에 선 장면들》",
    "place": "서울시립미술관",
    "period": "2026.04.16 ~ 2026.11.22",
@@ -64,15 +73,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/d75df319f1e94752b8e37e952da7a051.jpg"
-  },
-  {
-   "title": "개관 20주년 기념 「북적북적(BOOK的BOOK積) 20년: 우리가 자란 시간, 우리가 그릴 미래」",
-   "place": "국립어린이청소년도서관",
-   "period": "2026.06.26 ~ 2026.11.30",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/33cab048514b4a4db225ed92a3b294c2.png"
   },
   {
    "title": "기록으로 산책하기_서울의 공원",
@@ -84,6 +84,15 @@
    "img": "http://www.culture.go.kr/upload/rdf/24/12/rdf_202412022124560550.jpg"
   },
   {
+   "title": "김창열 화가의 집 개관전 &lt;김창열, 물방울의 흔적&gt;",
+   "place": "종로문화재단",
+   "period": "2026.05.29 ~ 2026.12.20",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202608/f673240ab58f486bb52d470357c90d3b.jpg"
+  },
+  {
    "title": "내셔널지오그래픽 특별기획 《OCEAN》",
    "place": "충무아트센터 갤러리",
    "period": "2026.06.06 ~ 2026.10.11",
@@ -93,6 +102,15 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/4ba6b38175264092a564d6bd5ab22f64.jpg"
   },
   {
+   "title": "대학기록관 기획전시 &lt;1996, 무용원 한 발&gt;",
+   "place": "한국예술종합학교 석관동캠퍼스",
+   "period": "2026.03.03 ~ 2026.12.18",
+   "region": "서울",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/70412e6a6ffc4e88bb9b27b83650f671.png"
+  },
+  {
    "title": "대학에서 우리는",
    "place": "서울생활사박물관",
    "period": "2026.05.15 ~ 2026.09.27",
@@ -100,24 +118,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/f8546ab1c3da40ada576098e7fc2ad10.jpg"
-  },
-  {
-   "title": "스페인의 거장 고야: 이성이 잠들 때, 괴물이 깨어난다",
-   "place": "예술의전당(한가람미술관)",
-   "period": "2026.06.26 ~ 2026.09.30",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/0e1f142e4c704909997463777863c358.jpg"
-  },
-  {
-   "title": "이것은 개념미술이 (아니)다",
-   "place": "국립현대미술관 서울관",
-   "period": "2026.06.19 ~ 2026.10.11",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/e28fd83727c34f5585157b2e1f70e01c.jpg"
   },
   {
    "title": "이슬람 미술 찬란한 빛의 여정",
@@ -181,15 +181,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/3fb8ff93e0d34cf1afd4c5a5be172e56.jpg"
-  },
-  {
-   "title": "2026 양평군립미술관 신진작가전 - 뉴 앙데팡당: Hit the Spot",
-   "place": "양평군립미술관",
-   "period": "2026.06.28 ~ 2026.11.29",
-   "region": "경기·인천",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/26/06/rdf_2026062921215762664.jpg"
   },
   {
    "title": "2026년 예술공간 광명시작 &lt;광명시작에서 예술하기&gt;",
@@ -291,15 +282,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/1db6ada5f8604598b9ce7c409f224a2a.png"
   },
   {
-   "title": "2026 이응노미술관 기획전 《이응노&middot;김창열》",
-   "place": "대전 이응노미술관",
-   "period": "2026.06.23 ~ 2026.09.27",
-   "region": "대전·충청",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/a4f99afae7d045fc94d16c60ef83ae48.jpg"
-  },
-  {
    "title": "[지역 공립박물관 순회전시] 국보순회전, 우리 동네에서 만나는 보물",
    "place": "진천종박물관",
    "period": "2026.05.19 ~ 2026.11.29",
@@ -354,15 +336,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202602/3f348feb75854fac80a0e4aa4846765a.jpg"
   },
   {
-   "title": "내금강행 열차, 출발합니다",
-   "place": "DMZ 박물관 [고성]",
-   "period": "2026.06.25 ~ 2026.09.27",
-   "region": "강원·제주",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202608/0cfaf390868a4cde9753542b62b512a5.png"
-  },
-  {
    "title": "은은한 문제: 김창열의 신문지 작업",
    "place": "제주도립김창열미술관",
    "period": "2026.04.28 ~ 2026.10.18",
@@ -370,15 +343,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/5c911e1fc1054105af695ba7e9290759.png"
-  },
-  {
-   "title": "종이여행Ⅱ&middot;Ⅲ 번지면 어떻고, 스며들면 어때",
-   "place": "원주한지테마파크",
-   "period": "2026.06.27 ~ 2026.10.11",
-   "region": "강원·제주",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/b06241aa080d46bbac2f99cf980feb1d.png"
   },
   {
    "title": "춘천 지역화 교재 개발 성과 홍보전",
