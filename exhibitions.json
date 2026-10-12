@@ -1,15 +1,14 @@
 {
- "updated": "2026-10-05",
+ "updated": "2026-10-12",
  "regions": [
   "서울",
   "경기·인천",
   "부산·경남",
   "대구·경북",
   "대전·충청",
-  "광주·전라",
   "강원·제주"
  ],
- "count": 42,
+ "count": 34,
  "items": [
   {
    "title": "2026 성북구립미술관 기획전시 《이정윤: 노래하는 집》",
@@ -28,15 +27,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202604/7848ebc75bc649b68102741c8c12a459.png"
-  },
-  {
-   "title": "2026년 K-뮤지엄 지역 순회 전시 및 투어 지원사업 &lt;이음-확장&gt;",
-   "place": "숙명여자대학교 정영양자수박물관",
-   "period": "2026.05.04 ~ 2026.12.30",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/58ed119a0b7d485883ae7926b2cf440b.jpg"
   },
   {
    "title": "MMCA 다원예술 2026: 탐정의 시간",
@@ -129,24 +119,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202609/b4af12f0e63248d18fb3987e60e7f232.jpg"
   },
   {
-   "title": "이슬람 미술 찬란한 빛의 여정",
-   "place": "국립중앙박물관",
-   "period": "2025.11.22 ~ 2026.10.11",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202603/fffac54cd3ec4f67a50c1ea8708b7afa.jpg"
-  },
-  {
-   "title": "제목전(展)",
-   "place": "한국영화박물관",
-   "period": "2026.05.08 ~ 2026.10.10",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/e7daf4dcdc76418bbbbdc4a77f78d50c.png"
-  },
-  {
    "title": "종로구립 박노수미술관 개관12주년 기념전시 「산수&middot;격물」",
    "place": "종로구립 박노수미술관",
    "period": "2025.09.19 ~ 2026.12.06",
@@ -154,33 +126,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202601/e0a7e01144474b71b7e691bada7de617.jpg"
-  },
-  {
-   "title": "주거의 전환 : 나에게 맞춘 집",
-   "place": "국토발전전시관",
-   "period": "2026.05.13 ~ 2026.11.01",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202609/397dcda34e544f29aa12e9dc3fc422cd.jpg"
-  },
-  {
-   "title": "2026년 예술공간 광명시작 &lt;광명시작에서 예술하기&gt;",
-   "place": "광명문화재단",
-   "period": "2026.05.09 ~ 2026.10.25",
-   "region": "경기·인천",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/4b33859c7afa4d6ba0a1fce72db8371f.JPG"
-  },
-  {
-   "title": "G뮤지엄커넥트 《눈-길》",
-   "place": "경기도미술관",
-   "period": "2026.05.05 ~ 2026.11.01",
-   "region": "경기·인천",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/f0a0d4c513b547feab6006e872d06da2.jpg"
   },
   {
    "title": "MMCA 해외 명작 : 수련과 샹들리에",
@@ -282,15 +227,6 @@
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/2bd49226409547d3a1e0d109066173d8.png"
   },
   {
-   "title": "알록달록 동자상",
-   "place": "국립대구박물관",
-   "period": "2025.09.30 ~ 2026.10.05",
-   "region": "대구·경북",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/rdf/25/09/show_202509251024362832.jpg"
-  },
-  {
    "title": "2026 소장품 상설전 《시대와 함께한 예술가, 이응노》",
    "place": "대전 이응노미술관",
    "period": "2026.01.16 ~ 2026.12.25",
@@ -343,15 +279,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/rdf/25/07/rdf_2025072421292200942.jpg"
-  },
-  {
-   "title": "《이나괴 : 이상한데 나를 닮은 괴물》",
-   "place": "전북도립미술관",
-   "period": "2026.05.01 ~ 2026.10.11",
-   "region": "광주·전라",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202607/10dd591a1d65482ba49bd5ad1b9541e0.png"
   },
   {
    "title": "10/10: 미술관 10년의 선택",
