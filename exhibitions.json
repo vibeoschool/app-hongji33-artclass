@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19",
+ "updated": "2026-10-26",
  "regions": [
   "서울",
   "경기·인천",
@@ -8,7 +8,7 @@
   "대전·충청",
   "강원·제주"
  ],
- "count": 40,
+ "count": 39,
  "items": [
   {
    "title": "2026 성북구립미술관 기획전시 《이정윤: 노래하는 집》",
@@ -36,15 +36,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/58ed119a0b7d485883ae7926b2cf440b.jpg"
-  },
-  {
-   "title": "2026년 한국 근대 거장전 《유영국: 산은 내 안에 있다》",
-   "place": "서울시립미술관",
-   "period": "2026.05.19 ~ 2026.10.25",
-   "region": "서울",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/ad1ebb208a194a55bdb3ec54c4e8c693.jpg"
   },
   {
    "title": "MMCA 다원예술 2026: 탐정의 시간",
@@ -171,15 +162,6 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202606/3fb8ff93e0d34cf1afd4c5a5be172e56.jpg"
-  },
-  {
-   "title": "2026년 예술공간 광명시작 &lt;광명시작에서 예술하기&gt;",
-   "place": "광명문화재단",
-   "period": "2026.05.09 ~ 2026.10.25",
-   "region": "경기·인천",
-   "realm": "전시",
-   "url": "",
-   "img": "http://www.culture.go.kr/upload/ucms/oneCltInfo/2026/202605/4b33859c7afa4d6ba0a1fce72db8371f.JPG"
   },
   {
    "title": "G뮤지엄커넥트 《눈-길》",
@@ -360,6 +342,15 @@
    "realm": "전시",
    "url": "",
    "img": "http://www.culture.go.kr/upload/rdf/25/10/show_202510181549717115.jpg"
+  },
+  {
+   "title": "공공수장고 미디어아트_곶자왈: 숨결의 시간",
+   "place": "제주현대미술관",
+   "period": "2026.06.02 ~ 2026.11.08",
+   "region": "강원·제주",
+   "realm": "전시",
+   "url": "",
+   "img": "http://www.culture.go.kr/upload/rdf/26/10/rdf_2026101221172444961.jpg"
   },
   {
    "title": "국립춘천박물관 브랜드2 &#39;강원의 불교미술, 깨달음을 찾는 길&#39;",
